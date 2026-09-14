@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zenodic Admin Dashboard</title>
+
+  <link rel="stylesheet" href="admin.css?v=1002">
+</head>
+
+
+<div class="admin-app">
+<body>
+
+<div class="admin-app" id="adminApp" style="display:none;">
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="admin-sidebar" id="sidebar">
+
+    <div class="admin-brand">
+
+      <div class="brand-logo">Z</div>
+
+      <div>
+        <strong>Zenodic</strong>
+        <span>Admin Panel</span>
+      </div>
+
+    </div>
+
+
+    <nav class="admin-nav">
+
+      <button class="nav-item active" data-section="overview">
+        <span>⌂</span>
+        <span>Overview</span>
+      </button>
+
+      <button class="nav-item" data-section="users">
+        <span>👥</span>
+        <span>Users</span>
+      </button>
+
+      <button class="nav-item" data-section="sellers">
+        <span>🏪</span>
+        <span>Sellers</span>
+      </button>
+      <button class="nav-item" data-section="products">
+        <span>📦</span>
+        <span>Products</span>
+      </button>
+
+      <button class="nav-item" data-section="orders">
+        <span>📦</span>
+        <span>Orders</span>
+      </button>
+
+      <button class="nav-item" data-section="payments">
+        <span>💳</span>
+        <span>Payments</span>
+      </button>
+
+      <button class="nav-item" data-section="payouts">
+        <span>💸</span>
+        <span>Payouts</span>
+      </button>
+
+      <button class="nav-item" data-section="analytics">
+        <span>📊</span>
+        <span>Analytics</span>
+      </button>
+
+      <button class="nav-item" data-section="notifications">
+        <span>🔔</span>
+        <span>Notifications</span>
+      </button>
+
+      <button class="nav-item" data-section="settings">
+        <span>⚙️</span>
+        <span>Settings</span>
+      </button>
+
+    </nav>
+
+
+    <button class="admin-logout" id="logoutBtn">
+      ⇥ Logout
+    </button>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="admin-main">
+
+    <!-- TOPBAR -->
+
+    <header class="admin-topbar">
+
+      <button
+        type="button"
+        class="menu-btn"
+        id="menuBtn"
+      >
+        ☰
+      </button>
+
+
+      <div class="topbar-title">
+
+        <h1 id="pageTitle">
+          Overview
+        </h1>
+
+        <p>
+          Karibu kwenye Zenodic Admin Panel
+        </p>
+
+      </div>
+
+
+      <div class="admin-profile">
+
+        <div class="admin-avatar">
+          A
+        </div>
+
+        <div>
+
+          <strong id="adminName">
+            Admin
+          </strong>
+
+          <small>
+            Administrator
+          </small>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <div class="admin-content">
+
+
+      <!-- ================= OVERVIEW ================= -->
+
+      <section
+        id="overview"
+        class="section active"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              Dashboard Overview
+            </h2>
+
+            <p>
+              Muhtasari wa biashara yote ya Zenodic.
+            </p>
+
+          </div>
+
+          <div class="status-badge">
+            ● System Online
+          </div>
+
+        </div>
+
+
+        <!-- MAIN STATS -->
+
+        <div
+          class="stats-grid"
+          id="adminOverview"
+        >
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              👥
+            </div>
+
+            <div>
+
+              <span>
+                Customers
+              </span>
+
+              <strong id="totalUsers">
+                0
+              </strong>
+
+              <small>
+                Registered users
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              🏪
+            </div>
+
+            <div>
+
+              <span>
+                Sellers
+              </span>
+
+              <strong id="totalSellers">
+                0
+              </strong>
+
+              <small>
+                Active sellers
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              📦
+            </div>
+
+            <div>
+
+              <span>
+                Orders
+              </span>
+
+              <strong id="totalOrders">
+                0
+              </strong>
+
+              <small>
+                Total orders
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              💰
+            </div>
+
+            <div>
+
+              <span>
+                Total Sales
+              </span>
+
+              <strong id="totalSales">
+                TSh 0
+              </strong>
+
+              <small>
+                Paid sales
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              💸
+            </div>
+
+            <div>
+
+              <span>
+                Paid Out
+              </span>
+
+              <strong id="paidOut">
+                TSh 0
+              </strong>
+
+              <small>
+                Seller payouts
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              📊
+            </div>
+
+            <div>
+
+              <span>
+                Commission
+              </span>
+
+              <strong id="commission">
+                TSh 0
+              </strong>
+
+              <small>
+                Zenodic commission
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              💵
+            </div>
+
+            <div>
+
+              <span>
+                Net Revenue
+              </span>
+
+              <strong id="netRevenue">
+                TSh 0
+              </strong>
+
+              <small>
+                After payouts
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              ⏳
+            </div>
+
+            <div>
+
+              <span>
+                Pending Payout
+              </span>
+
+              <strong id="pendingPayout">
+                TSh 0
+              </strong>
+
+              <small>
+                Waiting for approval
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OVERVIEW DETAILS -->
+
+        <div class="content-grid">
+
+
+          <div class="panel">
+
+            <div class="panel-header">
+
+              <div>
+
+                <h2>
+                  📦 Order Overview
+                </h2>
+
+                <p>
+                  Muhtasari wa oda za Zenodic
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div
+              id="adminOverviewDetails"
+              class="overview-details"
+            >
+
+              <p>
+                Inapakia...
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="panel">
+
+            <div class="panel-header">
+
+              <div>
+
+                <h2>
+                  ⚡ Quick Actions
+                </h2>
+
+                <p>
+                  Manage Zenodic haraka
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+              <button data-section="orders">
+                📦 View Orders
+              </button>
+
+              <button data-section="users">
+                👥 Manage Users
+              </button>
+
+              <button data-section="sellers">
+                🏪 Manage Sellers
+              </button>
+
+              <button data-section="payouts">
+                💸 Seller Payouts
+              </button>
+
+              <button data-section="analytics">
+                📊 View Analytics
+              </button>
+
+              <button data-section="settings">
+                ⚙️ Admin Settings
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PERFORMANCE -->
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h2>
+                📈 Sales Performance
+              </h2>
+
+              <p>
+                Performance ya biashara
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="adminSalesPerformance"
+            class="stats-grid"
+          >
+
+            <p>
+              Inapakia...
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- ================= USERS ================= -->
+
+      <section
+        id="users"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              👥 Users
+            </h2>
+
+            <p>
+              Manage customers na accounts za Zenodic.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div id="usersContent">
+
+            <p>
+              Inapakia users...
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= SELLERS ================= -->
+
+      <section
+        id="sellers"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              🏪 Sellers
+            </h2>
+
+            <p>
+              Manage sellers na maduka yao.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div id="sellersContent">
+
+            <p>
+              Inapakia sellers...
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+      <!-- ================= PRODUCTS ================= -->
+      <section
+        id="products"
+        class="section"
+      >
+        <div class="section-heading">
+          <div>
+            <h2>📦 Products</h2>
+            <p>Approve au reject bidhaa za sellers na wholesalers.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div id="productsContent">
+            <p>Inapakia products...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ORDERS ================= -->
+
+      <section
+        id="orders"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              📦 Orders
+            </h2>
+
+            <p>
+              Angalia na simamia oda zote.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div id="ordersContent">
+
+            <p>
+              Inapakia orders...
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= PAYMENTS ================= -->
+
+      <section
+        id="payments"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              💳 Payments
+            </h2>
+
+            <p>
+              Monitor malipo ya orders.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div id="paymentsContent">
+
+            <p>
+              Inapakia payments...
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= PAYOUTS ================= -->
+
+      <section
+        id="payouts"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              💸 Seller Payouts
+            </h2>
+
+            <p>
+              Manage na approve malipo ya sellers.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="adminPayoutSummary"
+          class="stats-grid"
+        >
+        </div>
+
+
+        <div class="panel">
+
+          <div id="payoutsContent">
+
+            <p>
+              Inapakia seller payouts...
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+
+        <div class="panel admin-commission-payouts-panel">
+          <div class="admin-commission-payouts-heading">
+            <div>
+              <h3>💰 Commission Payouts</h3>
+              <p>Manage payout requests za commission ya Zenodic.</p>
+            </div>
+
+            <button
+              type="button"
+              class="settings-action-btn secondary"
+              id="refreshAdminCommissionPayoutsBtn"
+            >
+              Refresh
+            </button>
+          </div>
+
+          <div
+            id="adminCommissionPayoutsMessage"
+            class="settings-message"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <div id="adminCommissionPayoutsContent">
+            <p>Inapakia commission payouts...</p>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ================= ANALYTICS ================= -->
+
+      <section
+        id="analytics"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              📊 Analytics
+            </h2>
+
+            <p>
+              Takwimu na performance ya Zenodic.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div id="analyticsContent">
+
+          <p>
+            Inapakia analytics...
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= NOTIFICATIONS ================= -->
+
+      <section
+        id="notifications"
+        class="section"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              🔔 Notifications
+            </h2>
+
+            <p>
+              System notifications na alerts.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="admin-notifications-shell">
+
+          <div class="admin-notifications-toolbar">
+
+            <div class="admin-notifications-tabs">
+              <button type="button" class="admin-notification-tab is-active" data-notification-filter="all">
+                All
+              </button>
+              <button type="button" class="admin-notification-tab" data-notification-filter="unread">
+                Unread <span id="adminNotificationUnreadCount">0</span>
+              </button>
+              <button type="button" class="admin-notification-tab" data-notification-filter="important">
+                Important
+              </button>
+            </div>
+
+            <div class="admin-notifications-actions">
+              <button type="button" id="markAllAdminNotificationsRead">
+                Mark all as read
+              </button>
+              <button type="button" id="refreshAdminNotifications">
+                Refresh
+              </button>
+            </div>
+
+          </div>
+
+          <div class="admin-notifications-summary">
+            <div>
+              <span class="admin-notifications-kicker">ADMIN CENTER</span>
+              <strong id="adminNotificationSummaryTitle">Notifications</strong>
+              <span>System alerts, orders, payments, payouts na security updates.</span>
+            </div>
+
+            <div class="admin-notifications-status">
+              <span class="admin-notification-status-dot"></span>
+              <span id="adminNotificationSystemStatus">Monitoring active</span>
+            </div>
+          </div>
+
+          <div id="notificationsContent">
+
+            <div class="admin-notifications-empty">
+              <div class="admin-notifications-empty-icon">🔔</div>
+              <strong>No notifications yet</strong>
+              <span>Notifications muhimu za mfumo zitaonekana hapa.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        </div>
+
+
+      <!-- ================= SETTINGS ================= -->
+<section
+  id="settings"
+  class="section"
+>
+  <div class="section-heading">
+    <div>
+      <h2>⚙️ Admin Settings</h2>
+      <p>Dhibiti mipangilio ya Zenodic kutoka sehemu moja.</p>
+    </div>
+  </div>
+
+  <div class="settings-grid">
+
+    <article class="settings-card settings-card-general" id="adminGeneralSettingsCard" role="button" tabindex="0" aria-controls="adminGeneralSettingsModal" aria-expanded="false">
+      <div class="settings-card-icon">⚙️</div>
+      <div class="settings-card-body">
+        <h3>General</h3>
+        <p>Mipangilio ya msingi ya dashboard na mfumo.</p>
+        <button type="button" class="settings-action-btn" id="openAdminGeneralSettingsBtn">
+          Manage General Settings
+        </button>
+      </div>
+    </article>
+
+    <article class="settings-card settings-card-security">
+      <div class="settings-card-icon">🔐</div>
+      <div class="settings-card-body">
+        <h3>Security</h3>
+        <p>Linda admin account yako kwa passkeys na WebAuthn.</p>
+        <button type="button" class="settings-action-btn" id="openPasskeySettingsBtn">
+          Manage Passkeys
+        </button>
+      </div>
+    </article>
+
+    <article class="settings-card">
+      <div class="settings-card-icon">💰</div>
+      <div class="settings-card-body">
+        <h3>Commission</h3>
+        <p>Weka commission inayotumika kwenye marketplace.</p>
+
+        <label class="settings-field">
+          <span>Commission Rate (%)</span>
+          <input
+            id="adminCommissionRate"
+            type="number"
+            min="0"
+            max="100"
+            step="0.1"
+            placeholder="5"
+          >
+        </label>
+
+        <button type="button" class="save-btn" id="saveCommissionBtn">
+          💾 Save Commission
+        </button>
+        <span id="commissionMessage" class="settings-message"></span>
+      </div>
+    </article>
+
+    <article class="settings-card">
+      <div class="settings-card-icon">🎨</div>
+      <div class="settings-card-body">
+        <h3>Appearance</h3>
+        <p>Customize mwonekano wa admin dashboard.</p>
+
+        <label class="settings-field">
+          <span>Theme</span>
+          <select id="dashboardTheme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+
+        <button type="button" class="save-btn" id="saveSettingsBtn">
+          🎨 Save Theme
+        </button>
+
+        <span
+          id="settingsMessage"
+          class="settings-message"
+          role="status"
+          aria-live="polite"
+        ></span>
+      </div>
+    </article>
+
+    <article class="settings-card">
+      <div class="settings-card-icon">🔔</div>
+      <div class="settings-card-body">
+        <h3>Notifications</h3>
+        <p>Dhibiti alerts zinazotumwa kwenye admin dashboard.</p>
+
+        <label class="setting-toggle">
+          <span>
+            <strong>Admin notifications</strong>
+            <small>Receive dashboard alerts.</small>
+          </span>
+          <input id="notificationsEnabled" type="checkbox" checked>
+        </label>
+
+        <button type="button" class="save-btn" id="saveNotificationSettingsBtn">
+          🔔 Save Notifications
+        </button>
+
+        <span
+          id="notificationSettingsMessage"
+          class="settings-message"
+          role="status"
+          aria-live="polite"
+        ></span>
+      </div>
+    </article>
+
+    <article class="settings-card admin-payment-account-card" id="adminPaymentAccountCard" role="button" tabindex="0" aria-controls="adminPaymentAccountModal" aria-expanded="false">
+      <div class="settings-card-icon">💳</div>
+      <div class="settings-card-body">
+        <h3>Admin Payment Account</h3>
+        <p>Account inayopokea commission na malipo ya Zenodic.</p>
+        <span class="settings-status">Payment account settings</span>
+      </div>
+    </article>
+
+    <div class="admin-general-settings-modal" id="adminGeneralSettingsModal" hidden>
+      <div class="admin-general-settings-dialog" role="dialog" aria-modal="true" aria-labelledby="adminGeneralSettingsModalTitle">
+        <div class="admin-general-settings-dialog-header">
+          <div>
+            <h3 id="adminGeneralSettingsModalTitle">General Settings</h3>
+            <p>Dhibiti taarifa za msingi na hali ya mfumo wa Zenodic.</p>
+          </div>
+          <button type="button" class="admin-general-settings-close" id="closeAdminGeneralSettingsBtn" aria-label="Close">×</button>
+        </div>
+
+        <div class="admin-general-settings-dialog-body">
+          <div class="admin-general-settings-form">
+            <label class="settings-field">
+              <span>Site Name</span>
+              <input
+                id="adminSiteName"
+                type="text"
+                maxlength="500"
+                placeholder="Zenodic"
+              >
+            </label>
+
+            <label class="settings-field">
+              <span>Site Description</span>
+              <textarea
+                id="adminSiteDescription"
+                maxlength="500"
+                rows="3"
+                placeholder="Maelezo ya Zenodic..."
+              ></textarea>
+            </label>
+
+            <label class="settings-field">
+              <span>Support Email</span>
+              <input
+                id="adminSupportEmail"
+                type="email"
+                maxlength="500"
+                placeholder="support@example.com"
+              >
+            </label>
+
+            <label class="settings-field">
+              <span>Default Currency</span>
+              <select id="adminDefaultCurrency">
+                <option value="TZS">TZS — Tanzanian Shilling</option>
+                <option value="USD">USD — US Dollar</option>
+                <option value="KES">KES — Kenyan Shilling</option>
+              </select>
+            </label>
+
+            <label class="settings-field">
+              <span>Maintenance Mode</span>
+              <select id="adminMaintenanceMode">
+                <option value="false">Off</option>
+                <option value="true">On</option>
+              </select>
+            </label>
+
+            <div class="admin-general-settings-actions">
+              <button type="button" class="save-btn" id="saveAdminGeneralSettingsBtn">
+                💾 Save General Settings
+              </button>
+              <span
+                id="adminGeneralSettingsMessage"
+                class="settings-message"
+                role="status"
+                aria-live="polite"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-payment-account-modal" id="adminPaymentAccountModal" hidden>
+      <div class="admin-payment-account-dialog" role="dialog" aria-modal="true" aria-labelledby="adminPaymentAccountModalTitle">
+        <div class="admin-payment-account-dialog-header">
+          <div>
+            <h3 id="adminPaymentAccountModalTitle">Admin Payment Account</h3>
+            <p>Weka account inayopokea commission na malipo ya Zenodic.</p>
+          </div>
+          <button type="button" class="admin-payment-account-close" id="closeAdminPayoutAccountBtn" aria-label="Close">×</button>
+        </div>
+
+        <div class="admin-payment-account-dialog-body">
+          <div class="admin-payment-account-form">
+            <label class="settings-field">
+              <span>Account type</span>
+              <select id="adminPayoutAccountType">
+                <option value="mobile_money">Mobile Money</option>
+                <option value="bank">Bank</option>
+              </select>
+            </label>
+
+            <label class="settings-field">
+              <span>Provider</span>
+              <input id="adminPayoutProvider" type="text" maxlength="120" placeholder="Mfano: M-Pesa">
+            </label>
+
+            <label class="settings-field">
+              <span>Account name</span>
+              <input id="adminPayoutAccountName" type="text" maxlength="160" placeholder="Jina la account">
+            </label>
+
+            <label class="settings-field">
+              <span>Account number</span>
+              <input id="adminPayoutAccountNumber" type="text" maxlength="80" inputmode="tel" placeholder="Namba ya account">
+            </label>
+
+            <label class="settings-field">
+              <span>Currency</span>
+              <select id="adminPayoutCurrency">
+                <option value="TZS">TZS — Tanzanian Shilling</option>
+                <option value="USD">USD — US Dollar</option>
+                <option value="KES">KES — Kenyan Shilling</option>
+              </select>
+            </label>
+
+            <div class="admin-commission-balance" id="adminCommissionBalance">
+              <div class="admin-commission-balance-header">
+                <div>
+                  <strong>Commission Balance</strong>
+                  <span>Commission iliyokusanywa na kiasi kinachopatikana kwa payout.</span>
+                </div>
+                <button type="button" class="settings-action-btn secondary" id="refreshAdminCommissionBalanceBtn">
+                  Refresh
+                </button>
+              </div>
+
+              <div class="admin-commission-balance-grid">
+                <div class="admin-commission-balance-item">
+                  <span>Total Commission</span>
+                  <strong id="adminTotalCommission">—</strong>
+                </div>
+                <div class="admin-commission-balance-item">
+                  <span>Reserved Payout</span>
+                  <strong id="adminReservedCommission">—</strong>
+                </div>
+                <div class="admin-commission-balance-item">
+                  <span>Available Commission</span>
+                  <strong id="adminAvailableCommission">—</strong>
+                </div>
+              </div>
+
+              <p id="adminCommissionBalanceMessage" class="settings-message" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="admin-commission-payout" id="adminCommissionPayout">
+              <div class="admin-commission-payout-header">
+                <div>
+                  <strong>Request Commission Payout</strong>
+                  <span>Omba payout ya commission kwenda kwenye Admin Payment Account iliyo active.</span>
+                </div>
+              </div>
+
+              <div class="admin-commission-payout-form">
+                <label class="settings-field">
+                  <span>Amount</span>
+                  <input
+                    id="adminCommissionPayoutAmount"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="Mfano: 100"
+                  >
+                </label>
+
+                <label class="settings-field">
+                  <span>Notes <small>(optional)</small></span>
+                  <textarea
+                    id="adminCommissionPayoutNotes"
+                    maxlength="500"
+                    rows="3"
+                    placeholder="Maelezo ya payout..."
+                  ></textarea>
+                </label>
+
+                <div class="admin-commission-payout-actions">
+                  <button
+                    type="button"
+                    class="settings-action-btn"
+                    id="requestAdminCommissionPayoutBtn"
+                  >
+                    Request Commission Payout
+                  </button>
+                  <span
+                    id="adminCommissionPayoutMessage"
+                    class="settings-message"
+                    role="status"
+                    aria-live="polite"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-payment-account-actions">
+              <button type="button" class="settings-action-btn" id="saveAdminPayoutAccountBtn">
+                Save Payment Account
+              </button>
+              <span id="adminPayoutAccountMessage" class="settings-message" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="settings-card settings-card-marketplace" id="adminMarketplaceSettingsCard">
+      <div class="settings-card-icon">🛍️</div>
+      <div class="settings-card-body">
+        <h3>Marketplace</h3>
+        <p>Product, order, seller na marketplace configuration.</p>
+
+        <div class="settings-card-actions">
+          <button type="button" class="settings-action-btn" data-settings-nav="products">
+            📦 Manage Products
+          </button>
+          <button type="button" class="settings-action-btn" data-settings-nav="orders">
+            🧾 Manage Orders
+          </button>
+          <button type="button" class="settings-action-btn" data-settings-nav="sellers">
+            🏪 Manage Sellers
+          </button>
+        </div>
+
+        <span class="settings-status">Marketplace controls ready</span>
+      </div>
+    </article>
+
+    <article class="settings-card">
+      <div class="settings-card-icon">🤖</div>
+      <div class="settings-card-body">
+        <h3>Zenodic AI</h3>
+        <p>AI services za text, voice na image kwa watumiaji wenye ruhusa.</p>
+        <span class="settings-status">AI foundation ready</span>
+      </div>
+    </article>
+
+    <article class="settings-card settings-card-audit" id="adminAuditActivityCard">
+      <div class="settings-card-icon">📋</div>
+      <div class="settings-card-body">
+        <h3>Audit & Activity</h3>
+        <p>Fuatilia security events na shughuli muhimu za admin.</p>
+
+        <button
+          type="button"
+          class="settings-action-btn"
+          id="openAdminAuditActivityBtn"
+        >
+          📋 Open Audit & Activity
+        </button>
+
+        <span class="settings-status">Security & activity monitoring</span>
+      </div>
+    </article>
+
+  </div>
+    <div
+      class="admin-settings-modal"
+      id="adminAuditActivityModal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="adminAuditActivityTitle"
+    >
+      <div class="admin-settings-modal-backdrop" data-close-admin-audit-modal></div>
+
+      <div class="admin-settings-modal-content admin-audit-modal-content">
+        <div class="admin-settings-modal-header">
+          <div>
+            <span class="settings-modal-eyebrow">SECURITY MONITORING</span>
+            <h2 id="adminAuditActivityTitle">Audit & Activity</h2>
+            <p>Fuatilia actions, security events na mabadiliko muhimu ya admin.</p>
+          </div>
+
+          <button
+            type="button"
+            class="settings-modal-close"
+            id="closeAdminAuditActivityBtn"
+            aria-label="Close Audit & Activity"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="admin-audit-toolbar">
+          <label class="settings-field">
+            <span>Search</span>
+            <input
+              id="adminAuditSearch"
+              type="search"
+              placeholder="Action, admin, target..."
+              autocomplete="off"
+            >
+          </label>
+
+          <label class="settings-field">
+            <span>Action</span>
+            <input
+              id="adminAuditAction"
+              type="text"
+              placeholder="Mfano: payout.paid"
+              autocomplete="off"
+            >
+          </label>
+
+          <label class="settings-field">
+            <span>Period</span>
+            <select id="adminAuditDays">
+              <option value="7">Last 7 days</option>
+              <option value="30" selected>Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="365">Last 365 days</option>
+            </select>
+          </label>
+
+          <button
+            type="button"
+            class="settings-action-btn"
+            id="refreshAdminAuditActivityBtn"
+          >
+            🔄 Refresh
+          </button>
+        </div>
+
+        <div
+          id="adminAuditActivityMessage"
+          class="settings-message"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <div class="admin-audit-table-wrap">
+          <table class="admin-audit-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Admin</th>
+                <th>Action</th>
+                <th>Target</th>
+                <th>Description</th>
+                <th>Manage</th>
+              </tr>
+            </thead>
+            <tbody id="adminAuditActivityBody"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-audit-pagination">
+          <button
+            type="button"
+            class="settings-action-btn"
+            id="adminAuditPrevBtn"
+          >
+            ← Previous
+          </button>
+
+          <span id="adminAuditPaginationInfo">Page 1</span>
+
+          <button
+            type="button"
+            class="settings-action-btn"
+            id="adminAuditNextBtn"
+          >
+            Next →
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div
+    id="passkeySettingsPanel"
+    class="passkey-settings-panel"
+    hidden
+  >
+    <div class="passkey-panel-header">
+      <div>
+        <span class="settings-eyebrow">SECURITY</span>
+        <h3>🔐 Admin Passkeys</h3>
+        <p>Ongeza passkey ya kifaa chako kwa login salama bila password.</p>
+      </div>
+
+      <button
+        type="button"
+        class="settings-close-btn"
+        id="closePasskeySettingsBtn"
+        aria-label="Close passkey settings"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="passkey-panel-actions">
+      <button
+        type="button"
+        class="settings-action-btn"
+        id="registerAdminPasskeyBtn"
+      >
+        🔑 Register New Passkey
+      </button>
+
+      <span id="adminPasskeyMessage" class="settings-message"></span>
+    </div>
+
+    <div class="admin-security-settings">
+
+      <div class="admin-security-section">
+        <h4>📧 Admin Email</h4>
+        <p>Email hii inaweza kutumika kwenye admin account recovery.</p>
+
+        <label class="settings-field">
+          <span>Admin Email</span>
+          <input
+            id="adminSecurityEmail"
+            type="email"
+            autocomplete="email"
+            placeholder="admin@example.com"
+          >
+        </label>
+
+        <button
+          type="button"
+          class="settings-action-btn"
+          id="saveAdminSecurityEmailBtn"
+        >
+          💾 Save Admin Email
+        </button>
+
+        <span
+          id="adminSecurityEmailMessage"
+          class="settings-message"
+        ></span>
+      </div>
+
+      <div class="admin-security-section">
+        <h4>🔑 Change Admin Password</h4>
+        <p>Badilisha password ya admin ukiwa umeingia kwenye dashboard.</p>
+
+        <label class="settings-field">
+          <span>Current Password</span>
+          <input
+            id="adminCurrentPassword"
+            type="password"
+            autocomplete="current-password"
+          >
+        </label>
+
+        <label class="settings-field">
+          <span>New Password</span>
+          <input
+            id="adminNewPassword"
+            type="password"
+            minlength="8"
+            maxlength="128"
+            autocomplete="new-password"
+          >
+        </label>
+
+        <label class="settings-field">
+          <span>Confirm New Password</span>
+          <input
+            id="adminConfirmPassword"
+            type="password"
+            minlength="8"
+            maxlength="128"
+            autocomplete="new-password"
+          >
+        </label>
+
+        <button
+          type="button"
+          class="settings-action-btn"
+          id="changeAdminPasswordBtn"
+        >
+          🔐 Change Password
+        </button>
+
+        <span
+          id="adminSecurityPasswordMessage"
+          class="settings-message"
+        ></span>
+      </div>
+
+    </div>
+
+    <div id="adminPasskeyList" class="admin-passkey-list">
+      <div class="passkey-empty-state">
+        Hakuna passkey iliyopakiwa bado.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    </div>
+
+  </main>
+
+</div>
+
+
+
+<div id="adminUserModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);padding:20px;overflow:auto;">
+  <div style="max-width:560px;margin:40px auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.25);">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:15px;">
+      <div>
+        <h2 id="adminUserModalTitle" style="margin:0;">User Details</h2>
+        <p id="adminUserModalSubtitle" style="margin:6px 0 0;opacity:.65;"></p>
+      </div>
+      <button id="adminUserModalClose" type="button" style="border:0;background:transparent;font-size:24px;cursor:pointer;">×</button>
+    </div>
+
+    <div id="adminUserModalContent" style="margin-top:20px;">
+      Inapakia...
+    </div>
+
+    <div id="adminUserModalActions" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@simplewebauthn/browser@13.2.0/dist/bundle/index.js"></script>
+<script src="admin.js?v=1016"></script>
+
+<script src="seller-earnings.js"></script>
+
+<script src="seller-payouts.js"></script>
+
+</body>
+</html>

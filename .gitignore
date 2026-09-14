@@ -1,0 +1,22 @@
+backend/.env
+backend/data/
+
+backend/uploads/
+node_modules/
+*.log
+zenodic-cookies.txt
+test-video.mp4
+*.db
+*.backup
+*.bak
+*.before-*
+*.broken
+*.damaged-*
+*.backup*
+*.bak*
+*backup*
+*before-*
+backend\ /
+*.wholesale-layout-final
+
+*.tar.gz

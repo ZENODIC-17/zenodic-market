@@ -1,0 +1,6538 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZENODIC — Business Platform</title>
+  <meta
+    name="description"
+    content="ZENODIC — Unganisha biashara, wanunuzi na wauzaji katika mfumo mmoja wa kisasa."
+  >
+
+  <link rel="stylesheet" href="style.css">
+<style id="zenodic-initial-visibility">
+/* Prevent non-Welcome content from flashing before Intro finishes */
+
+
+/* =========================================================
+   ZENODIC MODERN SELLER DASHBOARD
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 760px) {
+
+  .seller-dashboard-modern.menu-open 
+
+  .seller-dashboard-modern.menu-open 
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+
+/* ---------- WHOLESALE SIDEBAR V2 ---------- */
+#wholesaleDashboard .wholesale-shell {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+#wholesaleDashboard .wholesale-sidebar {
+  position: sticky;
+  top: 18px;
+  min-height: calc(100vh - 36px);
+  padding: 18px 14px;
+  background: #111827;
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, .12);
+  display: flex;
+  flex-direction: column;
+}
+
+#wholesaleDashboard .wholesale-brand {
+  padding: 8px 10px 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #fff;
+}
+
+#wholesaleDashboard .wholesale-brand strong {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+#wholesaleDashboard .wholesale-brand span {
+  font-size: 11px;
+  font-weight: 800;
+  opacity: .6;
+  letter-spacing: .12em;
+}
+
+#wholesaleDashboard .wholesale-nav {
+  display: grid;
+  gap: 6px;
+}
+
+#wholesaleDashboard .wholesale-nav-item {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+#wholesaleDashboard .wholesale-nav-item span:first-child {
+  width: 22px;
+  text-align: center;
+  font-size: 16px;
+  opacity: .8;
+}
+
+#wholesaleDashboard .wholesale-nav-item:hover {
+  background: rgba(255,255,255,.07);
+  color: #fff;
+}
+
+#wholesaleDashboard .wholesale-nav-item.active {
+  background: #fff;
+  color: #111827;
+}
+
+#wholesaleDashboard .wholesale-nav-item.active span:first-child {
+  opacity: 1;
+}
+
+#wholesaleDashboard .wholesale-account-btn {
+  margin-top: auto;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 11px;
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#wholesaleDashboard .wholesale-main {
+  min-width: 0;
+}
+
+/* Wholesale mobile drawer menu */
+#wholesaleDashboard .wholesale-mobile-topbar {
+  display: none;
+}
+
+#wholesaleDashboard .wholesale-sidebar-overlay {
+  display: none;
+}
+
+#wholesaleDashboard .wholesale-menu-btn {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px;
+}
+
+@media (max-width: 900px) {
+  #wholesaleDashboard .wholesale-mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+  }
+
+  #wholesaleDashboard .wholesale-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(300px, 82vw);
+    min-height: 100vh;
+    z-index: 1001;
+    transform: translateX(-110%);
+    transition: transform 0.25s ease;
+    overflow-y: auto;
+    border-radius: 0 18px 18px 0;
+  }
+
+  #wholesaleDashboard .wholesale-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  #wholesaleDashboard .wholesale-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  #wholesaleDashboard .wholesale-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  #wholesaleDashboard .wholesale-shell {
+    grid-template-columns: 1fr;
+  }
+
+  #wholesaleDashboard .wholesale-main {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #wholesaleDashboard .wholesale-shell {
+    grid-template-columns: 1fr;
+  }
+
+  #wholesaleDashboard .wholesale-sidebar {
+    position: static;
+    min-height: auto;
+  }
+
+  #wholesaleDashboard .wholesale-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #wholesaleDashboard .wholesale-account-btn {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  #wholesaleDashboard .wholesale-shell {
+    gap: 10px;
+  }
+
+  #wholesaleDashboard .wholesale-sidebar {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  #wholesaleDashboard .wholesale-brand {
+    padding-bottom: 12px;
+  }
+
+  #wholesaleDashboard .wholesale-nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  #wholesaleDashboard .wholesale-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  #wholesaleDashboard .wholesale-nav-item {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
+  }
+
+  #wholesaleDashboard .wholesale-nav-item span:last-child {
+    white-space: nowrap;
+  }
+
+  #wholesaleDashboard .wholesale-account-btn {
+    display: none;
+  }
+}
+
+</style>
+
+<style id="zenodic-modern-seller-dashboard">
+
+.seller-stat-card {
+  background:var(--zd-card);
+  border:1px solid var(--zd-border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:var(--zd-shadow);
+}
+
+.seller-stat-label {
+  color:var(--zd-muted);
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.seller-stat-value {
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:-.4px;
+}
+
+.seller-stat-meta {
+  margin-top:8px;
+  font-size:12px;
+  color:var(--zd-muted);
+}
+
+@media(max-width:1050px) {
+
+}
+
+@media(max-width:760px) {
+
+  .seller-dashboard-modern.menu-open 
+
+}
+
+@media(max-width:480px) {
+
+}
+</style>
+
+<style id="zenodic-seller-single-section-nav">
+/* ============================================================
+   SELLER DASHBOARD - SINGLE SECTION NAVIGATION
+   ============================================================ */
+
+#modernSellerDashboard 
+
+#modernSellerDashboard .seller-nav-section {
+  display: none;
+}
+
+#modernSellerDashboard .seller-nav-section.active {
+  display: block;
+}
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+/* Dashboard overview */
+.seller-dashboard-overview {
+  display: grid;
+  gap: 20px;
+}
+
+/* Navigation buttons */
+
+/* Mobile */
+@media (max-width: 768px) {
+  #modernSellerDashboard 
+
+  #modernSellerDashboard 
+}
+</style>
+
+<style id="zenodic-final-seller-view-fix">
+
+/* =========================================================
+   FINAL SELLER DASHBOARD VIEW CONTROL
+   ========================================================= */
+
+/* Hide ALL legacy seller sections by default */
+#sellerDashboard > .seller-dashboard > .seller-content,
+#sellerDashboard > .seller-dashboard > .seller-section,
+#sellerDashboard > .seller-dashboard > .seller-legacy-content {
+  display: none !important;
+}
+
+/* Modern dashboard is the only visible seller content */
+#modernSellerDashboard {
+  display: grid !important;
+}
+
+/* Modern dashboard cards that belong to dashboard */
+#modernSellerDashboard .seller-dashboard-home-only {
+  display: block;
+}
+
+/* When Products is selected */
+#sellerDashboard.seller-view-products
+  #sellerProductsPanel {
+  display: block !important;
+}
+
+/* When Sales is selected */
+#sellerDashboard.seller-view-sales
+  #sellerSalesOverview {
+  display: block !important;
+}
+
+/* When Earnings is selected */
+#sellerDashboard.seller-view-earnings
+  #sellerEarningsPanel {
+  display: block !important;
+}
+
+/* When AI is selected */
+#sellerDashboard.seller-view-ai
+  #sellerAiPanel {
+  display: block !important;
+}
+
+/* When Settings is selected */
+#sellerDashboard.seller-view-settings
+  #sellerSettingsPanel {
+  display: block !important;
+}
+
+/* Hide modern dashboard home cards when another view is selected */
+#sellerDashboard.seller-view-products
+  #modernSellerDashboard,
+
+#sellerDashboard.seller-view-sales
+  #modernSellerDashboard,
+
+#sellerDashboard.seller-view-earnings
+  #modernSellerDashboard,
+
+#sellerDashboard.seller-view-ai
+  #modernSellerDashboard,
+
+#sellerDashboard.seller-view-settings
+  #modernSellerDashboard {
+  display: none !important;
+}
+
+</style>
+
+<style id="zenodic-seller-navigation-final">
+
+/* =========================================================
+   ZENODIC SELLER DASHBOARD - TRUE VIEW NAVIGATION
+   ========================================================= */
+
+/* The modern dashboard is the default view */
+#sellerDashboard.seller-view-dashboard
+  #modernSellerDashboard {
+  display: grid !important;
+}
+
+/* Other seller views are hidden by default */
+#sellerDashboard.seller-view-products
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-orders
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-sales
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-earnings
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-reports
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-ai
+  #modernSellerDashboard,
+#sellerDashboard.seller-view-settings
+  #modernSellerDashboard {
+  display: none !important;
+}
+
+/* Hide all legacy seller sections when dashboard is active */
+#sellerDashboard.seller-view-dashboard
+  .seller-legacy-view {
+  display: none !important;
+}
+
+/* Show selected legacy view */
+#sellerDashboard.seller-view-products
+  #sellerProductsPanel {
+  display: block !important;
+}
+
+#sellerDashboard.seller-view-sales
+  #sellerSalesOverview {
+  display: block !important;
+}
+
+#sellerDashboard.seller-view-earnings
+  #sellerEarningsPanel {
+  display: block !important;
+}
+
+/* Everything inside seller dashboard that isn't modern
+   or explicitly selected stays hidden */
+#sellerDashboard.seller-view-dashboard
+  .seller-section {
+  display: none !important;
+}
+
+#sellerDashboard.seller-view-products
+  .seller-section:not(#sellerProductsPanel),
+#sellerDashboard.seller-view-sales
+  .seller-section:not(#sellerSalesOverview),
+#sellerDashboard.seller-view-earnings
+  .seller-section:not(#sellerEarningsPanel) {
+  display: none !important;
+}
+
+/* Navigation active state */
+
+/* Reports card */
+#modernSellerDashboard.seller-report-view 
+
+#modernSellerDashboard.seller-report-view
+  [data-modern-export] {
+  display: inline-flex;
+}
+
+</style>
+
+<style id="zenodic-seller-app-navigation">
+
+#modernSellerDashboard {
+  width:100%;
+}
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+.seller-app-page {
+  display:none;
+  animation:sellerPageIn .18s ease;
+}
+
+.seller-app-page.active {
+  display:block;
+}
+
+@keyframes sellerPageIn {
+  from {
+    opacity:0;
+    transform:translateY(4px);
+  }
+  to {
+    opacity:1;
+    transform:none;
+  }
+}
+
+.seller-compact-cards {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+
+.seller-compact-card {
+  border:1px solid #e8edf3;
+  border-radius:14px;
+  padding:15px;
+  background:#fff;
+}
+
+.seller-compact-card .label {
+  font-size:10px;
+  font-weight:800;
+  color:#64748b;
+  text-transform:uppercase;
+}
+
+.seller-compact-card .value {
+  margin-top:6px;
+  font-size:20px;
+  font-weight:800;
+  color:#0f172a;
+}
+
+.seller-compact-card .meta {
+  margin-top:4px;
+  color:#94a3b8;
+  font-size:11px;
+}
+
+.seller-mini-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+@media(max-width:900px) {
+  .seller-compact-cards {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px) {
+  #modernSellerDashboard 
+
+  #modernSellerDashboard 
+
+  .seller-compact-cards {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .seller-mini-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+
+<style id="seller-app-final-fix">
+/* ===== SELLER APP FINAL VIEW ===== */
+
+/* Hide the old/legacy seller content */
+#sellerDashboard > .seller-dashboard > .seller-header,
+#sellerDashboard > .seller-dashboard > .seller-content,
+#sellerDashboard > .seller-dashboard > .seller-section,
+#sellerDashboard > .seller-dashboard > .seller-legacy-content {
+  display: none !important;
+}
+
+/* Modern dashboard is the only seller shell */
+#sellerDashboard 
+
+/* Navigation */
+#sellerDashboard 
+
+#sellerDashboard 
+
+/* Main app views */
+#modernSellerDashboard .seller-nav-section {
+  display: none !important;
+}
+
+#modernSellerDashboard .seller-nav-section.active {
+  display: block !important;
+}
+
+/* Dashboard home */
+#modernSellerDashboard 
+
+#modernSellerDashboard 
+
+/* Never show old seller panels underneath modern dashboard */
+#sellerDashboard.seller-view-products .seller-section,
+#sellerDashboard.seller-view-orders .seller-section,
+#sellerDashboard.seller-view-sales .seller-section,
+#sellerDashboard.seller-view-earnings .seller-section,
+#sellerDashboard.seller-view-reports .seller-section,
+#sellerDashboard.seller-view-ai .seller-section,
+#sellerDashboard.seller-view-settings .seller-section {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #modernSellerDashboard 
+
+  #modernSellerDashboard 
+}
+
+/* Prevent duplicate old dashboard blocks */
+#sellerDashboard .seller-header,
+#sellerDashboard .seller-dashboard > .seller-content,
+#sellerDashboard .seller-dashboard > .seller-section {
+  display: none !important;
+}
+</style>
+
+
+<style id="seller-foundation-css">
+/* ZENODIC SELLER APP — NEW FOUNDATION */
+
+#sellerDashboard.seller-dashboard-shell {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  min-height: 100vh;
+}
+
+#sellerDashboard .seller-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#sellerDashboard .seller-header {
+  display: none !important;
+}
+
+#sellerDashboard #modernSellerDashboard {
+  display: none !important;
+}
+
+#sellerDashboard .seller-app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#sellerDashboard .seller-app-layout {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+#sellerDashboard .seller-app-sidebar {
+  width: 250px;
+  flex: 0 0 250px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 18px 14px;
+}
+
+#sellerDashboard .seller-app-main {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  background: #f7f8fa;
+}
+
+#sellerDashboard .seller-app-sidebar button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  margin: 3px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  #sellerDashboard .seller-app-sidebar {
+    width: 220px;
+    flex-basis: 220px;
+  }
+
+  #sellerDashboard .seller-app-main {
+    padding: 16px;
+  }
+
+  #sellerDashboard .seller-app-topbar {
+    padding: 0 14px;
+  }
+}
+</style>
+
+
+<style id="seller-app-final-foundation">
+
+/* =========================================================
+   ZENODIC SELLER APP — FINAL FOUNDATION
+   ========================================================= */
+
+#sellerDashboard {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  background: #f5f7fb !important;
+}
+
+#sellerDashboard .seller-dashboard {
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide every previous seller dashboard */
+#sellerDashboard .seller-header,
+#sellerDashboard #modernSellerDashboard {
+  display: none !important;
+}
+
+/* ---------- TOP BAR ---------- */
+
+#sellerDashboard .seller-app-topbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+
+  width: 100% !important;
+  height: 68px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 0 24px !important;
+
+  background: #ffffff !important;
+  border-bottom: 1px solid #e6e9ef !important;
+  box-sizing: border-box !important;
+}
+
+#sellerDashboard .seller-app-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  min-width: 220px !important;
+}
+
+#sellerDashboard .seller-app-menu-btn {
+  display: none !important;
+}
+
+#sellerDashboard .seller-app-logo {
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 10px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+
+  font-size: 19px !important;
+  font-weight: 800 !important;
+}
+
+#sellerDashboard .seller-app-brand strong {
+  font-size: 17px !important;
+  letter-spacing: .5px !important;
+}
+
+/* Search */
+
+#sellerDashboard .seller-app-search {
+  flex: 1 !important;
+  max-width: 520px !important;
+
+  height: 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+
+  padding: 0 14px !important;
+
+  background: #f5f7fa !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 11px !important;
+}
+
+#sellerDashboard .seller-app-search input {
+  width: 100% !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  font-size: 14px !important;
+}
+
+/* Actions */
+
+#sellerDashboard .seller-app-actions {
+  min-width: 220px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+#sellerDashboard .seller-app-action-btn,
+#sellerDashboard .seller-app-profile {
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+#sellerDashboard .seller-app-action-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+}
+
+#sellerDashboard .seller-app-profile {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+}
+
+#sellerDashboard .seller-app-avatar {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: #111827 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* ---------- BODY ---------- */
+
+#sellerDashboard .seller-app-body {
+  display: flex !important;
+  align-items: stretch !important;
+  min-height: calc(100vh - 68px) !important;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+#sellerDashboard .seller-app-sidebar {
+  position: sticky !important;
+  top: 68px !important;
+
+  width: 250px !important;
+  min-width: 250px !important;
+
+  height: calc(100vh - 68px) !important;
+
+  overflow-y: auto !important;
+
+  padding: 22px 14px !important;
+
+  background: #ffffff !important;
+  border-right: 1px solid #e6e9ef !important;
+
+  box-sizing: border-box !important;
+}
+
+#sellerDashboard .seller-app-sidebar-title {
+  padding: 4px 12px 12px !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  color: #9ca3af !important;
+}
+
+#sellerDashboard .seller-app-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+#sellerDashboard .seller-app-nav-item {
+  width: 100% !important;
+  min-height: 44px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  padding: 0 13px !important;
+
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  background: transparent !important;
+  color: #4b5563 !important;
+
+  font-size: 14px !important;
+  text-align: left !important;
+
+  cursor: pointer !important;
+}
+
+#sellerDashboard .seller-app-nav-item > span {
+  width: 24px !important;
+  text-align: center !important;
+  font-size: 17px !important;
+}
+
+#sellerDashboard .seller-app-nav-item strong {
+  font-weight: 600 !important;
+}
+
+#sellerDashboard .seller-app-nav-item:hover {
+  background: #f3f4f6 !important;
+}
+
+#sellerDashboard .seller-app-nav-item.active {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+#sellerDashboard .seller-app-nav-divider {
+  height: 1px !important;
+  background: #e5e7eb !important;
+  margin: 12px 8px !important;
+}
+
+/* ---------- MAIN ---------- */
+
+#sellerDashboard .seller-app-main {
+  flex: 1 !important;
+  min-width: 0 !important;
+
+  padding: 30px !important;
+
+  background: #f5f7fb !important;
+  box-sizing: border-box !important;
+}
+
+/* Page heading */
+
+#sellerDashboard .seller-app-page-heading {
+  margin-bottom: 24px !important;
+}
+
+#sellerDashboard .seller-app-eyebrow {
+  display: block !important;
+  margin-bottom: 6px !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  color: #9ca3af !important;
+}
+
+#sellerDashboard .seller-app-page-heading h1 {
+  margin: 0 !important;
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+  color: #111827 !important;
+}
+
+#sellerDashboard .seller-app-page-heading p {
+  margin: 7px 0 0 !important;
+  color: #6b7280 !important;
+}
+
+/* ---------- STATS ---------- */
+
+#sellerDashboard .seller-app-stats {
+  display: grid !important;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+  gap: 16px !important;
+
+  margin-bottom: 20px !important;
+}
+
+#sellerDashboard .seller-app-stat {
+  padding: 20px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #e6e9ef !important;
+  border-radius: 14px !important;
+
+  box-shadow: 0 2px 8px rgba(15,23,42,.03) !important;
+}
+
+#sellerDashboard .seller-app-stat > span {
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #6b7280 !important;
+}
+
+#sellerDashboard .seller-app-stat > strong {
+  display: block !important;
+  margin-top: 9px !important;
+
+  font-size: 24px !important;
+  color: #111827 !important;
+}
+
+#sellerDashboard .seller-app-stat > small {
+  display: block !important;
+  margin-top: 5px !important;
+  color: #9ca3af !important;
+}
+
+/* ---------- DASHBOARD GRID ---------- */
+
+#sellerDashboard .seller-app-dashboard-grid {
+  display: grid !important;
+
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr) !important;
+
+  gap: 18px !important;
+}
+
+#sellerDashboard .seller-app-card {
+  min-width: 0 !important;
+
+  padding: 20px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #e6e9ef !important;
+  border-radius: 14px !important;
+
+  box-shadow: 0 2px 8px rgba(15,23,42,.03) !important;
+}
+
+#sellerDashboard .seller-app-card-large {
+  min-height: 220px !important;
+}
+
+#sellerDashboard .seller-app-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+#sellerDashboard .seller-app-card-header h2 {
+  margin: 0 !important;
+  font-size: 17px !important;
+  color: #111827 !important;
+}
+
+#sellerDashboard .seller-app-card-header p {
+  margin: 5px 0 0 !important;
+  color: #9ca3af !important;
+  font-size: 13px !important;
+}
+
+#sellerDashboard .seller-app-secondary-btn {
+  border: 1px solid #d1d5db !important;
+  background: #ffffff !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+}
+
+/* Overview */
+
+#sellerDashboard .seller-app-overview-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+#sellerDashboard .seller-app-overview-list > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 13px 0 !important;
+
+  border-bottom: 1px solid #eef0f3 !important;
+}
+
+#sellerDashboard .seller-app-overview-list > div:last-child {
+  border-bottom: 0 !important;
+}
+
+#sellerDashboard .seller-app-overview-list span {
+  color: #6b7280 !important;
+  font-size: 13px !important;
+}
+
+#sellerDashboard .seller-app-overview-list strong {
+  color: #111827 !important;
+}
+
+/* Empty states */
+
+#sellerDashboard .seller-app-empty,
+#sellerDashboard .seller-app-placeholder {
+  padding: 30px 20px !important;
+
+  text-align: center !important;
+  color: #9ca3af !important;
+
+  background: #f9fafb !important;
+  border: 1px dashed #d9dee7 !important;
+  border-radius: 10px !important;
+}
+
+/* Quick actions */
+
+#sellerDashboard .seller-app-quick-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+#sellerDashboard .seller-app-quick-actions button {
+  width: 100% !important;
+  padding: 11px 12px !important;
+
+  border: 1px solid #e5e7eb !important;
+  border-radius: 9px !important;
+
+  background: #ffffff !important;
+
+  text-align: left !important;
+  cursor: pointer !important;
+}
+
+#sellerDashboard .seller-app-quick-actions button:hover {
+  background: #f9fafb !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+  #sellerDashboard .seller-app-search {
+    display: none !important;
+  }
+
+  #sellerDashboard .seller-app-brand {
+    min-width: auto !important;
+  }
+
+  #sellerDashboard .seller-app-actions {
+    min-width: auto !important;
+  }
+
+  #sellerDashboard .seller-app-profile-name {
+    display: none !important;
+  }
+
+  #sellerDashboard .seller-app-menu-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    font-size: 22px !important;
+    cursor: pointer !important;
+  }
+
+  #sellerDashboard .seller-app-body {
+    position: relative !important;
+  }
+
+  #sellerDashboard .seller-app-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 68px !important;
+    bottom: 0 !important;
+
+    z-index: 1200 !important;
+
+    transform: translateX(-100%) !important;
+    transition: transform .2s ease !important;
+  }
+
+  #sellerDashboard .seller-app-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  #sellerDashboard .seller-app-overlay {
+    display: none !important;
+    position: fixed !important;
+    inset: 68px 0 0 0 !important;
+    z-index: 1100 !important;
+    background: rgba(15,23,42,.35) !important;
+  }
+
+  #sellerDashboard .seller-app-overlay.open {
+    display: block !important;
+  }
+
+  #sellerDashboard .seller-app-main {
+    width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  #sellerDashboard .seller-app-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #sellerDashboard .seller-app-dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 520px) {
+
+  #sellerDashboard .seller-app-topbar {
+    padding: 0 12px !important;
+  }
+
+  #sellerDashboard .seller-app-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  #sellerDashboard .seller-app-page-heading h1 {
+    font-size: 23px !important;
+  }
+}
+
+
+
+/* =========================================================
+   ZENODIC SELLER APP — SIDEBAR + MOBILE FOUNDATION
+   ========================================================= */
+
+#sellerDashboard .seller-app-body {
+  display: flex !important;
+  width: 100% !important;
+  min-height: calc(100vh - 68px) !important;
+}
+
+#sellerDashboard .seller-app-sidebar {
+  width: 250px !important;
+  flex: 0 0 250px !important;
+  min-height: calc(100vh - 68px) !important;
+  background: #ffffff !important;
+  border-right: 1px solid #e6e9ef !important;
+  box-sizing: border-box !important;
+  padding: 22px 14px !important;
+  position: sticky !important;
+  top: 68px !important;
+  align-self: flex-start !important;
+  overflow-y: auto !important;
+}
+
+#sellerDashboard .seller-app-sidebar-title {
+  padding: 0 12px 14px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.2px !important;
+  color: #9ca3af !important;
+}
+
+#sellerDashboard .seller-app-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+#sellerDashboard .seller-app-nav-item {
+  width: 100% !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  padding: 0 12px !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: #4b5563 !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  font-size: 14px !important;
+}
+
+#sellerDashboard .seller-app-nav-item:hover {
+  background: #f3f4f6 !important;
+}
+
+#sellerDashboard .seller-app-nav-item.active {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+#sellerDashboard .seller-app-nav-item > span {
+  width: 22px !important;
+  text-align: center !important;
+  flex: 0 0 22px !important;
+}
+
+#sellerDashboard .seller-app-nav-item strong {
+  font-weight: 600 !important;
+  flex: 1 !important;
+}
+
+#sellerDashboard .seller-app-nav-divider {
+  height: 1px !important;
+  background: #e6e9ef !important;
+  margin: 12px 8px !important;
+}
+
+#sellerDashboard .seller-app-main {
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding: 28px !important;
+  box-sizing: border-box !important;
+}
+
+#sellerDashboard .seller-app-view {
+  display: none !important;
+}
+
+#sellerDashboard .seller-app-view.active {
+  display: block !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+  #sellerDashboard .seller-app-menu-btn {
+    display: flex !important;
+    width: 40px !important;
+    height: 40px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 9px !important;
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+    font-size: 22px !important;
+    cursor: pointer !important;
+  }
+
+  #sellerDashboard .seller-app-topbar {
+    height: 64px !important;
+    padding: 0 14px !important;
+  }
+
+  #sellerDashboard .seller-app-brand {
+    min-width: auto !important;
+    gap: 8px !important;
+  }
+
+  #sellerDashboard .seller-app-search {
+    display: none !important;
+  }
+
+  #sellerDashboard .seller-app-profile-name {
+    display: none !important;
+  }
+
+  #sellerDashboard .seller-app-body {
+    min-height: calc(100vh - 64px) !important;
+  }
+
+  #sellerDashboard .seller-app-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    z-index: 1200 !important;
+    width: 270px !important;
+    min-height: 100vh !important;
+    transform: translateX(-100%) !important;
+    transition: transform .25s ease !important;
+    box-shadow: 8px 0 30px rgba(0,0,0,.12) !important;
+  }
+
+  #sellerDashboard .seller-app-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  #sellerDashboard .seller-app-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1100 !important;
+    background: rgba(17,24,39,.42) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .25s ease, visibility .25s ease !important;
+  }
+
+  #sellerDashboard .seller-app-overlay.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  #sellerDashboard .seller-app-main {
+    width: 100% !important;
+    padding: 20px 14px !important;
+  }
+}
+</style>
+
+
+<style id="zenodic-product-polish">
+.seller-product-card {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06) !important;
+  margin-bottom: 18px !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.seller-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.10) !important;
+}
+
+.seller-product-card img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.seller-product-card h3 {
+  margin: 0 0 7px !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+}
+
+.seller-product-card strong {
+  font-size: 17px !important;
+  color: #111827 !important;
+}
+
+.seller-product-card p {
+  line-height: 1.5 !important;
+}
+
+.seller-product-meta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 10px !important;
+  border-radius: 999px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e5e7eb !important;
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.seller-product-view-btn,
+.seller-product-edit-btn,
+.seller-product-delete-btn,
+.seller-product-contact-btn {
+  min-height: 40px !important;
+  transition: all 0.15s ease !important;
+}
+
+.seller-product-view-btn:hover,
+.seller-product-edit-btn:hover {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px);
+}
+
+.seller-product-delete-btn:hover {
+  background: #fef2f2 !important;
+  border-color: #fca5a5 !important;
+  transform: translateY(-1px);
+}
+
+.seller-product-contact-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border: 1px solid #dbe2ea !important;
+  background: #fff !important;
+  color: #1f2937 !important;
+}
+
+.seller-product-contact-btn:hover {
+  background: #f8fafc !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .seller-product-card {
+    border-radius: 14px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .seller-product-card img {
+    height: 190px !important;
+  }
+
+  .seller-product-card h3 {
+    font-size: 17px !important;
+  }
+
+  .seller-product-card strong {
+    font-size: 16px !important;
+  }
+
+  .seller-product-view-btn,
+  .seller-product-edit-btn,
+  .seller-product-delete-btn,
+  .seller-product-contact-btn {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+</style>
+
+
+<style id="zenodic-seller-dashboard-polish-v2">
+
+/* ================================
+   SELLER DASHBOARD POLISH V2
+   ================================ */
+
+#sellerDashboard .seller-dashboard-shell,
+#sellerDashboard .seller-dashboard {
+  width: 100%;
+}
+
+#sellerDashboard .seller-app-view {
+  animation: sellerViewIn .22s ease;
+}
+
+@keyframes sellerViewIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main dashboard spacing */
+#sellerDashboard .seller-app-dashboard-grid {
+  gap: 18px;
+}
+
+/* Navigation */
+#sellerDashboard [data-seller-nav] {
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    transform .18s ease;
+}
+
+#sellerDashboard [data-seller-nav]:hover {
+  transform: translateY(-1px);
+}
+
+#sellerDashboard [data-seller-nav].active,
+#sellerDashboard [data-seller-nav][aria-current="page"] {
+  font-weight: 700;
+}
+
+/* Generic dashboard cards */
+#sellerDashboard .seller-dashboard-card,
+#sellerDashboard .seller-app-card,
+#sellerDashboard .seller-stat-card {
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, .08);
+  background: #fff;
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, .06);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+#sellerDashboard .seller-dashboard-card:hover,
+#sellerDashboard .seller-app-card:hover,
+#sellerDashboard .seller-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, .09);
+  border-color: rgba(15, 23, 42, .12);
+}
+
+/* Product management cards */
+#sellerDashboard .seller-product-card {
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+#sellerDashboard .seller-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, .10);
+}
+
+/* Product buttons */
+#sellerDashboard .seller-product-view-btn,
+#sellerDashboard .seller-product-edit-btn,
+#sellerDashboard .seller-product-delete-btn,
+#sellerDashboard .seller-product-contact-btn {
+  min-height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition:
+    transform .16s ease,
+    opacity .16s ease,
+    box-shadow .16s ease;
+}
+
+#sellerDashboard .seller-product-view-btn:hover,
+#sellerDashboard .seller-product-edit-btn:hover,
+#sellerDashboard .seller-product-delete-btn:hover,
+#sellerDashboard .seller-product-contact-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Empty states */
+#sellerDashboard .seller-app-empty {
+  min-height: 180px;
+  border: 1px dashed rgba(15, 23, 42, .16);
+  border-radius: 18px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px;
+  color: #64748b;
+}
+
+#sellerDashboard .seller-app-empty strong {
+  color: #0f172a;
+  font-size: 16px;
+}
+
+/* Section headings */
+#sellerDashboard h1,
+#sellerDashboard h2,
+#sellerDashboard h3 {
+  letter-spacing: -.02em;
+}
+
+#sellerDashboard .seller-section-title {
+  margin-bottom: 14px;
+}
+
+/* Forms */
+#sellerDashboard input,
+#sellerDashboard textarea,
+#sellerDashboard select {
+  border-radius: 11px;
+  transition:
+    border-color .16s ease,
+    box-shadow .16s ease;
+}
+
+#sellerDashboard input:focus,
+#sellerDashboard textarea:focus,
+#sellerDashboard select:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, .55);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+/* Buttons */
+#sellerDashboard button {
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    opacity .16s ease;
+}
+
+#sellerDashboard button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+#sellerDashboard button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#sellerDashboard button:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+/* Tables / order lists */
+#sellerDashboard table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+#sellerDashboard table th {
+  font-weight: 700;
+  background: #f8fafc;
+}
+
+#sellerDashboard table td,
+#sellerDashboard table th {
+  padding: 13px 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  #sellerDashboard .seller-app-dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  #sellerDashboard .seller-product-card {
+    border-radius: 15px !important;
+  }
+
+  #sellerDashboard .seller-product-card img {
+    height: 190px !important;
+  }
+
+  #sellerDashboard table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  #sellerDashboard .seller-product-card img {
+    height: 170px !important;
+  }
+
+  #sellerDashboard .seller-product-card {
+    margin-bottom: 12px !important;
+  }
+
+}
+
+</style>
+
+
+<style id="zenodic-orders-earnings-polish">
+
+/* =========================================
+   SELLER ORDERS + EARNINGS POLISH
+   ========================================= */
+
+/* ---------- Shared panels ---------- */
+
+#sellerDashboard #sellerOrdersSection,
+#sellerDashboard #sellerEarningsPanel,
+#sellerDashboard .seller-orders-panel,
+#sellerDashboard .seller-earnings-panel {
+  border-radius: 18px;
+}
+
+/* ---------- Orders ---------- */
+
+#sellerDashboard #sellerOrdersList {
+  display: grid;
+  gap: 14px;
+}
+
+#sellerDashboard #sellerOrdersList > * {
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 7px 22px rgba(15, 23, 42, .055);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+#sellerDashboard #sellerOrdersList > *:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 30px rgba(15, 23, 42, .09);
+  border-color: rgba(15, 23, 42, .13);
+}
+
+/* Order text hierarchy */
+#sellerDashboard #sellerOrdersList h3,
+#sellerDashboard #sellerOrdersList h4 {
+  color: #0f172a;
+  letter-spacing: -.015em;
+}
+
+#sellerDashboard #sellerOrdersList p {
+  color: #64748b;
+}
+
+/* Status badges */
+#sellerDashboard #sellerOrdersList [class*="status"],
+#sellerDashboard #sellerOrdersList [class*="badge"] {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- Earnings ---------- */
+
+#sellerDashboard #sellerEarningsCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+#sellerDashboard #sellerEarningsCards > * {
+  min-height: 112px;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+#sellerDashboard #sellerEarningsCards > *:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, .09);
+}
+
+/* Earnings numbers */
+#sellerDashboard #sellerEarningsCards strong,
+#sellerDashboard #sellerEarningsCards .amount,
+#sellerDashboard #sellerEarningsCards [class*="amount"],
+#sellerDashboard #sellerEarningsCards [class*="value"] {
+  letter-spacing: -.025em;
+}
+
+/* Transactions */
+#sellerDashboard #sellerEarningsTransactions {
+  display: grid;
+  gap: 10px;
+}
+
+#sellerDashboard #sellerEarningsTransactions > * {
+  border-bottom: 1px solid #eef2f7;
+  padding: 13px 4px;
+  transition: background .16s ease;
+}
+
+#sellerDashboard #sellerEarningsTransactions > *:hover {
+  background: #f8fafc;
+}
+
+/* Monthly earnings */
+#sellerDashboard #sellerMonthlyEarnings {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Messages / loading */
+#sellerDashboard #sellerEarningsMessage,
+#sellerDashboard #sellerOrdersMessage {
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #64748b;
+}
+
+/* Refresh buttons */
+#sellerDashboard #refreshSellerEarningsBtn {
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+#sellerDashboard #refreshSellerEarningsBtn:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+
+  #sellerDashboard #sellerEarningsCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #sellerDashboard #sellerEarningsCards {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  #sellerDashboard #sellerEarningsCards > * {
+    min-height: 96px;
+  }
+
+  #sellerDashboard #sellerOrdersList {
+    gap: 11px;
+  }
+
+  #sellerDashboard #sellerOrdersList > * {
+    border-radius: 14px;
+  }
+
+}
+
+</style>
+
+
+<style id="zenodic-real-sidebar-icons">
+
+#sellerDashboard [data-seller-nav] svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+#sellerDashboard [data-seller-nav] {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+#sellerDashboard [data-seller-nav] svg + span,
+#sellerDashboard [data-seller-nav] svg + strong {
+  display: inline-flex;
+  align-items: center;
+}
+
+#sellerDashboard .seller-sidebar-section-title {
+  letter-spacing: .08em;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+</style>
+
+
+<style id="zenodic-legacy-sidebar-icons">
+.seller-nav-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 20px;
+}
+
+.seller-nav-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+</style>
+
+
+<style id="zenodic-seller-payments-modern">
+.seller-payments-heading {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.seller-payments-refresh-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:36px;
+  padding:0 13px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fff;
+  color:#111827;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.seller-payments-refresh-btn:hover {
+  border-color:#cbd5e1;
+  transform:translateY(-1px);
+}
+
+.seller-payments-refresh-btn span {
+  font-size:16px;
+  line-height:1;
+}
+
+.seller-payments-summary-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+
+.seller-payment-stat-card {
+  min-width:0;
+  padding:17px;
+  border:1px solid #e8edf3;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 4px 16px rgba(15,23,42,.035);
+}
+
+.seller-payment-stat-label {
+  display:block;
+  color:#64748b;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.seller-payment-stat-card strong {
+  display:block;
+  margin-top:8px;
+  color:#0f172a;
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.seller-payment-stat-card small {
+  display:block;
+  margin-top:5px;
+  color:#94a3b8;
+  font-size:10px;
+}
+
+.seller-payments-message {
+  margin-top:14px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f8fafc;
+  color:#475569;
+  font-size:11px;
+}
+
+.seller-payments-main-grid {
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:14px;
+  margin-top:14px;
+}
+
+.seller-payments-panel {
+  min-width:0;
+  padding:18px;
+  border:1px solid #e8edf3;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 4px 16px rgba(15,23,42,.035);
+}
+
+.seller-payments-panel-header {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.seller-payments-panel-header > div {
+  min-width:0;
+}
+
+.seller-payments-kicker {
+  display:block;
+  margin-bottom:4px;
+  color:#94a3b8;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.seller-payments-panel-header strong {
+  display:block;
+  color:#0f172a;
+  font-size:14px;
+  font-weight:800;
+}
+
+.seller-payments-panel-header span:last-child {
+  display:block;
+  margin-top:4px;
+  color:#94a3b8;
+  font-size:10px;
+  line-height:1.45;
+}
+
+.seller-payout-account-content {
+  margin-top:16px;
+  min-height:92px;
+}
+
+.seller-payout-account-card {
+  padding:13px;
+  border:1px solid #eef2f7;
+  border-radius:12px;
+  background:#f8fafc;
+}
+
+.seller-payout-account-row {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:6px 0;
+}
+
+.seller-payout-account-row + .seller-payout-account-row {
+  border-top:1px solid #e8edf3;
+}
+
+.seller-payout-account-row span {
+  color:#94a3b8;
+  font-size:10px;
+}
+
+.seller-payout-account-row strong {
+  color:#334155;
+  font-size:10px;
+  text-align:right;
+}
+
+.seller-payout-account-empty {
+  padding:16px;
+  border:1px dashed #dbe3ec;
+  border-radius:12px;
+  color:#64748b;
+  font-size:11px;
+  text-align:center;
+}
+
+.seller-payments-secondary-btn {
+  width:100%;
+  height:35px;
+  margin-top:13px;
+  border:1px solid #e2e8f0;
+  border-radius:9px;
+  background:#fff;
+  color:#334155;
+  font-size:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.seller-payments-secondary-btn:hover {
+  border-color:#cbd5e1;
+  background:#f8fafc;
+}
+
+.seller-payment-flow {
+  margin-top:16px;
+}
+
+.seller-payment-flow-step {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.seller-payment-flow-icon {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  border-radius:50%;
+  background:#f1f5f9;
+  color:#334155;
+  font-size:10px;
+  font-weight:800;
+}
+
+.seller-payment-flow-step strong {
+  display:block;
+  color:#334155;
+  font-size:11px;
+}
+
+.seller-payment-flow-step small {
+  display:block;
+  margin-top:2px;
+  color:#94a3b8;
+  font-size:9px;
+  line-height:1.4;
+}
+
+.seller-payment-flow-line {
+  width:1px;
+  height:18px;
+  margin:3px 0 3px 13px;
+  background:#e2e8f0;
+}
+
+.seller-payment-activity-panel {
+  margin-top:14px;
+}
+
+.seller-payments-transactions {
+  margin-top:14px;
+  overflow-x:auto;
+}
+
+.seller-payments-table {
+  width:100%;
+  border-collapse:collapse;
+  min-width:760px;
+}
+
+.seller-payments-table th {
+  padding:9px 10px;
+  border-bottom:1px solid #e8edf3;
+  color:#94a3b8;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-align:left;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.seller-payments-table td {
+  padding:12px 10px;
+  border-bottom:1px solid #f0f3f7;
+  color:#475569;
+  font-size:10px;
+  vertical-align:middle;
+}
+
+.seller-payments-table tr:last-child td {
+  border-bottom:0;
+}
+
+.seller-payment-order {
+  color:#0f172a;
+  font-weight:800;
+}
+
+.seller-payment-ref {
+  margin-top:3px;
+  color:#94a3b8;
+  font-size:9px;
+}
+
+.seller-payment-gross {
+  color:#334155;
+  font-weight:700;
+}
+
+.seller-payment-net {
+  color:#0f172a;
+  font-weight:800;
+}
+
+.seller-payment-fee {
+  color:#64748b;
+}
+
+.seller-payment-status {
+  display:inline-flex;
+  align-items:center;
+  padding:4px 7px;
+  border-radius:999px;
+  background:#f1f5f9;
+  color:#475569;
+  font-size:8px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.seller-payment-status.is-paid {
+  background:#ecfdf5;
+  color:#047857;
+}
+
+.seller-payment-status.is-failed {
+  background:#fef2f2;
+  color:#b91c1c;
+}
+
+.seller-payment-status.is-pending {
+  background:#fffbeb;
+  color:#a16207;
+}
+
+.seller-payments-loading,
+.seller-payments-empty {
+  padding:30px 15px;
+  color:#94a3b8;
+  font-size:11px;
+  text-align:center;
+}
+
+@media(max-width:900px) {
+  .seller-payments-summary-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .seller-payments-main-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px) {
+  .seller-payments-heading {
+    align-items:flex-start;
+  }
+
+  .seller-payments-summary-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .seller-payment-stat-card {
+    padding:13px;
+  }
+
+  .seller-payment-stat-card strong {
+    font-size:18px;
+  }
+
+  .seller-payments-panel {
+    padding:14px;
+  }
+}
+</style>
+
+
+<style>
+#intro {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+</style>
+<style>
+.zenodic-ai-chat {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #e5ebf5;
+  border-radius: 16px;
+  background: #f8fbff;
+}
+
+.zenodic-ai-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.zenodic-ai-chat-head span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.zenodic-ai-chat-messages {
+  min-height: 180px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 14px;
+  border: 1px solid #e5ebf5;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.zenodic-ai-message {
+  max-width: 85%;
+  margin-bottom: 10px;
+  padding: 10px 13px;
+  border-radius: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.zenodic-ai-message-assistant {
+  margin-right: auto;
+  background: #f1f5fb;
+}
+
+.zenodic-ai-message-user {
+  margin-left: auto;
+  background: #e8f0ff;
+}
+
+.zenodic-ai-chat-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.zenodic-ai-chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid #d7e0ee;
+  border-radius: 10px;
+  outline: none;
+}
+
+.zenodic-ai-chat-form button {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+
+
+<style>
+/* WHOLESALER DASHBOARD CARD POLISH */
+#sellerDashboard .seller-app-stats {
+  gap: 18px !important;
+  margin-bottom: 24px !important;
+}
+
+#sellerDashboard .seller-app-stat {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 132px !important;
+  padding: 22px !important;
+  border: 1px solid #e3e8f0 !important;
+  border-radius: 18px !important;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
+}
+
+#sellerDashboard .seller-app-stat::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -34px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.06);
+}
+
+#sellerDashboard .seller-app-stat:hover {
+  transform: translateY(-3px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09) !important;
+}
+
+#sellerDashboard .seller-app-stat > span {
+  position: relative !important;
+  z-index: 1 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase !important;
+  color: #64748b !important;
+}
+
+#sellerDashboard .seller-app-stat > strong {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 12px !important;
+  font-size: 26px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+#sellerDashboard .seller-app-stat > small {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 8px !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 900px) {
+  #sellerDashboard .seller-app-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #sellerDashboard .seller-app-stats {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  #sellerDashboard .seller-app-stat {
+    min-height: 112px !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  #sellerDashboard .seller-app-stat > strong {
+    font-size: 23px !important;
+  }
+}
+
+
+
+/* ---------- WHOLESALE VIEW SWITCHING ---------- */
+#wholesaleDashboard .wholesale-section[style*="display: none"] {
+  display: none !important;
+}
+
+#wholesaleDashboard .wholesale-section {
+  width: 100%;
+}
+
+#wholesaleDashboard .wholesale-overview-section {
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-overview-actions {
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-section + .wholesale-section {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  #wholesaleDashboard .wholesale-main {
+    width: 100%;
+  }
+}
+
+/* ---------- ZENODIC WHOLESALE MODERN UI ---------- */
+#wholesaleDashboard .wholesale-dashboard {
+  background: #f7f9fc !important;
+  border: 1px solid #e7ebf2 !important;
+  border-radius: 24px !important;
+  padding: 24px !important;
+}
+
+#wholesaleDashboard .dashboard-header {
+  background: #ffffff !important;
+  border: 1px solid #e7ebf2 !important;
+  border-radius: 18px !important;
+  padding: 22px 24px !important;
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-stat-card {
+  min-height: 128px !important;
+  padding: 20px !important;
+  background: #ffffff !important;
+  border: 1px solid #e7ebf2 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, .045) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+}
+
+#wholesaleDashboard .wholesale-stat-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #d9e0ea !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, .08) !important;
+}
+
+#wholesaleDashboard .wholesale-section,
+#wholesaleDashboard .wholesale-panel {
+  background: #ffffff !important;
+  border: 1px solid #e7ebf2 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, .035) !important;
+}
+
+#wholesaleDashboard .wholesale-section {
+  padding: 22px !important;
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-two-column {
+  gap: 18px !important;
+  margin-bottom: 18px !important;
+}
+
+#wholesaleDashboard .wholesale-two-column .wholesale-panel {
+  padding: 20px !important;
+}
+
+#wholesaleDashboard .wholesale-quick-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+#wholesaleDashboard .wholesale-action {
+  min-height: 118px !important;
+  padding: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid #e7ebf2 !important;
+  border-radius: 16px !important;
+  text-align: left !important;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+}
+
+#wholesaleDashboard .wholesale-action:hover {
+  transform: translateY(-2px) !important;
+  border-color: #cfd8e6 !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, .07) !important;
+}
+
+#wholesaleDashboard .wholesale-order-card,
+#wholesaleDashboard .rfq-item,
+#wholesaleDashboard .production-item,
+#wholesaleDashboard .inventory-row {
+  border-color: #e7ebf2 !important;
+  border-radius: 14px !important;
+}
+
+#wholesaleDashboard .intelligence-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%) !important;
+}
+
+@media (max-width: 1000px) {
+  #wholesaleDashboard .wholesale-stats,
+  #wholesaleDashboard .wholesale-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #wholesaleDashboard .wholesale-dashboard {
+    padding: 12px !important;
+    border-radius: 18px !important;
+  }
+
+  #wholesaleDashboard .dashboard-header {
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  #wholesaleDashboard .wholesale-stats,
+  #wholesaleDashboard .wholesale-quick-grid,
+  #wholesaleDashboard .wholesale-two-column {
+    grid-template-columns: 1fr !important;
+  }
+
+  #wholesaleDashboard .wholesale-section {
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  #wholesaleDashboard .section-heading {
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #wholesaleDashboard .wholesale-stat-card {
+    min-height: 108px !important;
+    padding: 16px !important;
+    border-radius: 15px !important;
+  }
+
+  #wholesaleDashboard .wholesale-action {
+    min-height: 100px !important;
+  }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+    <!-- ===================================================
+         AUTH GATEWAY / LOGIN / REGISTER
+         =================================================== -->
+
+    <section id="home" class="page active">
+      <div class="welcome-language">
+        <button type="button" class="language-btn" data-lang="sw">🇹🇿 SW</button>
+        <button type="button" class="language-btn" data-lang="en">🇬🇧 EN</button>
+      </div>
+
+      <div class="hero">
+
+        <div class="hero-content">
+
+          <p
+            style="
+              color:#1769ff;
+              font-weight:800;
+              letter-spacing:.12em;
+              margin-bottom:14px;
+            "
+          >
+            ZENODIC
+          </p>
+
+          <h1>
+            Karibu
+            <span>Zenodic!</span>
+          </h1>
+
+          <p class="message"
+          data-sw="Unganisha biashara, wanunuzi na wauzaji katika mfumo mmoja wa kisasa."
+          data-en="Connect businesses, buyers and sellers in one modern system."
+        >Unganisha biashara, wanunuzi na wauzaji katika mfumo mmoja wa kisasa.</p>
+
+          <div class="hero-buttons">
+
+            <button
+              type="button"
+              class="primary-btn"
+              data-auth-tab="login"
+              data-nav="auth"
+            >
+              <span data-sw="Ingia" data-en="Login">Ingia</span>
+            </button>
+
+            <button
+              type="button"
+              class="secondary-btn"
+              data-auth-tab="register"
+              data-nav="auth"
+            >
+              <span data-sw="Jisajili" data-en="Register">Jisajili</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+          <div
+            class="dashboard-box"
+            style="
+              margin:0;
+              padding:35px;
+              text-align:center;
+            "
+          >
+
+            <div
+              style="
+                width:100px;
+                height:100px;
+                margin:0 auto 22px;
+                display:grid;
+                place-items:center;
+                border-radius:28px;
+                color:white;
+                background:#1769ff;
+                font-size:48px;
+                font-weight:900;
+                box-shadow:0 20px 45px rgba(23,105,255,.22);
+              "
+            >
+              Z
+            </div>
+
+            <h2
+              style="
+                font-size:28px;
+                font-weight:900;
+                color:#0b1220;
+              "
+            >
+              ZENODIC
+            </h2>
+
+            <p
+              style="
+                margin-top:10px;
+                color:#718096;
+                line-height:1.7;
+              "
+            >
+              Business Platform
+            </p>
+
+            <div
+              style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:12px;
+                margin-top:25px;
+              "
+            >
+
+              <div class="dashboard-card">
+                <div class="icon real-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/>
+        <circle cx="10" cy="20" r="1.2"/>
+        <circle cx="18" cy="20" r="1.2"/>
+      </svg>
+    </div>
+                <h3>Buyer</h3>
+                <p>
+                  Tafuta na nunua bidhaa.
+                </p>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="icon real-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 10v10h16V10"/>
+        <path d="M3 10 5 4h14l2 6"/>
+        <path d="M3 10c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3"/>
+        <path d="M9 20v-5h6v5"/>
+      </svg>
+    </div>
+                <h3>Seller</h3>
+                <p>
+                  Uza na simamia biashara.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<section id="auth" class="page">
+
+      <div class="auth-container">
+
+        <div class="auth-header">
+
+          <div
+            style="
+              width:64px;
+              height:64px;
+              margin:0 auto 15px;
+              display:grid;
+              place-items:center;
+              border-radius:18px;
+              color:white;
+              background:#1769ff;
+              font-size:30px;
+              font-weight:900;
+            "
+          >
+            Z
+          </div>
+
+          <h2>ZENODIC</h2>
+
+          <p>
+            Ingia au fungua akaunti yako
+          </p>
+
+        </div>
+
+        <!-- AUTH TABS -->
+
+        <div class="auth-tabs">
+
+          <button
+            type="button"
+            class="active"
+            data-auth-tab="login"
+          >
+            Ingia
+          </button>
+
+          <button
+            type="button"
+            data-auth-tab="register"
+          >
+            Jisajili
+          </button>
+
+        </div>
+
+        <!-- ===============================================
+             LOGIN
+             =============================================== -->
+
+        <form id="loginForm" class="active">
+
+          <div class="form-group">
+
+            <label for="loginEmail">
+              Email
+            </label>
+
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="loginPassword">
+              Password
+            </label>
+
+            <div class="password-wrap">
+
+              <input
+                id="loginPassword"
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                required
+              >
+
+              <button
+                type="button"
+                data-password-toggle="loginPassword"
+                aria-label="Show or hide password"
+              >
+                👁️
+              </button>
+
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            class="primary-btn"
+            style="width:100%;"
+          >
+            Ingia
+          </button>
+
+          <div
+            style="
+              display:flex;
+              align-items:center;
+              gap:12px;
+              margin:22px 0;
+              color:#718096;
+              font-size:12px;
+              font-weight:700;
+            "
+          >
+            <span style="height:1px;flex:1;background:#e5ebf5;"></span>
+            AU
+            <span style="height:1px;flex:1;background:#e5ebf5;"></span>
+          </div>
+
+          <div class="social-login">
+
+  <button type="button" class="social-btn" data-provider="Google">
+    <svg class="social-svg google-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#4285F4" d="M21.6 12.23c0-.72-.06-1.41-.18-2.07H12v3.92h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.89-1.74 2.99-4.31 2.99-7.38Z"/>
+      <path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.62-2.39l-3.23-2.51c-.9.6-2.05.96-3.39.96-2.61 0-4.82-1.76-5.61-4.13H3.05v2.59A10 10 0 0 0 12 22Z"/>
+      <path fill="#FBBC05" d="M6.39 13.93A6.01 6.01 0 0 1 6.07 12c0-.67.11-1.32.32-1.93V7.48H3.05A10 10 0 0 0 2 12c0 1.61.39 3.13 1.05 4.52l3.34-2.59Z"/>
+      <path fill="#EA4335" d="M12 5.94c1.47 0 2.79.51 3.83 1.51l2.87-2.87C16.96 2.99 14.7 2 12 2a10 10 0 0 0-8.95 5.48l3.34 2.59C7.18 7.7 9.39 5.94 12 5.94Z"/>
+    </svg>
+    <span>Google</span>
+  </button>
+
+  <button type="button" class="social-btn" data-provider="Facebook">
+    <svg class="social-svg facebook-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#1877F2" d="M24 12a12 12 0 1 0-13.88 11.85v-8.39H7.08V12h3.04V9.41c0-3 1.79-4.66 4.53-4.66 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.96.93-1.96 1.88V12h3.34l-.53 3.46h-2.81v8.39A12 12 0 0 0 24 12Z"/>
+      <path fill="#fff" d="M13.67 15.46h2.81l.53-3.46h-3.34V9.81c0-.95.47-1.88 1.96-1.88h1.51V4.98s-1.37-.23-2.68-.23c-2.74 0-4.53 1.66-4.53 4.66V12H7.08v3.46h3.04v8.39c.61.1 1.24.15 1.88.15s1.27-.05 1.88-.15v-8.39Z"/>
+    </svg>
+    <span>Facebook</span>
+  </button>
+
+  <button type="button" class="social-btn" data-provider="Instagram" style="grid-column:1/-1;">
+    <svg class="social-svg instagram-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="url(#ig)" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4" fill="none" stroke="url(#ig)" stroke-width="2"/>
+      <circle cx="17.5" cy="6.5" r="1.2" fill="#E4405F"/>
+      <defs>
+        <linearGradient id="ig" x1="3" y1="21" x2="21" y2="3">
+          <stop offset="0" stop-color="#F58529"/>
+          <stop offset=".45" stop-color="#DD2A7B"/>
+          <stop offset=".75" stop-color="#8134AF"/>
+          <stop offset="1" stop-color="#515BD4"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span>Instagram</span>
+  </button>
+
+</div>
+
+        </form>
+
+        <!-- ===============================================
+             REGISTER
+             =============================================== -->
+
+        <form id="registerForm">
+
+  <div id="registerRoleStep">
+    <div style="text-align:center;margin-bottom:20px;">
+      <h3 style="font-size:22px;font-weight:900;color:#0b1220;">
+        Unajiunga kama nani?
+      </h3>
+      <p style="margin-top:7px;color:#718096;">
+        Chagua aina ya akaunti yako
+      </p>
+    </div>
+
+    <div class="role-selection">
+
+      <button type="button" class="role-card" data-role="buyer">
+        <span class="real-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/>
+            <circle cx="10" cy="20" r="1.2"/>
+            <circle cx="18" cy="20" r="1.2"/>
+          </svg>
+        </span>
+        <strong>Buyer</strong>
+        <small>Nunua bidhaa</small>
+      </button>
+
+      <button type="button" class="role-card" data-role="seller">
+        <span class="real-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 10v10h16V10"/>
+            <path d="M3 10 5 4h14l2 6"/>
+            <path d="M3 10c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3"/>
+            <path d="M9 20v-5h6v5"/>
+          </svg>
+        </span>
+        <strong>Seller</strong>
+        <small>Uza bidhaa</small>
+      </button>
+
+      <button type="button" class="role-card" data-role="wholesale">
+        <span class="real-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 21V9l6 3V7l6 3V5l6 3v13H3Z"/>
+        <path d="M7 21v-4h3v4M14 21v-4h3v4"/>
+      </svg>
+    </span>
+        <strong>Wholesale / Factory</strong>
+        <small>Biashara ya jumla na viwanda</small>
+      </button>
+
+    </div>
+
+    <input id="registerRole" type="hidden" name="role" value="">
+
+    <button
+      type="button"
+      id="continueRegister"
+      class="primary-btn"
+      style="width:100%;margin-top:8px;"
+    >
+      Endelea
+    </button>
+  </div>
+
+  <div id="registerDetailsStep" style="display:none;">
+
+    <div
+      style="display:flex;align-items:center;gap:10px;margin-bottom:20px;"
+    >
+      <button
+        type="button"
+        id="backToRole"
+        class="secondary-btn"
+        style="padding:9px 13px;"
+      >
+        ←
+      </button>
+
+      <div>
+        <strong id="selectedRoleText">Account</strong>
+        <p style="font-size:12px;color:#718096;">
+          Jaza taarifa zako
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="registerName">Name</label>
+      <input
+        id="registerName"
+        name="name"
+        type="text"
+        placeholder="Jina lako"
+        autocomplete="name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="registerEmail">Email</label>
+      <input
+        id="registerEmail"
+        name="email"
+        type="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="registerPassword">Password</label>
+
+      <div class="password-wrap">
+        <input
+          id="registerPassword"
+          name="password"
+          type="password"
+          placeholder="••••••••"
+          autocomplete="new-password"
+          required
+        >
+
+        <button
+          type="button"
+          data-password-toggle="registerPassword"
+          aria-label="Show or hide password"
+        >
+          👁️
+        </button>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="primary-btn"
+      style="width:100%;"
+    >
+      Jisajili
+    </button>
+
+    <div
+      style="display:flex;align-items:center;gap:12px;margin:22px 0;color:#718096;font-size:12px;font-weight:700;"
+    >
+      <span style="height:1px;flex:1;background:#e5ebf5;"></span>
+      AU
+      <span style="height:1px;flex:1;background:#e5ebf5;"></span>
+    </div>
+
+    <div class="social-login">
+
+      <button type="button" class="social-btn" data-provider="Google">
+        <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M21.35 12.23c0-.7-.06-1.42-.2-2.1H12v3.98h5.23a4.47 4.47 0 0 1-1.94 2.94v2.45h3.14c1.84-1.7 2.92-4.2 2.92-7.27z"/>
+          <path fill="#34A853" d="M12 21.75c2.63 0 4.84-.86 6.45-2.34l-3.14-2.45c-.87.58-1.98.93-3.31.93-2.54 0-4.7-1.72-5.47-4.04H3.29v2.53A9.74 9.74 0 0 0 12 21.75z"/>
+          <path fill="#FBBC05" d="M6.53 13.85a5.86 5.86 0 0 1 0-3.7V7.62H3.29a9.75 9.75 0 0 0 0 8.76l3.24-2.53z"/>
+          <path fill="#EA4335" d="M12 6.11c1.43 0 2.72.49 3.73 1.46l2.8-2.8C16.84 3.18 14.63 2.25 12 2.25a9.74 9.74 0 0 0-8.71 5.37l3.24 2.53C7.3 7.83 9.46 6.11 12 6.11z"/>
+        </svg>
+        <span>Google</span>
+      </button>
+
+      <button type="button" class="social-btn" data-provider="Facebook">
+        <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="#1877F2"/>
+          <path fill="#fff" d="M13.4 20v-7h2.35l.35-2.7H13.4V8.58c0-.78.22-1.31 1.34-1.31h1.43V4.86c-.25-.03-1.1-.11-2.1-.11-2.08 0-3.5 1.27-3.5 3.61v1.94H8.22V13h2.35v7h2.83z"/>
+        </svg>
+        <span>Facebook</span>
+      </button>
+
+      <button type="button" class="social-btn" data-provider="Instagram" style="grid-column:1/-1;">
+        <svg class="social-svg instagram-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="url(#registerIg)" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4" fill="none" stroke="url(#registerIg)" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="#E4405F"/>
+          <defs>
+            <linearGradient id="registerIg" x1="3" y1="21" x2="21" y2="3">
+              <stop offset="0" stop-color="#F58529"/>
+              <stop offset=".45" stop-color="#DD2A7B"/>
+              <stop offset=".75" stop-color="#8134AF"/>
+              <stop offset="1" stop-color="#515BD4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Instagram</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</form>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         BUYER DASHBOARD
+         =================================================== -->
+
+    <section id="buyerDashboard" class="page">
+  <div class="buyer-dashboard-shell">
+
+    <div class="buyer-dashboard-topbar">
+      <div>
+        <span class="buyer-eyebrow">ZENODIC MARKETPLACE</span>
+        <h1>Karibu, <span id="buyerWelcomeName">Buyer</span> 👋</h1>
+        <p>Simamia manunuzi yako, orders na malipo sehemu moja.</p>
+      </div>
+
+      <div class="buyer-top-actions">
+        <button type="button" class="buyer-icon-btn" data-nav="orders" title="My Orders">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 3h12v18H6z"/>
+            <path d="M9 7h6M9 11h6M9 15h4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="buyer-cart-btn" data-nav="cart">
+          <span>🛍️</span>
+          <span>Cart</span>
+        </button>
+
+        <button type="button" class="secondary-btn" data-logout>
+          Toka
+        </button>
+      </div>
+    </div>
+
+    <div class="buyer-welcome-banner">
+      <div>
+        <span class="buyer-banner-label">BUYER OVERVIEW</span>
+        <h2>Ununuzi wako unaonekana hapa.</h2>
+        <p>Angalia orders zako na fuatilia hali ya malipo kwa urahisi.</p>
+      </div>
+
+      <button type="button" class="buyer-primary-action" data-nav="market">
+        <span>Shop Now</span>
+        <span>→</span>
+      </button>
+    </div>
+
+    <div class="buyer-stat-grid">
+
+      <article class="buyer-stat-card">
+        <div class="buyer-stat-icon">📦</div>
+        <div>
+          <span>Total Orders</span>
+          <strong id="buyerTotalOrders">0</strong>
+        </div>
+      </article>
+
+      <article class="buyer-stat-card">
+        <div class="buyer-stat-icon">⏳</div>
+        <div>
+          <span>Pending Orders</span>
+          <strong id="buyerPendingOrders">0</strong>
+        </div>
+      </article>
+
+      <article class="buyer-stat-card">
+        <div class="buyer-stat-icon">✓</div>
+        <div>
+          <span>Paid Orders</span>
+          <strong id="buyerPaidOrders">0</strong>
+        </div>
+      </article>
+
+      <article class="buyer-stat-card">
+        <div class="buyer-stat-icon">💰</div>
+        <div>
+          <span>Total Spent</span>
+          <strong id="buyerTotalSpent">TZS 0.00</strong>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="buyer-main-grid">
+
+      <section class="buyer-panel buyer-recent-panel">
+        <div class="buyer-panel-heading">
+          <div>
+            <span class="buyer-panel-kicker">ACTIVITY</span>
+            <h2>Recent Orders</h2>
+          </div>
+
+          <button type="button" class="buyer-text-btn" data-nav="orders">
+            View all →
+          </button>
+        </div>
+
+        <div id="buyerRecentOrders">
+          <div class="buyer-loading-state">
+            Loading orders...
+          </div>
+        </div>
+      </section>
+
+      <section class="buyer-panel buyer-actions-panel">
+        <div class="buyer-panel-heading">
+          <div>
+            <span class="buyer-panel-kicker">SHORTCUTS</span>
+            <h2>Quick Actions</h2>
+          </div>
+        </div>
+
+        <div class="buyer-quick-actions">
+
+          <button type="button" class="buyer-quick-action" data-nav="market">
+            <span class="buyer-quick-icon">🌐</span>
+            <span>
+              <strong>Shop Market</strong>
+              <small>Tafuta bidhaa na huduma</small>
+            </span>
+            <span class="buyer-arrow">→</span>
+          </button>
+
+          <button type="button" class="buyer-quick-action" data-nav="orders">
+            <span class="buyer-quick-icon">📦</span>
+            <span>
+              <strong>My Orders</strong>
+              <small>Fuatilia orders zako</small>
+            </span>
+            <span class="buyer-arrow">→</span>
+          </button>
+
+          <button type="button" class="buyer-quick-action" data-nav="cart">
+            <span class="buyer-quick-icon">🛒</span>
+            <span>
+              <strong>View Cart</strong>
+              <small>Endelea na checkout</small>
+            </span>
+            <span class="buyer-arrow">→</span>
+          </button>
+          <button type="button" class="buyer-quick-action" data-nav="buyerAI">
+            <span class="buyer-quick-icon">🤖</span>
+            <span>
+              <strong>Buyer AI</strong>
+              <small>Uliza kuhusu bidhaa na orders</small>
+            </span>
+            <span class="buyer-arrow">→</span>
+          </button>
+
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+<!-- MARKET -->
+
+      <section
+        id="market"
+        class="products-section"
+      >
+
+        <h2>
+          🌐 Zenodic Market
+        </h2>
+
+        <div class="product-grid" id="marketProducts">
+            <div class="buyer-empty-state">
+              Inapakia bidhaa za Market...
+            </div>
+          </div>
+        </section>
+        <!-- BUYER CHECKOUT -->
+<section id="buyerCheckout" class="buyer-checkout-section" style="display:none;">
+  <div class="buyer-checkout-container">
+
+    <div class="buyer-checkout-header">
+      <div>
+        <span class="buyer-panel-kicker">CHECKOUT</span>
+        <h2>Complete Your Order</h2>
+        <p>Review order yako kabla ya kuendelea na malipo.</p>
+      </div>
+
+      <button type="button"
+              class="buyer-text-btn"
+              data-nav="cart">
+        ← Back to Cart
+      </button>
+    </div>
+
+    <div class="buyer-checkout-grid">
+
+      <section class="buyer-checkout-card">
+        <div class="buyer-checkout-card-heading">
+          <span>01</span>
+          <div>
+            <h3>Order Summary</h3>
+            <p>Bidhaa ulizochagua.</p>
+          </div>
+        </div>
+
+        <div id="checkoutItems" class="buyer-checkout-items"></div>
+
+        <div class="buyer-checkout-total">
+          <span>Total</span>
+          <strong id="checkoutTotal">TZS 0</strong>
+        </div>
+      </section>
+
+      <section class="buyer-checkout-card">
+
+        <div class="buyer-checkout-card-heading">
+          <span>02</span>
+          <div>
+            <h3>Delivery Details</h3>
+            <p>Weka sehemu ambayo order itapelekwa.</p>
+          </div>
+        </div>
+
+        <div class="buyer-form-group">
+          <label for="checkoutDeliveryLocation">
+            Delivery Location
+          </label>
+
+          <textarea
+            id="checkoutDeliveryLocation"
+            rows="3"
+            placeholder="Mfano: Kariakoo, Dar es Salaam"
+          ></textarea>
+        </div>
+
+        <div class="buyer-form-row">
+
+          <div class="buyer-form-group">
+            <label for="checkoutExpectedDelivery">
+              Expected Delivery
+            </label>
+
+            <input
+              id="checkoutExpectedDelivery"
+              type="date"
+            />
+          </div>
+
+          <div class="buyer-form-group">
+            <label for="checkoutCurrency">
+              Currency
+            </label>
+
+            <select id="checkoutCurrency">
+              <option value="TZS">TZS — Tanzanian Shilling</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="buyer-form-group">
+          <label for="checkoutNotes">
+            Order Notes <span>(optional)</span>
+          </label>
+
+          <textarea
+            id="checkoutNotes"
+            rows="3"
+            placeholder="Maelezo ya ziada kuhusu order..."
+          ></textarea>
+        </div>
+
+      </section>
+
+      <section class="buyer-checkout-card buyer-payment-card">
+
+        <div class="buyer-checkout-card-heading">
+          <span>03</span>
+          <div>
+            <h3>Payment Method</h3>
+            <p>Chagua njia utakayotumia kulipia.</p>
+          </div>
+        </div>
+
+        <div class="buyer-payment-options">
+
+          <label class="buyer-payment-option">
+            <input
+              type="radio"
+              name="checkoutPaymentMethod"
+              value="mobile_money"
+              checked
+            >
+
+            <span class="buyer-payment-option-icon">📱</span>
+
+            <span>
+              <strong>Mobile Money</strong>
+              <small>Airtel Money, Mixx, HaloPesa na nyingine</small>
+            </span>
+
+            <span class="buyer-payment-check">✓</span>
+          </label>
+
+          <label class="buyer-payment-option">
+            <input
+              type="radio"
+              name="checkoutPaymentMethod"
+              value="card"
+            >
+
+            <span class="buyer-payment-option-icon">💳</span>
+
+            <span>
+              <strong>Credit / Debit Card</strong>
+              <small>Pay using your bank card</small>
+            </span>
+
+            <span class="buyer-payment-check">✓</span>
+          </label>
+
+        </div>
+
+        <div id="checkoutPaymentMessage"
+             class="buyer-checkout-message"
+             style="display:none;">
+        </div>
+
+        <button
+          type="button"
+          class="buyer-checkout-place-order"
+          data-place-checkout-order
+        >
+          <span>Continue to Payment</span>
+          <span>→</span>
+        </button>
+
+      </section>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- BUYER ORDERS -->
+
+      <section
+        id="orders"
+        class="my-orders-section"
+      >
+
+        <div class="my-orders-container">
+
+          <h2>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5v-7Z"/>
+      <path d="m3 8.5 9 4.5 9-4.5M12 13v7"/>
+    </svg> My Orders
+          </h2>
+
+          <p
+            style="
+              margin-top:8px;
+              color:#718096;
+            "
+          >
+            Angalia orders zako na hali ya malipo.
+          </p>
+
+          <div id="buyerOrdersMessage" style="display:none;"></div>
+
+          <div id="buyerOrdersList">
+            <div class="wholesale-empty-state">
+              Loading orders...
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="refreshBuyerOrdersBtn"
+            style="margin-top:16px;padding:10px 14px;border:0;border-radius:10px;cursor:pointer;"
+          >
+            Refresh Orders
+          </button>
+
+        </div>
+
+
+
+        <!-- ===================================================
+             ORDER DETAILS
+             =================================================== -->
+        <div class="wholesale-section" id="orderDetailsPanel" style="display:none;">
+          <div class="section-heading">
+            <div>
+              <span class="panel-label">ORDER DETAILS</span>
+              <h3 id="orderDetailsNumber">Order Details</h3>
+              <p id="orderDetailsMessage">Maelezo ya order.</p>
+            </div>
+
+            <button
+              type="button"
+              class="secondary-btn"
+              id="closeOrderDetailsBtn"
+            >
+              Close
+            </button>
+          </div>
+
+          <div
+            id="orderDetailsLiveMessage"
+            style="display:none;margin-bottom:16px;"
+          ></div>
+
+          <div
+            id="orderDetailsContent"
+            style="border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:18px;"
+          ></div>
+        </div>
+      </section>
+
+      <!-- CART -->
+
+      <section
+        id="cart"
+        class="my-orders-section"
+      >
+
+        <div class="cart-box">
+
+          <div class="cart-header">
+
+            <h2>
+              🛍️ Cart
+            </h2>
+
+            <span id="cartCount">
+              0
+            </span>
+
+          </div>
+
+          <p
+            style="
+              color:#718096;
+              line-height:1.7;
+            "
+          >
+            Cart yako iko tayari kwa bidhaa
+            utakazochagua.
+          </p>
+
+          <div class="cart-total">
+
+            <span>
+              Total
+            </span>
+
+            <span>
+              TZS 0
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+    <!-- ===================================================
+         SELLER DASHBOARD
+         =================================================== -->
+
+<!-- =========================================================
+     ZENODIC SELLER APP — CLEAN DASHBOARD
+     ========================================================= -->
+
+<!-- =========================================================
+     ZENODIC SELLER DASHBOARD — FOUNDATION
+     ========================================================= -->
+<section id="sellerDashboard" class="page seller-dashboard-shell">
+
+  <div class="seller-app">
+
+    <!-- TOP HORIZONTAL BAR -->
+    <header class="seller-app-topbar">
+
+      <div class="seller-app-brand">
+        <button
+          type="button"
+          class="seller-app-menu-btn"
+          id="sellerAppMenuBtn"
+          aria-label="Open seller menu"
+          aria-expanded="false"
+        >☰</button>
+
+        <div class="seller-app-logo">Z</div>
+        <strong>ZENODIC</strong>
+      </div>
+
+      <div class="seller-app-search">
+        <span>⌕</span>
+        <input
+          type="search"
+          id="sellerAppSearch"
+          placeholder="Search your business..."
+        >
+      </div>
+
+      <div class="seller-app-actions">
+
+        <button
+          type="button"
+          class="seller-app-action-btn"
+          data-seller-nav="notifications"
+          aria-label="Notifications"
+        >🔔</button>
+
+        <button
+          type="button"
+          class="seller-app-profile"
+          data-seller-nav="settings"
+        >
+          <span class="seller-app-avatar" id="sellerAppAvatar">S</span>
+          <span class="seller-app-profile-name" id="sellerAppProfileName">
+            Seller
+          </span>
+        </button>
+
+      </div>
+
+    </header>
+
+    <div class="seller-app-body">
+
+      <!-- SIDEBAR -->
+      <aside class="seller-app-sidebar" id="sellerAppSidebar">
+
+        <div class="seller-app-sidebar-title">
+          SELLER
+        </div>
+
+        <nav class="seller-app-nav" id="sellerAppNav">
+
+          <button type="button"
+                  class="seller-app-nav-item active"
+                  data-seller-nav="dashboard">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span>
+            <strong>Overview</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="buyer-orders">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2l2.2 11h10.9L20 8H6"/></svg></span>
+            <strong>Buyer Orders</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="supply-orders">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l7 4V8l9 5v8H4Z"/><path d="M8 17h2M14 17h2M8 21v-4M14 21v-4"/></svg></span>
+            <strong>My Orders</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="products">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span>
+            <strong>Products</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="analytics">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h17"/><path d="m7 15 4-4 3 2 5-7"/></svg></span>
+            <strong>Analytics</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="payments">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+            <strong>Payments</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="earnings">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c-.7-.7-1.6-1-3-1-1.7 0-3 .8-3 2s1.3 2 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.3-.3-3-1"/></svg></span>
+            <strong>Earnings</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="speed-sheet">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h3M14 13h2M8 17h8"/></svg></span>
+            <strong>Speed Sheet</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="reports">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9M12 20V4M19 20v-7"/><path d="M3 20h18"/></svg></span>
+            <strong>Reports</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="market">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1-5H5z"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg></span>
+            <strong>Market</strong>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="ai">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 13h.01M15 13h.01M9 17h6"/></svg></span>
+            <strong>Seller AI</strong>
+          </button>
+
+          <div class="seller-app-nav-divider"></div>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="notifications">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg></span>
+            <strong>Notifications</strong>
+            <em id="sellerNotificationBadge">0</em>
+          </button>
+
+          <button type="button"
+                  class="seller-app-nav-item"
+                  data-seller-nav="settings">
+            <span class="seller-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 13a7 7 0 0 0 0-2l2-1-2-3-2 1a7 7 0 0 0-2-1l-.3-2h-3.4L11 7a7 7 0 0 0-2 1L7 7 5 10l2 1a7 7 0 0 0 0 2l-2 1 2 3 2-1a7 7 0 0 0 2 1l.3 2h3.4L13 17a7 7 0 0 0 2-1l2 1 2-3-2-1Z"/></svg></span>
+            <strong>Settings</strong>
+          </button>
+
+        </nav>
+
+      </aside>
+
+      <div
+        class="seller-app-overlay"
+        id="sellerAppOverlay"
+        aria-hidden="true"
+      ></div>
+
+      <!-- MAIN CONTENT -->
+      <main class="seller-app-main">
+
+        <!-- OVERVIEW -->
+        <section
+          class="seller-app-view active"
+          data-seller-page="dashboard"
+        >
+
+          <div class="seller-app-page-heading">
+            <div>
+              <span class="seller-app-eyebrow">SELLER CENTER</span>
+              <h1>Seller Dashboard</h1>
+              <p>Simamia biashara yako kupitia ZENODIC.</p>
+            </div>
+          </div>
+
+          <!-- STAT CARDS -->
+          <div class="seller-app-stats">
+
+            <article class="seller-app-stat">
+              <span>Total Sales</span>
+              <strong id="modernTotalSales">0 TZS</strong>
+              <small>Jumla ya mauzo</small>
+            </article>
+
+            <article class="seller-app-stat">
+              <span>Paid Earnings</span>
+              <strong id="modernPaidEarnings">0 TZS</strong>
+              <small>Malipo yaliyothibitishwa</small>
+            </article>
+
+            <article class="seller-app-stat">
+              <span>Pending</span>
+              <strong id="modernPendingEarnings">0 TZS</strong>
+              <small>Fedha bado hazijalipwa</small>
+            </article>
+
+            <article class="seller-app-stat">
+              <span>Orders</span>
+              <strong id="modernTotalOrders">0</strong>
+              <small>Orders zote</small>
+            </article>
+
+          </div>
+
+          <!-- DASHBOARD GRID -->
+          <div class="seller-app-dashboard-grid">
+
+            <section class="seller-app-card seller-app-card-large">
+
+              <div class="seller-app-card-header">
+                <div>
+                  <h2>Products</h2>
+                  <p>Bidhaa zako na stock</p>
+                </div>
+
+                <button
+                  type="button"
+                  class="seller-app-secondary-btn"
+                  id="modernProductsRefresh"
+                >
+                  Refresh
+                </button>
+              </div>
+
+              <div
+                id="modernSellerProducts"
+                class="seller-app-empty"
+              >
+                Products zitaonekana hapa.
+              </div>
+
+            </section>
+
+            <section class="seller-app-card">
+
+              <div class="seller-app-card-header">
+                <div>
+                  <h2>Business Overview</h2>
+                  <p>Muhtasari wa biashara</p>
+                </div>
+              </div>
+
+              <div class="seller-app-overview-list">
+
+                <div>
+                  <span>Products</span>
+                  <strong id="modernProductCount">0</strong>
+                </div>
+
+                <div>
+                  <span>Pending Orders</span>
+                  <strong id="modernPendingOrders">0</strong>
+                </div>
+
+                <div>
+                  <span>Processing</span>
+                  <strong id="modernProcessingOrders">0</strong>
+                </div>
+
+                <div>
+                  <span>Low Stock</span>
+                  <strong id="modernLowStock">0</strong>
+                </div>
+
+              </div>
+
+            </section>
+
+            <section class="seller-app-card seller-app-card-large">
+
+              <div class="seller-app-card-header">
+                <div>
+                  <h2>Recent Orders</h2>
+                  <p>Maagizo ya hivi karibuni</p>
+                </div>
+              </div>
+
+              <div
+                id="modernSellerOrders"
+                class="seller-app-empty"
+              >
+                Orders zitaonekana hapa.
+              </div>
+
+            </section>
+
+            <section class="seller-app-card">
+
+              <div class="seller-app-card-header">
+                <div>
+                  <h2>Quick Actions</h2>
+                  <p>Vitendo vya haraka</p>
+                </div>
+              </div>
+
+              <div class="seller-app-quick-actions">
+
+                <button type="button" data-seller-nav="products">
+                  📦 Manage Products
+                </button>
+
+                <button type="button" data-seller-nav="reports">
+                  📊 View Reports
+                </button>
+
+                <button type="button" data-seller-nav="ai">
+                  🤖 Ask Seller AI
+                </button>
+
+              </div>
+
+            </section>
+
+          </div>
+
+        </section>
+
+        <!-- EMPTY MODULE VIEWS -->
+
+          <section class="seller-app-view" data-seller-page="buyer-orders">
+            <div class="seller-app-page-heading">
+              <span class="seller-app-eyebrow">ORDERS</span>
+              <h1>Buyer Orders</h1>
+              <p>Orders kutoka kwa wanunuzi zitaonekana hapa.</p>
+            </div>
+
+            <div class="seller-orders-grid">
+              <div class="seller-order-stat">
+                <span>New Orders</span>
+                <strong id="modernSellerNewOrders">0</strong>
+                <small>Oda mpya</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Processing</span>
+                <strong id="modernSellerProcessingOrders">0</strong>
+                <small>Zinachakatwa</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Completed</span>
+                <strong id="modernSellerCompletedOrders">0</strong>
+                <small>Zilizokamilika</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Cancelled</span>
+                <strong id="modernSellerCancelledOrders">0</strong>
+                <small>Zilizoghairiwa</small>
+              </div>
+            </div>
+
+            <div id="modernBuyerOrdersList" class="seller-modern-card seller-orders-list">
+              <div class="seller-order-empty">
+                <div class="seller-order-empty-icon">🛒</div>
+
+
+                <strong>Hakuna buyer orders bado</strong>
+                <p>Orders kutoka kwa wanunuzi zitaonekana hapa.</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="sellerOrderDetailsPanel" class="seller-modern-card seller-order-details-panel" style="display:none;">
+            <div class="seller-modern-order-top">
+              <div>
+                <span class="seller-app-eyebrow">ORDER DETAILS</span>
+                <h3 id="sellerOrderDetailsNumber">Order Details</h3>
+                <p id="sellerOrderDetailsBuyer">Buyer: -</p>
+              </div>
+              <button type="button" class="secondary-btn" id="closeSellerOrderDetails">Close</button>
+            </div>
+            <div id="sellerOrderDetailsContent" class="seller-modern-order-meta"></div>
+          </div>
+
+          <section class="seller-app-view" data-seller-page="supply-orders">
+            <div class="seller-app-page-heading">
+              <span class="seller-app-eyebrow">ORDERS</span>
+              <h1>My Orders</h1>
+              <p>Simamia orders zako kutoka wholesale au factory.</p>
+            </div>
+
+            <div class="seller-orders-grid">
+              <div class="seller-order-stat">
+                <span>Pending</span>
+                <strong>0</strong>
+                <small>Zinasubiri</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Processing</span>
+                <strong>0</strong>
+                <small>Zinachakatwa</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Delivered</span>
+                <strong>0</strong>
+                <small>Zimewasilishwa</small>
+              </div>
+              <div class="seller-order-stat">
+                <span>Cancelled</span>
+                <strong>0</strong>
+                <small>Zimeghairiwa</small>
+              </div>
+            </div>
+
+            <div class="seller-modern-card seller-orders-list">
+              <div class="seller-order-empty">
+                <div class="seller-order-empty-icon">🏭</div>
+                <strong>Hakuna orders bado</strong>
+                <p>Orders zako za wholesale au factory zitaonekana hapa.</p>
+              </div>
+            </div>
+          </section>
+
+        <section class="seller-app-view" data-seller-page="products">
+          <div class="seller-app-page-heading">
+            <span class="seller-app-eyebrow">INVENTORY</span>
+            <h1>Products</h1>
+            <p>Simamia bidhaa na stock ya biashara yako.</p>
+          </div>
+          <div id="modernSellerProducts">
+  <div class="seller-app-card">
+    <div class="seller-app-card-header">
+      <div>
+        <h2>Post Product</h2>
+        <p>Weka bidhaa yako na tangazo lake.</p>
+      </div>
+    </div>
+
+    <form id="sellerProductForm">
+      <input id="sellerProductName" type="text" placeholder="Jina la bidhaa" required>
+      <textarea id="sellerProductDescription" placeholder="Maelezo ya bidhaa"></textarea>
+      <input id="sellerProductPrice" type="number" placeholder="Bei" min="0">
+      <input id="sellerProductQuantity" type="number" placeholder="Stock / Quantity" min="0" required>
+      <input id="sellerProductUnit" type="text" value="pcs" placeholder="Unit">
+      <input id="sellerProductLocation" type="text" placeholder="Location">
+      <input id="sellerProductPhone" type="tel" placeholder="Phone / WhatsApp">
+      <input id="sellerProductImage" type="file" accept="image/*">
+                        <input id="sellerProductVideo" type="file" accept="video/*">
+                        <small>Video ya bidhaa: hadi 50 MB.</small>
+
+      <button type="submit">＋ Post Product</button>
+    </form>
+  </div>
+
+  <div class="seller-app-card">
+    <div class="seller-app-card-header">
+      <div>
+        <h2>My Products</h2>
+        <p>Matangazo na bidhaa zako.</p>
+      </div>
+    </div>
+
+    <div id="sellerProductList">
+      Hakuna bidhaa bado.
+    </div>
+  </div>
+</div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="speed-sheet">
+          <div class="seller-speed-sheet">
+            <div class="seller-speed-sheet-header">
+              <div>
+                <span class="seller-speed-kicker">QUICK BUSINESS CONTROL</span>
+                <h2>Speed Sheet</h2>
+                <p>Muhtasari wa haraka wa biashara yako na actions muhimu.</p>
+              </div>
+
+              <button type="button" class="seller-speed-refresh" id="sellerSpeedRefreshBtn">
+                Refresh
+              </button>
+            </div>
+
+            <div class="seller-speed-grid">
+              <div class="seller-speed-card">
+                <span>Today's Sales</span>
+                <strong id="speedTodaySales">TZS 0</strong>
+                <small>Sales za leo</small>
+              </div>
+
+              <div class="seller-speed-card">
+                <span>Pending Orders</span>
+                <strong id="speedPendingOrders">0</strong>
+                <small>Orders zinazosubiri</small>
+              </div>
+
+              <div class="seller-speed-card">
+                <span>Paid Orders</span>
+                <strong id="speedPaidOrders">0</strong>
+                <small>Malipo yaliyothibitishwa</small>
+              </div>
+
+              <div class="seller-speed-card">
+                <span>Low Stock</span>
+                <strong id="speedLowStock">0</strong>
+                <small>Products zinazohitaji attention</small>
+              </div>
+            </div>
+
+            <div class="seller-speed-actions">
+              <div class="seller-speed-action">
+                <div>
+                  <strong>Orders</strong>
+                  <span>Angalia orders zako mpya</span>
+                </div>
+                <button type="button" data-speed-go="buyer-orders">Open</button>
+              </div>
+
+              <div class="seller-speed-action">
+                <div>
+                  <strong>Earnings</strong>
+                  <span>Angalia mapato na transactions</span>
+                </div>
+                <button type="button" data-speed-go="earnings">Open</button>
+              </div>
+
+              <div class="seller-speed-action">
+                <div>
+                  <strong>Analytics</strong>
+                  <span>Chunguza performance ya biashara</span>
+                </div>
+                <button type="button" data-speed-go="analytics">Open</button>
+              </div>
+
+              <div class="seller-speed-action">
+                <div>
+                  <strong>Reports</strong>
+                  <span>Fungua business reports</span>
+                </div>
+                <button type="button" data-speed-go="reports">Open</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="analytics">
+          <div class="seller-analytics-page">
+
+            <div class="seller-analytics-header">
+              <div>
+                <span class="seller-app-eyebrow">BUSINESS INTELLIGENCE</span>
+                <h1>Analytics</h1>
+                <p>Chambua performance ya biashara yako kwa muhtasari.</p>
+              </div>
+
+              <button type="button"
+                      class="seller-analytics-refresh"
+                      id="sellerAnalyticsRefreshBtn">
+                ↻ Refresh
+              </button>
+            </div>
+
+            <div class="seller-analytics-filters" id="sellerAnalyticsFilters">
+              <div class="seller-analytics-filter-group">
+                <label for="sellerAnalyticsFrom">
+                  From Date
+                </label>
+                <input
+                  type="date"
+                  id="sellerAnalyticsFrom"
+                  aria-label="Analytics start date"
+                />
+              </div>
+
+              <div class="seller-analytics-filter-group">
+                <label for="sellerAnalyticsTo">
+                  To Date
+                </label>
+                <input
+                  type="date"
+                  id="sellerAnalyticsTo"
+                  aria-label="Analytics end date"
+                />
+              </div>
+
+              <div class="seller-analytics-filter-actions">
+                <button
+                  type="button"
+                  class="seller-analytics-apply"
+                  id="sellerAnalyticsApplyBtn">
+                  Chambua
+                </button>
+
+                <button
+                  type="button"
+                  class="seller-analytics-clear"
+                  id="sellerAnalyticsClearBtn">
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            <div class="seller-analytics-presets" id="sellerAnalyticsPresets">
+              <button type="button" data-analytics-period="7d">
+                7 Days
+              </button>
+
+              <button type="button" data-analytics-period="30d">
+                30 Days
+              </button>
+
+              <button type="button" data-analytics-period="90d">
+                90 Days
+              </button>
+
+              <button type="button" data-analytics-period="1y">
+                1 Year
+              </button>
+
+              <button type="button" data-analytics-period="all">
+                All Time
+              </button>
+            </div>
+
+            <div
+              class="seller-analytics-filter-message"
+              id="sellerAnalyticsFilterMessage"
+              aria-live="polite">
+            </div>
+
+            <div id="sellerAnalyticsContent">
+              <div class="seller-analytics-loading">
+                <span class="seller-speed-spinner"></span>
+                <span>Loading Analytics...</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="payments">
+          <div class="seller-app-page-heading seller-payments-heading">
+            <div>
+              <span class="seller-app-eyebrow">FINANCE</span>
+              <h1>Payments</h1>
+              <p>Simamia malipo, mapato na payout za biashara yako.</p>
+            </div>
+
+            <button
+              type="button"
+              id="refreshSellerPaymentsBtn"
+              class="seller-payments-refresh-btn"
+            >
+              <span aria-hidden="true">↻</span>
+              Refresh
+            </button>
+          </div>
+
+          <div
+            id="sellerPaymentsMessage"
+            class="seller-payments-message"
+            style="display:none;"
+            aria-live="polite"
+          ></div>
+
+          <div id="sellerPaymentsSummary" class="seller-payments-summary-grid">
+            <div class="seller-payment-stat-card">
+              <span class="seller-payment-stat-label">Available Balance</span>
+              <strong id="sellerAvailableBalance">TZS 0</strong>
+              <small>Available for payout</small>
+            </div>
+
+            <div class="seller-payment-stat-card">
+              <span class="seller-payment-stat-label">Total Earned</span>
+              <strong id="sellerTotalEarned">TZS 0</strong>
+              <small>Seller net earnings</small>
+            </div>
+
+            <div class="seller-payment-stat-card">
+              <span class="seller-payment-stat-label">Paid Out</span>
+              <strong id="sellerTotalPaidOut">TZS 0</strong>
+              <small>Completed payouts</small>
+            </div>
+
+            <div class="seller-payment-stat-card">
+              <span class="seller-payment-stat-label">Pending</span>
+              <strong id="sellerPendingPayouts">TZS 0</strong>
+              <small>Pending payouts</small>
+            </div>
+          </div>
+
+          <div class="seller-payments-main-grid">
+
+            <section class="seller-payments-panel seller-payout-account-panel">
+              <div class="seller-payments-panel-header">
+                <div>
+                  <span class="seller-payments-kicker">PAYOUT</span>
+                  <strong>Payout Account</strong>
+                  <span>Account inayotumika kupokea seller earnings.</span>
+                </div>
+              </div>
+
+              <div id="sellerPaymentsPayoutAccount" class="seller-payout-account-content">
+                <div class="seller-payout-account-empty">
+                  Loading payout settings...
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="seller-payments-secondary-btn"
+                id="openSellerPayoutSettingsBtn"
+              >
+                Manage payout settings
+              </button>
+            </section>
+
+            <section class="seller-payments-panel seller-payment-flow-panel">
+              <div class="seller-payments-panel-header">
+                <div>
+                  <span class="seller-payments-kicker">SETTLEMENT</span>
+                  <strong>How your payment is settled</strong>
+                  <span>Buyer payment minus Zenodic commission becomes your seller earnings.</span>
+                </div>
+              </div>
+
+              <div class="seller-payment-flow">
+                <div class="seller-payment-flow-step">
+                  <span class="seller-payment-flow-icon">1</span>
+                  <div>
+                    <strong>Buyer pays</strong>
+                    <small>Payment is verified before settlement.</small>
+                  </div>
+                </div>
+
+                <div class="seller-payment-flow-line"></div>
+
+                <div class="seller-payment-flow-step">
+                  <span class="seller-payment-flow-icon">2</span>
+                  <div>
+                    <strong>Commission deducted</strong>
+                    <small>Admin commission is recorded automatically.</small>
+                  </div>
+                </div>
+
+                <div class="seller-payment-flow-line"></div>
+
+                <div class="seller-payment-flow-step">
+                  <span class="seller-payment-flow-icon">3</span>
+                  <div>
+                    <strong>Seller receives net</strong>
+                    <small>Your net amount enters the seller ledger.</small>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <section class="seller-payments-panel seller-payment-activity-panel">
+            <div class="seller-payments-panel-header">
+              <div>
+                <span class="seller-payments-kicker">ACTIVITY</span>
+                <strong>Payment Activity</strong>
+                <span>Malipo ya buyers na seller earnings zako.</span>
+              </div>
+            </div>
+
+            
+      <section class="seller-payments-panel seller-payout-request-panel">
+        <div class="seller-payments-panel-header">
+          <div>
+            <span class="seller-payments-kicker">WITHDRAW</span>
+            <strong>Request Payout</strong>
+            <span>Omba malipo ya seller kutoka kwenye available balance yako.</span>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:14px;max-width:520px;">
+          <div>
+            <label
+              for="sellerPayoutRequestAmount"
+              style="display:block;margin-bottom:7px;font-weight:600;"
+            >
+              Amount
+            </label>
+
+            <div style="display:flex;gap:10px;align-items:center;">
+              <input
+                type="number"
+                id="sellerPayoutRequestAmount"
+                min="1"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Enter amount"
+                style="flex:1;"
+              />
+
+              <span id="sellerPayoutRequestCurrency">TZS</span>
+            </div>
+
+            <small>
+              Available:
+              <strong id="sellerPayoutRequestAvailable">TZS 0</strong>
+            </small>
+          </div>
+
+          <button
+            type="button"
+            class="seller-payments-primary-btn"
+            id="requestSellerPayoutBtn"
+          >
+            Request Payout
+          </button>
+
+          <div
+            id="sellerPayoutRequestMessage"
+            aria-live="polite"
+            style="display:none;"
+          ></div>
+        </div>
+      </section>
+
+<div id="sellerPaymentsTransactions" class="seller-payments-transactions">
+              <div class="seller-payments-loading">
+                Loading payment activity...
+              </div>
+            </div>
+          </section>
+
+        </section>
+
+          <section class="seller-app-view" data-seller-page="earnings">
+  <div class="seller-app-page-heading">
+    <span class="seller-app-eyebrow">FINANCE</span>
+    <h1>Earnings</h1>
+    <p>Angalia mapato ya biashara yako.</p>
+  </div>
+
+  <div id="sellerEarningsMessage" class="seller-earnings-message" style="display:none;"></div>
+
+  <div id="sellerEarningsCards" class="seller-earnings-summary-grid"></div>
+
+  <section class="seller-earnings-panel seller-earnings-overview-panel">
+    <div class="seller-earnings-panel-header">
+      <div>
+        <span class="seller-earnings-kicker">PERFORMANCE</span>
+        <strong>Earnings Overview</strong>
+        <span>Muhtasari wa mapato ya biashara yako.</span>
+      </div>
+
+      <button
+        type="button"
+        id="refreshSellerEarningsBtn"
+        class="seller-earnings-refresh-btn"
+      >
+        ↻ Refresh
+      </button>
+    </div>
+
+    <div id="sellerMonthlyEarnings" class="seller-monthly-earnings"></div>
+  </section>
+
+  <section class="seller-earnings-panel">
+    <div class="seller-earnings-panel-header">
+      <div>
+        <span class="seller-earnings-kicker">ACTIVITY</span>
+        <strong>Recent Transactions</strong>
+        <span>Malipo na transactions zako za hivi karibuni.</span>
+      </div>
+    </div>
+
+    <div id="sellerEarningsTransactions" class="seller-earnings-transactions"></div>
+  </section>
+</section>
+
+<section class="seller-app-view" data-seller-page="reports">
+          <div class="seller-app-page-heading">
+            <span class="seller-app-eyebrow">REPORTS</span>
+            <h1>Business Reports</h1>
+            <p>Angalia performance ya biashara yako na export report kwa Excel.</p>
+          </div>
+
+          <section class="seller-reports-panel">
+            <div class="seller-reports-toolbar">
+              <div>
+                <span class="seller-earnings-kicker">REPORT PERIOD</span>
+                <strong>Sales Report</strong>
+              </div>
+
+              <div class="seller-reports-actions">
+
+                <div class="seller-report-date-field">
+                  <label for="sellerReportFrom">From Date</label>
+                  <input
+                    type="date"
+                    id="sellerReportFrom"
+                    class="seller-report-date"
+                  >
+                </div>
+
+                <div class="seller-report-date-field">
+                  <label for="sellerReportTo">To Date</label>
+                  <input
+                    type="date"
+                    id="sellerReportTo"
+                    class="seller-report-date"
+                  >
+                </div>
+
+                <button
+                  type="button"
+                  id="sellerReportApplyBtn"
+                  class="seller-earnings-refresh-btn"
+                >
+                  Apply
+                </button>
+
+                <button
+                  type="button"
+                  id="sellerReportClearBtn"
+                  class="seller-report-clear-btn"
+                >
+                  Clear
+                </button>
+
+                <select id="sellerReportPeriod" class="seller-report-period">
+                  <option value="7d">Last 7 Days</option>
+                  <option value="30d" selected>Last 30 Days</option>
+                  <option value="90d">Last 90 Days</option>
+                  <option value="1y">Last 1 Year</option>
+                  <option value="all">All Time</option>
+                </select>
+
+                <button
+                  type="button"
+                  id="sellerReportRefreshBtn"
+                  class="seller-earnings-refresh-btn"
+                >
+                  ↻ Refresh
+                </button>
+
+                <button
+                  type="button"
+                  id="sellerReportExcelBtn"
+                  class="seller-report-excel-btn"
+                >
+                  ↓ Export Excel
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="sellerReportsMessage"
+              class="seller-earnings-message"
+              style="display:none;"
+            ></div>
+
+            <div
+              id="sellerReportsSummary"
+              class="seller-compact-cards seller-reports-summary"
+            ></div>
+
+            <div class="seller-reports-table-wrap">
+              <div class="seller-reports-table-header">
+                <div>
+                  <strong>Orders</strong>
+                  <span>Orders zilizopatikana kwenye kipindi hiki.</span>
+                </div>
+              </div>
+
+              <div id="sellerReportsTable" class="seller-reports-table">
+                <div class="wholesale-empty-state">
+                  Loading Reports...
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="market">
+          <div class="seller-app-page-heading">
+            <span class="seller-app-eyebrow">MARKET</span>
+            <h1>Market</h1>
+            <p>Angalia marketplace ya ZENODIC.</p>
+          </div>
+          <div class="seller-app-placeholder">Market</div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="ai">
+          <div class="seller-app-page-heading">
+            <span class="seller-app-eyebrow">AI</span>
+            <h1>Seller AI</h1>
+            <p>Msaada wa AI kwa biashara yako.</p>
+          </div>
+          <div class="seller-app-placeholder">Seller AI</div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="notifications">
+          <div class="seller-app-page-heading seller-notifications-heading">
+            <div>
+              <span class="seller-app-eyebrow">ALERTS</span>
+              <h1>Notifications</h1>
+              <p>Updates muhimu kuhusu orders, payments na biashara yako.</p>
+            </div>
+
+            <button
+              type="button"
+              id="sellerNotificationsReadAllBtn"
+              class="seller-notifications-read-all"
+            >
+              Mark all as read
+            </button>
+          </div>
+
+          <div
+            id="sellerNotificationsMessage"
+            class="seller-earnings-message"
+            style="display:none;"
+          ></div>
+
+          <div
+            id="sellerNotificationsList"
+            class="seller-notifications-list"
+          >
+            <div class="seller-notifications-loading">
+              Loading notifications...
+            </div>
+          </div>
+        </section>
+
+        <section class="seller-app-view" data-seller-page="settings">
+  <div class="seller-app-page-heading">
+    <span class="seller-app-eyebrow">ACCOUNT</span>
+    <h1>Settings</h1>
+    <p>Settings za seller account.</p>
+  </div>
+
+  <div id="sellerSettingsPanel" class="seller-app-placeholder">
+
+    <div class="seller-settings-card">
+      <h2>🏪 Store Settings</h2>
+
+      <form id="sellerSettingsForm">
+
+        <label>Store name</label>
+        <input type="text" id="sellerStoreName" name="store_name">
+
+        <label>Phone</label>
+        <input type="text" id="sellerPhone" name="phone">
+
+        <label>Location</label>
+        <input type="text" id="sellerLocation" name="location">
+
+        <label>Description</label>
+        <textarea id="sellerDescription" name="description"></textarea>
+
+        <label>Store status</label>
+        <select id="sellerStoreStatus" name="store_status">
+          <option value="open">Open</option>
+          <option value="paused">Paused</option>
+        </select>
+
+        <label>Currency</label>
+        <input type="text" id="sellerCurrency" name="currency" value="TZS">
+
+        <label>Minimum order quantity</label>
+        <input
+          type="number"
+          id="sellerMinimumOrderQuantity"
+          name="minimum_order_quantity"
+          min="1"
+          step="1"
+          value="1"
+        >
+
+        <label>Delivery information</label>
+        <textarea
+          id="sellerDeliveryInformation"
+          name="delivery_information"
+        ></textarea>
+
+        <div class="seller-settings-action-card">
+          <div class="seller-settings-action-copy">
+            <strong>Save store settings</strong>
+            <small>Update your seller store preferences.</small>
+          </div>
+          <button type="submit" class="seller-settings-save-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 3h11l3 3v15H5z"></path>
+              <path d="M8 3v6h8V3"></path>
+              <path d="M8 14h8"></path>
+              <path d="M8 18h5"></path>
+            </svg>
+            Save settings
+          </button>
+        </div>
+
+        <div id="sellerSettingsMessage" style="display:none;"></div>
+
+      </form>
+    </div>
+
+    <div class="seller-settings-card seller-payment-settings-card">
+      <h2>
+      <span class="seller-settings-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="2.5" y="5" width="19" height="14" rx="2"></rect>
+          <path d="M2.5 9h19"></path>
+          <path d="M7 14h3"></path>
+        </svg>
+      </span>
+      Payment &amp; Payout
+    </h2>
+      <p>Manage how your seller earnings are paid.</p>
+
+      <label>Payout method</label>
+      <select id="sellerPayoutMethod">
+        <option value="mobile_money">Mobile Money</option>
+        <option value="bank">Bank Account</option>
+      </select>
+
+      <label>Account holder name</label>
+      <input type="text" id="sellerPayoutName"
+        placeholder="Name on payment account">
+
+      <label>Account / phone number</label>
+      <input type="text" id="sellerPayoutAccount"
+        placeholder="Payment account number">
+
+      <label>Payout schedule</label>
+      <select id="sellerPayoutSchedule">
+        <option value="weekly">Weekly</option>
+        <option value="biweekly">Every 2 weeks</option>
+        <option value="monthly">Monthly</option>
+      </select>
+
+      <label>Tax / VAT number</label>
+      <input type="text" id="sellerTaxNumber"
+        placeholder="Optional">
+
+      <div class="seller-settings-info-box">
+        <svg class="seller-info-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+        </svg>
+        <span>Your payout information should only be used for seller payments.</span>
+      </div>
+
+      <div class="seller-settings-action-card">
+        <div class="seller-settings-action-copy">
+          <strong>Save payout settings</strong>
+          <small>Update how your seller earnings are paid.</small>
+        </div>
+        <button
+          type="button"
+          class="seller-settings-save-btn"
+          id="saveSellerPayoutBtn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 3h11l3 3v15H5z"></path>
+            <path d="M8 3v6h8V3"></path>
+            <path d="M8 14h8"></path>
+            <path d="M8 18h5"></path>
+          </svg>
+          Save
+        </button>
+      </div>
+
+      <div id="sellerPayoutMessage" style="display:none;"></div>
+    </div>
+
+    <div class="seller-settings-card seller-notification-settings-card">
+      <h2>
+      <span class="seller-settings-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+          <path d="M10 21h4"></path>
+        </svg>
+      </span>
+      Notification Preferences
+    </h2>
+      <p>Choose which seller notifications you want to receive.</p>
+
+      <label class="seller-setting-toggle">
+        <span>
+          <strong>New order notifications</strong>
+          <small>Get notified when a buyer places a new order.</small>
+        </span>
+        <input type="checkbox" id="sellerNotifyNewOrders">
+      </label>
+
+      <label class="seller-setting-toggle">
+        <span>
+          <strong>RFQ notifications</strong>
+          <small>Get notified when buyers send new requests for quotation.</small>
+        </span>
+        <input type="checkbox" id="sellerNotifyRfqs">
+      </label>
+
+      <label class="seller-setting-toggle">
+        <span>
+          <strong>Order update notifications</strong>
+          <small>Get notified when an order status changes.</small>
+        </span>
+        <input type="checkbox" id="sellerNotifyOrderUpdates">
+      </label>
+
+      <label class="seller-setting-toggle">
+        <span>
+          <strong>Marketing notifications</strong>
+          <small>Receive useful seller offers, tips and marketplace updates.</small>
+        </span>
+        <input type="checkbox" id="sellerNotifyMarketing">
+      </label>
+
+      <div class="seller-settings-action-card">
+        <div class="seller-settings-action-copy">
+          <strong>Save notifications</strong>
+          <small>Keep your seller notification preferences updated.</small>
+        </div>
+        <button
+          type="button"
+          class="seller-settings-save-btn"
+          id="saveSellerNotificationsBtn"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 3h11l3 3v15H5z"></path>
+            <path d="M8 3v6h8V3"></path>
+            <path d="M8 14h8"></path>
+            <path d="M8 18h5"></path>
+          </svg>
+          Save
+        </button>
+      </div>
+
+      <div id="sellerNotificationMessage" style="display:none;"></div>
+    </div>
+
+    <div class="seller-settings-card">
+      <h2>
+      <span class="seller-settings-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+          <circle cx="12" cy="15" r="1"></circle>
+        </svg>
+      </span>
+      Change Password
+    </h2>
+      <p>Update password ya seller account yako.</p>
+
+      <form id="sellerChangePasswordForm">
+
+        <label>Current password</label>
+        <div class="seller-password-field">
+          <input
+            type="password"
+            id="sellerCurrentPassword"
+            autocomplete="current-password"
+            required
+          >
+          <button
+            type="button"
+            class="seller-password-toggle"
+            data-password-target="sellerCurrentPassword"
+            aria-label="Show password"
+          >
+            <svg class="password-eye-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"></path>
+              <circle cx="12" cy="12" r="2.5"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <label>New password</label>
+        <div class="seller-password-field">
+          <input
+            type="password"
+            id="sellerNewPassword"
+            autocomplete="new-password"
+            required
+            minlength="8"
+          >
+          <button
+            type="button"
+            class="seller-password-toggle"
+            data-password-target="sellerNewPassword"
+            aria-label="Show password"
+          >
+            <svg class="password-eye-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"></path>
+              <circle cx="12" cy="12" r="2.5"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <label>Confirm new password</label>
+        <div class="seller-password-field">
+          <input
+            type="password"
+            id="sellerConfirmPassword"
+            autocomplete="new-password"
+            required
+            minlength="8"
+          >
+          <button
+            type="button"
+            class="seller-password-toggle"
+            data-password-target="sellerConfirmPassword"
+            aria-label="Show password"
+          >
+            <svg class="password-eye-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"></path>
+              <circle cx="12" cy="12" r="2.5"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <div class="seller-settings-action-card">
+          <div class="seller-settings-action-copy">
+            <strong>Update password</strong>
+            <small>Use a strong password to protect your account.</small>
+          </div>
+          <button type="submit" class="seller-settings-save-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              <path d="M12 14v2"></path>
+            </svg>
+            Update
+          </button>
+        </div>
+
+        <div id="sellerChangePasswordMessage" style="display:none;"></div>
+
+      </form>
+    </div>
+
+  </div>
+
+
+    <div class="seller-settings-card seller-login-activity-card">
+      <h2>
+      <span class="seller-settings-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+          <path d="M8 7h8"></path>
+          <path d="M8 11h8"></path>
+          <path d="M8 15h5"></path>
+        </svg>
+      </span>
+      Login Activity
+    </h2>
+      <p>Review recent activity on your seller account.</p>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Last login</strong>
+          <small id="sellerLastLogin">Loading...</small>
+        </span>
+        <span class="seller-security-badge">Recent</span>
+      </div>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Login status</strong>
+          <small id="sellerLoginStatus">Checking...</small>
+        </span>
+        <span class="seller-security-badge">Secure</span>
+      </div>
+
+      <div class="seller-login-history">
+        <div class="seller-login-history-header">
+          <strong>Recent logins</strong>
+          <small>Last 5 login attempts</small>
+        </div>
+      <button
+        type="button"
+        class="seller-clear-login-btn"
+        id="clearSellerLoginHistoryBtn"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7h16"></path>
+      <path d="M9 7V4h6v3"></path>
+      <path d="M7 7l1 13h8l1-13"></path>
+      <path d="M10 11v5"></path>
+      <path d="M14 11v5"></path>
+    </svg>
+    Clear history
+      </button>
+
+
+        <div id="sellerLoginHistory">
+          <div class="seller-login-history-empty">
+            Loading login activity...
+          </div>
+        </div>
+      </div>
+
+      <div class="seller-settings-info-box">
+        <svg class="seller-info-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="10.5" cy="10.5" r="5.5"></circle>
+          <path d="M15 15l5 5"></path>
+        </svg>
+        <span>If you notice unfamiliar login activity, change your password immediately.</span>
+      </div>
+    </div>
+
+    <div class="seller-settings-card seller-account-security-card">
+      <h2>
+      <span class="seller-settings-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3l7 3v5c0 4.7-2.9 8.2-7 10-4.1-1.8-7-5.3-7-10V6l7-3z"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+      </span>
+      Account Security
+    </h2>
+      <p>Review the security status of your seller account.</p>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Account email</strong>
+          <small id="sellerSecurityEmail">Loading...</small>
+        </span>
+        <span class="seller-security-badge">Email on account</span>
+      </div>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Account type</strong>
+          <small>Seller account</small>
+        </span>
+        <span class="seller-security-badge">Seller</span>
+      </div>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Last settings update</strong>
+          <small id="sellerSecurityLastUpdate">Loading...</small>
+        </span>
+        <span class="seller-security-badge">Updated</span>
+      </div>
+
+      <div class="seller-security-row">
+        <span>
+          <strong>Password protection</strong>
+          <small>Your account is protected by a password.</small>
+        </span>
+        <span class="seller-security-badge">Protected</span>
+      </div>
+
+      <div class="seller-settings-info-box">
+        <svg class="seller-info-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+          <circle cx="12" cy="15" r="1"></circle>
+        </svg>
+        <span>Keep your password private and change it if you think someone else may know it.</span>
+      </div>
+    </div>
+
+</section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ===================================================
+         BUYER AI
+         =================================================== -->
+
+    <section id="buyerAI" class="page">
+
+      <div class="ai-panel">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          data-nav="buyerDashboard"
+          style="margin-bottom:20px;"
+        >
+          ← Buyer Dashboard
+        </button>
+
+        <h2>
+          🤖 Buyer AI
+        </h2>
+
+        <p>
+          Msaidizi wako wa AI wa ZENODIC
+          kwa utafutaji na ununuzi.
+        </p>
+
+        <div class="zenodic-ai-chat">
+          <div class="zenodic-ai-chat-head">
+            <strong>AI Assistant</strong>
+            <span id="buyerAIStatus">Ready</span>
+          </div>
+
+          <div id="buyerAIChatMessages" class="zenodic-ai-chat-messages">
+            <div class="zenodic-ai-message zenodic-ai-message-assistant">
+              Habari! Mimi ni Zenodic AI. Naweza kukusaidia kuhusu bidhaa, orders na matumizi ya Buyer Market.
+            </div>
+          </div>
+
+          <form id="buyerAIChatForm" class="zenodic-ai-chat-form">
+            <input
+              type="text"
+              id="buyerAIChatInput"
+              placeholder="Andika ujumbe wako..."
+              maxlength="4000"
+              autocomplete="off"
+            >
+            <button type="submit">Tuma</button>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         SELLER AI
+         =================================================== -->
+
+    <section id="sellerAI" class="page">
+
+      <div class="ai-panel">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          data-nav="sellerDashboard"
+          style="margin-bottom:20px;"
+        >
+          ← Seller Dashboard
+        </button>
+
+        <h2>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="5"/></svg> Seller AI
+        </h2>
+
+        <p>
+          Msaidizi wa AI kwa biashara yako
+          ndani ya ZENODIC.
+        </p>
+
+        <div
+          style="
+            margin-top:25px;
+            padding:20px;
+            border:1px solid #e5ebf5;
+            border-radius:16px;
+            background:#f8fbff;
+          "
+        >
+          <div class="zenodic-ai-chat">
+            <div class="zenodic-ai-chat-head">
+              <strong>AI Assistant</strong>
+              <span id="sellerAIStatus">Ready</span>
+            </div>
+
+            <div id="sellerAIChatMessages" class="zenodic-ai-chat-messages">
+              <div class="zenodic-ai-message zenodic-ai-message-assistant">
+                Habari! Mimi ni Zenodic AI. Naweza kukusaidia kuhusu sales, inventory, orders, RFQs na biashara yako.
+              </div>
+            </div>
+
+            <form id="sellerAIChatForm" class="zenodic-ai-chat-form">
+              <input
+                type="text"
+                id="sellerAIChatInput"
+                placeholder="Uliza kuhusu biashara yako..."
+                maxlength="4000"
+                autocomplete="off"
+              >
+              <button type="submit">Tuma</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         ADMIN LOGIN
+         =================================================== -->
+
+    <section id="adminLogin" class="page">
+
+      <div class="auth-container">
+
+        <div class="auth-header">
+
+          <div
+            style="
+              width:64px;
+              height:64px;
+              margin:0 auto 15px;
+              display:grid;
+              place-items:center;
+              border-radius:18px;
+              color:white;
+              background:#0b1730;
+              font-size:30px;
+              font-weight:900;
+            "
+          >
+            Z
+          </div>
+
+          <h2>
+            Admin Login
+          </h2>
+
+          <p>
+            ZENODIC Administration
+          </p>
+
+        </div>
+
+        <form id="adminLoginForm">
+
+          <div class="form-group">
+
+            <label for="adminEmail">
+              Email
+            </label>
+
+            <input
+              id="adminEmail"
+              type="email"
+              placeholder="admin@example.com"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="adminPassword">
+              Password
+            </label>
+
+            <div class="password-wrap">
+
+              <input
+                id="adminPassword"
+                type="password"
+                placeholder="••••••••"
+              >
+
+              <button
+                type="button"
+                data-password-toggle="adminPassword"
+              >
+                👁️
+              </button>
+
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            class="primary-btn"
+            style="width:100%;"
+          >
+            Ingia kama Admin
+          </button>
+
+        </form>
+
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         ADMIN DASHBOARD
+         =================================================== -->
+
+    <!-- ===================================================
+         WHOLESALE / FACTORY DASHBOARD
+         =================================================== -->
+
+    <section id="wholesaleDashboard" class="page">
+
+      <div class="wholesale-shell">
+        <aside class="wholesale-sidebar">
+          <div class="wholesale-brand">
+            <strong>ZENODIC</strong>
+            <span>B2B</span>
+          </div>
+
+          <nav class="wholesale-nav" aria-label="Wholesale navigation">
+            <button type="button" class="wholesale-nav-item active" data-wholesale-nav="overview"><span>⌂</span><span>Overview</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="orders"><span>▣</span><span>Orders</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="procurement"><span>▤</span><span>Procurement</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="production"><span>▥</span><span>Production</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="inventory"><span>◫</span><span>Inventory</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="payments"><span>◉</span><span>Payments</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="analytics"><span>◌</span><span>Analytics</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="reports"><span>▱</span><span>Reports</span></button>
+            <button type="button" class="wholesale-nav-item" data-wholesale-nav="intelligence"><span>✦</span><span>Intelligence</span></button>
+          </nav>
+
+          <button type="button" class="wholesale-account-btn" data-page="home">
+            <span>Account</span>
+            <span>→</span>
+          </button>
+        </aside>
+
+        <div
+          class="wholesale-mobile-topbar"
+        >
+          <button
+            type="button"
+            class="wholesale-menu-btn"
+            id="wholesaleMenuBtnTop"
+            aria-label="Open wholesale menu"
+            aria-expanded="false"
+          >☰</button>
+
+          <div>
+            <strong>ZENODIC</strong>
+            <span>WHOLESALE</span>
+          </div>
+        </div>
+
+        <div
+          class="wholesale-sidebar-overlay"
+          id="wholesaleSidebarOverlay"
+          aria-hidden="true"
+        ></div>
+
+        <div class="wholesale-main">
+          <div class="dashboard-box wholesale-dashboard">
+
+        <div class="dashboard-header">
+          <div class="wholesale-header-brand">
+            <button
+              type="button"
+              class="wholesale-menu-btn"
+              id="wholesaleMenuBtn"
+              aria-label="Open wholesale menu"
+              aria-expanded="false"
+            >☰</button>
+
+            <div>
+              <span class="dashboard-eyebrow">ZENODIC B2B</span>
+            <h2>Wholesale & Factory Command Center</h2>
+            <p>Simamia biashara yako kutoka sourcing hadi delivery.</p>
+          </div>
+
+          <div class="dashboard-actions">
+            <button type="button" class="secondary-btn icon-btn" data-wholesale-action="notifications" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                <path d="M10 21h4"/>
+              </svg>
+            </button>
+            <button type="button" class="primary-btn" data-page="home">
+              Account
+            </button>
+          </div>
+        </div>
+
+        <!-- OVERVIEW CARDS -->
+
+        <div class="wholesale-section wholesale-overview-section" id="wholesaleOverviewSection">
+
+          <div class="wholesale-stats">
+
+          <div class="wholesale-stat-card">
+            <span class="stat-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5v-7Z"/>
+        <path d="m3 8.5 9 4.5 9-4.5M12 13v7"/>
+      </svg>
+    </span>
+            <div>
+              <small>Active Orders</small>
+              <strong id="wholesaleActiveOrders">0</strong>
+              <span class="stat-positive">+12% this month</span>
+            </div>
+          </div>
+
+          <div class="wholesale-stat-card">
+            <span class="stat-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 4h8"/>
+        <path d="M9 3h6v3H9z"/>
+        <rect x="5" y="4" width="14" height="17" rx="2"/>
+        <path d="M9 10h6M9 14h6M9 18h3"/>
+      </svg>
+    </span>
+            <div>
+              <small>Open RFQs</small>
+              <strong id="wholesaleOpenRfqs">0</strong>
+              <span class="stat-positive">5 new today</span>
+            </div>
+          </div>
+
+          <div class="wholesale-stat-card">
+            <span class="stat-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 21V9l6 3V7l6 3V5l6 3v13H3Z"/>
+        <path d="M7 21v-4h3v4M14 21v-4h3v4M18 11h2M18 14h2"/>
+      </svg>
+    </span>
+            <div>
+              <small>Production</small>
+              <strong id="wholesaleProductionCount">0</strong>
+              <span class="stat-neutral">In progress</span>
+            </div>
+          </div>
+
+          <div class="wholesale-stat-card">
+            <span class="stat-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m12 3 10 18H2L12 3Z"/>
+        <path d="M12 9v5M12 17h.01"/>
+      </svg>
+    </span>
+            <div>
+              <small>Stock Alerts</small>
+              <strong id="wholesaleStockAlerts">0</strong>
+              <span class="stat-warning">Needs attention</span>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+        <!-- ===================================================
+             LIVE ORDERS
+             =================================================== -->
+        <div class="wholesale-section" id="wholesaleOrdersSection">
+
+          <div class="section-heading">
+            <div>
+              <span class="panel-label">ORDERS</span>
+              <h3>Live Orders</h3>
+              <p>Fuatilia orders zako moja kwa moja kutoka Zenodic.</p>
+            </div>
+
+            <button
+              type="button"
+              class="secondary-btn"
+              id="refreshOrdersBtn"
+            >
+              Refresh Orders
+            </button>
+          </div>
+
+          <div
+            id="ordersLiveMessage"
+            style="display:none;margin-bottom:16px;"
+          ></div>
+
+          <div
+            id="ordersLiveList"
+            class="wholesale-orders-list"
+          >
+            <div class="wholesale-empty-state">
+              Loading orders...
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===================================================
+             SELLER ORDER MANAGEMENT
+             =================================================== -->
+        <div class="wholesale-section" id="sellerOrdersSection">
+
+          <div class="section-heading">
+            <div>
+              <span class="panel-label">SELLER ORDERS</span>
+              <h3>Order Management</h3>
+              <p>Simamia orders ulizopokea kutoka kwa buyers.</p>
+            </div>
+
+            <button
+              type="button"
+              class="secondary-btn"
+              id="refreshSellerOrdersBtn"
+            >
+              Refresh Orders
+            </button>
+          </div>
+
+          <div
+            id="sellerOrdersMessage"
+            style="display:none;margin-bottom:16px;"
+          ></div>
+
+          <div
+            id="sellerOrdersList"
+            class="wholesale-orders-list"
+          >
+            <div class="wholesale-empty-state">
+              Loading seller orders...
+            </div>
+          </div>
+
+        </div>
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="wholesale-section wholesale-overview-actions" id="wholesaleQuickActionsSection">
+
+          <div class="section-heading">
+            <div>
+              <h3>Quick Actions</h3>
+              <p>Fanya kazi muhimu kwa haraka.</p>
+            </div>
+          </div>
+
+          <div class="wholesale-quick-grid">
+
+            <button type="button" class="wholesale-action" data-wholesale-action="rfq">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 4h8"/>
+                  <rect x="5" y="4" width="14" height="17" rx="2"/>
+                  <path d="M9 10h6M9 14h6M9 18h3"/>
+                </svg>
+              </span>
+              <strong>Manage RFQs</strong>
+              <small>Jibu quotation requests</small>
+            </button>
+
+            <button type="button" class="wholesale-action" data-wholesale-action="orders">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5v-7Z"/>
+                  <path d="m3 8.5 9 4.5 9-4.5M12 13v7"/>
+                </svg>
+              </span>
+              <strong>Orders</strong>
+              <small>Fuatilia orders za B2B</small>
+            </button>
+
+            <button type="button" class="wholesale-action" data-wholesale-action="production">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 21V9l6 3V7l6 3V5l6 3v13H3Z"/>
+                  <path d="M7 21v-4h3v4M14 21v-4h3v4"/>
+                </svg>
+              </span>
+              <strong>Production</strong>
+              <small>Simamia uzalishaji</small>
+            </button>
+
+            <button type="button" class="wholesale-action" data-wholesale-action="inventory">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/>
+                </svg>
+              </span>
+              <strong>Inventory</strong>
+              <small>Stock na raw materials</small>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- LIVE RFQ WORKSPACE -->
+
+        <div class="wholesale-section" id="wholesaleRfqSection">
+
+          <div class="section-heading">
+            <div>
+              <span class="panel-label">PROCUREMENT</span>
+              <h3>RFQ Management</h3>
+              <p>Unda na fuatilia Request for Quotation zako.</p>
+            </div>
+
+            <button
+              type="button"
+              class="primary-btn"
+              data-wholesale-action="create-rfq"
+            >
+              Create RFQ
+            </button>
+          </div>
+
+          <div
+            id="rfqCreatePanel"
+            style="display:none;margin-bottom:20px;"
+          >
+
+            <form id="rfqForm">
+
+              <div class="form-group">
+                <label for="rfqTitle">Product / Requirement</label>
+                <input
+                  id="rfqTitle"
+                  type="text"
+                  placeholder="Mfano: Electronic Components"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="rfqDescription">Description</label>
+                <textarea
+                  id="rfqDescription"
+                  rows="4"
+                  placeholder="Eleza bidhaa au mahitaji yako..."
+                  required
+                ></textarea>
+              </div>
+
+              <div
+                style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"
+              >
+
+                <div class="form-group">
+                  <label for="rfqQuantity">Quantity</label>
+                  <input
+                    id="rfqQuantity"
+                    type="number"
+                    min="1"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="rfqUnit">Unit</label>
+                  <input
+                    id="rfqUnit"
+                    type="text"
+                    placeholder="units"
+                    required
+                  >
+                </div>
+
+              </div>
+
+              <div
+                style="display:flex;gap:10px;margin-top:10px;"
+              >
+                <button
+                  type="submit"
+                  class="primary-btn"
+                  id="rfqSubmitButton"
+                >
+                  Submit RFQ
+                </button>
+
+                <button
+                  type="button"
+                  class="secondary-btn"
+                  data-wholesale-action="cancel-rfq"
+                >
+                  Cancel
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+
+          <div
+            id="rfqLiveMessage"
+            style="display:none;margin-bottom:15px;"
+          ></div>
+
+          <div id="rfqLiveList">
+
+            <div class="wholesale-panel">
+              <p>Loading RFQs...</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RFQ + PRODUCTION -->
+
+        <div class="wholesale-two-column" id="wholesaleProductionSection">
+
+          <div class="wholesale-panel">
+
+            <div class="panel-header">
+              <div>
+                <span class="panel-label">PROCUREMENT</span>
+                <h3>Latest RFQs</h3>
+              </div>
+
+              <button type="button" class="text-btn" data-wholesale-action="rfq">
+                View all →
+              </button>
+            </div>
+
+            <div class="rfq-list">
+
+              <div class="rfq-item">
+                <div>
+                  <strong>5,000 Electronic Units</strong>
+                  <small>Buyer: East Africa Distributor</small>
+                </div>
+                <span class="rfq-status new">NEW</span>
+              </div>
+
+              <div class="rfq-item">
+                <div>
+                  <strong>2,500 Packaging Boxes</strong>
+                  <small>Buyer: Global Retail Co.</small>
+                </div>
+                <span class="rfq-status pending">PENDING</span>
+              </div>
+
+              <div class="rfq-item">
+                <div>
+                  <strong>10,000 Industrial Components</strong>
+                  <small>Buyer: Manufacturing Group</small>
+                </div>
+                <span class="rfq-status new">NEW</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="wholesale-panel">
+
+            <div class="panel-header">
+              <div>
+                <span class="panel-label">FACTORY</span>
+                <h3>Production Overview</h3>
+              </div>
+
+              <button type="button" class="text-btn" data-wholesale-action="production">
+                Manage →
+              </button>
+            </div>
+
+            
+<div class="wholesale-panel" style="margin-bottom:16px;">
+  <div class="panel-header">
+    <div>
+      <span class="panel-label">CREATE</span>
+      <h3>New Production Order</h3>
+      <p>Anzisha production order mpya kwa account yako.</p>
+    </div>
+  </div>
+
+  <form id="productionCreateForm">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="productionProductName">Product name</label>
+        <input
+          type="text"
+          id="productionProductName"
+          name="product_name"
+          placeholder="Mfano: Electronics"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="productionPlannedQuantity">Planned quantity</label>
+        <input
+          type="number"
+          id="productionPlannedQuantity"
+          name="planned_quantity"
+          min="0.01"
+          step="0.01"
+          placeholder="100"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="productionUnit">Unit</label>
+        <input
+          type="text"
+          id="productionUnit"
+          name="unit"
+          value="pcs"
+          placeholder="pcs"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="productionOrderId">Order ID (optional)</label>
+        <input
+          type="number"
+          id="productionOrderId"
+          name="order_id"
+          min="1"
+          placeholder="Mfano: 12"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="productionStartDate">Start date</label>
+        <input
+          type="date"
+          id="productionStartDate"
+          name="start_date"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="productionExpectedCompletion">Expected completion</label>
+        <input
+          type="date"
+          id="productionExpectedCompletion"
+          name="expected_completion"
+        >
+      </div>
+    </div>
+
+    <div id="productionCreateMessage"
+         style="display:none;margin-top:12px;"></div>
+
+    <div style="margin-top:16px;">
+      <button type="submit" class="primary-btn">
+        Create Production
+      </button>
+    </div>
+  </form>
+</div>
+
+<div id="wholesaleProductionList">
+              <div class="wholesale-empty-state">
+                Loading production...
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- INVENTORY -->
+<div class="wholesale-section" id="wholesaleInventorySection">
+  <div class="section-heading">
+    <div>
+      <span class="panel-label">INVENTORY INTELLIGENCE</span>
+      <h3>Wholesale Inventory</h3>
+      <p>Manage stock, monitor availability and act before products run out.</p>
+    </div>
+    <button type="button" class="text-btn" data-wholesale-action="inventory">Refresh →</button>
+  </div>
+
+  <div class="inventory-summary">
+    <div class="inventory-summary-card">
+      <span>Total Products</span>
+      <strong id="inventoryTotalProducts">—</strong>
+      <small>Items in inventory</small>
+    </div>
+    <div class="inventory-summary-card">
+      <span>Available Stock</span>
+      <strong id="inventoryAvailableStock">—</strong>
+      <small>Units available</small>
+    </div>
+    <div class="inventory-summary-card">
+      <span>Low Stock</span>
+      <strong id="inventoryLowStock">—</strong>
+      <small>Need attention</small>
+    </div>
+    <div class="inventory-summary-card">
+      <span>Out of Stock</span>
+      <strong id="inventoryOutOfStock">—</strong>
+      <small>Need restocking</small>
+    </div>
+  </div>
+
+  <div class="inventory-toolbar">
+    <div class="inventory-search">
+      <input type="search" id="wholesaleInventorySearch" placeholder="Search products, SKU or location..." autocomplete="off">
+    </div>
+    <select id="wholesaleInventoryStatusFilter">
+      <option value="all">All Stock</option>
+      <option value="healthy">Healthy</option>
+      <option value="low">Low Stock</option>
+      <option value="out">Out of Stock</option>
+    </select>
+  </div>
+
+  <div class="inventory-table" id="wholesaleInventoryTable">
+    <div class="inventory-row inventory-head">
+      <span>Product</span>
+      <span>SKU</span>
+      <span>Available</span>
+      <span>Status</span>
+      <span>Location</span>
+      <span>Price</span>
+      <span>Action</span>
+    </div>
+
+    <div class="inventory-row" id="wholesaleInventoryLoading">
+      <span style="grid-column:1 / -1;">Loading inventory...</span>
+    </div>
+  </div>
+
+  <div class="inventory-empty" id="wholesaleInventoryEmpty" style="display:none;">
+    <strong>No inventory found</strong>
+    <p>Your wholesale products will appear here once inventory is available.</p>
+  </div>
+</div>
+
+
+<!-- WHOLESALE PAYMENTS -->
+<div class="wholesale-section" id="wholesalePaymentsSection">
+  <div class="seller-payments-heading">
+    <div>
+      <span class="panel-label">PAYMENT COMMAND CENTER</span>
+      <h3>Wholesale Payments</h3>
+      <p>Track collections, pending payments and transaction activity from your wholesale orders.</p>
+    </div>
+    <button type="button" class="seller-payments-refresh-btn" data-wholesale-action="payments">
+      <span>↻</span> Refresh
+    </button>
+  </div>
+
+  <div class="seller-payments-summary-grid">
+    <div class="seller-payment-stat-card">
+      <span class="seller-payment-stat-label">Total Received</span>
+      <strong id="wholesalePaymentsReceived">—</strong>
+      <small>Successfully paid</small>
+    </div>
+
+    <div class="seller-payment-stat-card">
+      <span class="seller-payment-stat-label">Pending</span>
+      <strong id="wholesalePaymentsPending">—</strong>
+      <small>Awaiting payment</small>
+    </div>
+
+    <div class="seller-payment-stat-card">
+      <span class="seller-payment-stat-label">Refunded</span>
+      <strong id="wholesalePaymentsRefunded">—</strong>
+      <small>Returned to buyers</small>
+    </div>
+
+    <div class="seller-payment-stat-card">
+      <span class="seller-payment-stat-label">Transactions</span>
+      <strong id="wholesalePaymentsCount">—</strong>
+      <small>Total payment records</small>
+    </div>
+  </div>
+
+  <div class="seller-payments-main-grid">
+    <div class="seller-payments-panel seller-payment-activity-panel">
+      <div class="seller-payments-panel-header">
+        <div>
+          <span class="seller-payments-kicker">TRANSACTION ACTIVITY</span>
+          <strong>Recent Payments</strong>
+        </div>
+        <span id="wholesalePaymentsActivityCount">—</span>
+      </div>
+
+      <div class="seller-payments-transactions">
+        <div class="seller-payments-loading" id="wholesalePaymentsLoading">
+          Loading wholesale payments...
+        </div>
+
+        <div class="seller-payments-empty" id="wholesalePaymentsEmpty" style="display:none;">
+          No wholesale payment transactions yet.
+        </div>
+
+        <div id="wholesalePaymentsTableWrap" style="display:none;">
+          <table class="seller-payments-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Buyer</th>
+                <th>Method</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="wholesalePaymentsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUSINESS INTELLIGENCE -->
+
+        <div class="wholesale-section intelligence-card" id="wholesaleIntelligenceCard">
+
+          <div>
+            <span class="panel-label">COMING NEXT</span>
+            <h3>ZENODIC Intelligence</h3>
+            <p>
+              Demand forecasting, smart pricing, stock prediction,
+              supplier intelligence na production planning.
+            </p>
+          </div>
+
+          <button type="button" class="primary-btn" data-wholesale-action="intelligence">
+            Explore Intelligence
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="adminDashboard" class="page">
+
+      <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+
+          <div
+            style="
+              font-size:23px;
+              font-weight:900;
+              margin-bottom:25px;
+            "
+          >
+            ZENODIC
+          </div>
+
+          <button
+            type="button"
+            class="active"
+          >
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/>
+    </svg> Dashboard
+          </button>
+
+          <button type="button">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="9" cy="8" r="3"/>
+      <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M16 5.5a3 3 0 0 1 0 5.8M18 14c1.8.9 3 2.8 3 5"/>
+    </svg> Users
+          </button>
+
+          <button type="button">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/>
+      <circle cx="10" cy="20" r="1.2"/>
+      <circle cx="18" cy="20" r="1.2"/>
+    </svg> Orders
+          </button>
+
+          <button type="button">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 10v10h16V10"/>
+      <path d="M3 10 5 4h14l2 6"/>
+      <path d="M3 10c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3"/>
+      <path d="M9 20v-5h6v5"/>
+    </svg> Sellers
+          </button>
+
+          <button type="button">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5v-7Z"/>
+      <path d="m3 8.5 9 4.5 9-4.5M12 13v7"/>
+    </svg> Products
+          </button>
+
+          <button type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.1h-2.5v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1A1.7 1.7 0 0 0 8.1 15a1.7 1.7 0 0 0-1.5-1H6.5v-2.5h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.1H15v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1V14h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg> Settings
+          </button>
+
+          <button
+            type="button"
+            data-logout
+          >
+            🚪 Logout
+          </button>
+
+        </aside>
+
+        <div class="admin-main">
+
+          <div class="dashboard-header">
+
+            <div>
+
+              <h1>
+                Admin Dashboard
+              </h1>
+
+              <p>
+                ZENODIC platform overview.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="admin-cards">
+
+            <div class="admin-card">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="9" cy="8" r="3"/>
+                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                <path d="M16 5.5a3 3 0 0 1 0 5.8M18 14c1.8.9 3 2.8 3 5"/>
+              </svg>
+              <strong>0</strong>
+              <span>Users</span>
+            </div>
+
+            <div class="admin-card">
+              <svg class="admin-card-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 10v10h16V10"/>
+                <path d="M3 10 5 4h14l2 6"/>
+                <path d="M3 10c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3c0 2 1.5 3 3 3s3-1 3-3"/>
+                <path d="M9 20v-5h6v5"/>
+              </svg>
+              <strong>0</strong>
+              <span>Sellers</span>
+            </div>
+
+            <div class="admin-card">
+              <svg class="admin-card-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5v-7Z"/>
+                <path d="m3 8.5 9 4.5 9-4.5M12 13v7"/>
+              </svg>
+              <strong>0</strong>
+              <span>Products</span>
+            </div>
+
+            <div class="admin-card">
+              <svg class="admin-card-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/>
+                <circle cx="10" cy="20" r="1.2"/>
+                <circle cx="18" cy="20" r="1.2"/>
+              </svg>
+              <strong>0</strong>
+              <span>Orders</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FLOATING CART
+       ===================================================== -->
+
+  <button
+    type="button"
+    class="floating-cart"
+    data-nav="cart"
+    aria-label="Cart"
+  >
+
+    <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/>
+      <circle cx="10" cy="20" r="1.2"/>
+      <circle cx="18" cy="20" r="1.2"/>
+    </svg>
+
+    <span id="cartCount">
+      0
+    </span>
+
+  </button>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <div class="footer-logo">
+          ZENODIC
+        </div>
+
+        <p>
+          Business Platform ya kizazi kijacho.
+        </p>
+
+      </div>
+
+      <div>
+
+        <strong>
+          Platform
+        </strong>
+
+        <p>
+          Zenodic Market
+        </p>
+
+        <p>
+          Buyer
+        </p>
+
+        <p>
+          Seller
+        </p>
+
+      </div>
+
+      <div>
+
+        <strong>
+          Account
+        </strong>
+
+        <p>
+          Ingia
+        </p>
+
+        <p>
+          Jisajili
+        </p>
+
+        <p>
+          Admin
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © 2026 ZENODIC. All rights reserved.
+
+    </div>
+
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="main.js?v=7"></script>
+
+</body>
+</html>
+
+<style>
+.inventory-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.inventory-summary-card {
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,.035);
+}
+
+.inventory-summary-card span,
+.inventory-summary-card small {
+  display: block;
+  opacity: .7;
+}
+
+.inventory-summary-card strong {
+  display: block;
+  margin: 8px 0 4px;
+  font-size: 28px;
+}
+
+.inventory-toolbar {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.inventory-search {
+  flex: 1;
+}
+
+.inventory-search input,
+.inventory-toolbar select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  color: inherit;
+}
+
+.inventory-toolbar select {
+  width: 180px;
+}
+
+.inventory-out {
+  color: #ff5f56;
+  font-weight: 700;
+}
+
+.inventory-row {
+  min-width: 900px;
+}
+
+.inventory-table {
+  overflow-x: auto;
+}
+
+@media (max-width: 800px) {
+  .inventory-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inventory-toolbar {
+    flex-direction: column;
+  }
+
+  .inventory-toolbar select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventory-summary {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+

@@ -1,0 +1,503 @@
+<!DOCTYPE html><html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Zenodic Admin | Login</title>  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(124, 58, 237, .35),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 85%,
+          rgba(37, 99, 235, .28),
+          transparent 32%
+        ),
+        #080b16;
+
+      color: #fff;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 430px;
+      padding: 34px 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.04)
+        );
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #7c3aed,
+          #2563eb
+        );
+
+      font-size: 28px;
+      font-weight: 900;
+
+      box-shadow:
+        0 15px 35px rgba(79,70,229,.35);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 27px;
+      font-weight: 850;
+      letter-spacing: -.5px;
+    }
+
+    .brand p {
+      margin: 8px 0 0;
+      color: #aab3c7;
+      font-size: 14px;
+    }
+
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 22px;
+      padding: 11px 13px;
+
+      border: 1px solid rgba(124,58,237,.25);
+      border-radius: 12px;
+
+      background: rgba(124,58,237,.08);
+
+      color: #c4b5fd;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+
+      color: #d9deea;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      height: 52px;
+
+      padding: 0 15px;
+
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 13px;
+
+      outline: none;
+
+      background: rgba(0,0,0,.25);
+      color: #fff;
+
+      font-size: 15px;
+
+      transition:
+        border-color .2s,
+        box-shadow .2s,
+        background .2s;
+    }
+
+    input::placeholder {
+      color: #68738a;
+    }
+
+    input:focus {
+      border-color: #8b5cf6;
+
+      background: rgba(0,0,0,.35);
+
+      box-shadow:
+        0 0 0 4px rgba(124,58,237,.12);
+    }
+
+    #password {
+      padding-right: 52px;
+    }
+
+    .toggle-password {
+      position: absolute;
+
+      right: 7px;
+      top: 7px;
+
+      width: 38px;
+      height: 38px;
+
+      border: 0;
+      border-radius: 10px;
+
+      background: transparent;
+      color: #9aa4b8;
+
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .toggle-password:hover {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+    }
+
+    #loginButton {
+      width: 100%;
+      height: 53px;
+
+      margin-top: 6px;
+
+      border: 0;
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #7c3aed,
+          #2563eb
+        );
+
+      color: #fff;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 28px rgba(79,70,229,.28);
+
+      transition:
+        transform .15s,
+        opacity .15s;
+    }
+
+    #loginButton:hover {
+      transform: translateY(-1px);
+    }
+
+    #loginButton:disabled {
+      opacity: .65;
+      cursor: wait;
+      transform: none;
+    }
+
+    #message {
+      min-height: 22px;
+      margin-top: 17px;
+
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .back-home {
+      display: block;
+
+      margin-top: 22px;
+
+      text-align: center;
+
+      color: #929db2;
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .back-home:hover {
+      color: #fff;
+    }
+
+    .footer-note {
+      margin-top: 25px;
+
+      text-align: center;
+
+      color: #667085;
+
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 14px;
+      }
+
+      .login-card {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+
+      .brand h1 {
+        font-size: 24px;
+      }
+    }
+  </style></head><body>
+
+<main class="login-card">
+
+  <div class="brand">
+    <div class="logo">Z</div>
+    <h1>Zenodic Admin</h1>
+    <p id="stepSubtitle">Secure Admin Access</p>
+  </div>
+
+  <div class="security-badge">
+    🔐
+    <span id="securityText">
+      Eneo salama la wasimamizi wa Zenodic
+    </span>
+  </div>
+
+  <!-- STEP 1: ADMIN GATEWAY -->
+  <section id="gatewayStep">
+
+    <form id="gatewayForm">
+
+      <div class="field">
+        <label for="gatewayEmail">
+          Special Admin Email
+        </label>
+
+        <input
+          id="gatewayEmail"
+          type="email"
+          placeholder="special@zenodic.com"
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="gatewayPassword">
+          Special Password
+        </label>
+
+        <div class="input-wrap">
+          <input
+            id="gatewayPassword"
+            type="password"
+            placeholder="Ingiza special password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="toggle-password"
+            data-target="gatewayPassword"
+            aria-label="Onyesha password"
+          >👁</button>
+        </div>
+      </div>
+
+      <button id="gatewayButton" type="submit">
+        Endelea
+      </button>
+
+    
+</form>
+
+  </section>
+
+  <!-- STEP 2: ADMIN LOGIN -->
+  <section id="adminStep" style="display:none;">
+
+    <form id="adminLoginForm" method="post">
+
+      <div class="field">
+        <label for="email">
+          Admin Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="admin@zenodic.com"
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="password">
+          Admin Password
+        </label>
+
+        <div class="input-wrap">
+
+          <input
+            id="password"
+            type="password"
+            placeholder="Ingiza password yako"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="toggle-password"
+            data-target="password"
+            aria-label="Onyesha password"
+          >👁</button>
+
+        </div>
+      </div>
+
+      <button id="loginButton" type="submit">
+        Ingia Admin
+      </button>
+
+      <button id="passkeyButton" type="button">
+        Ingia kwa Passkey
+      </button>
+
+    </form>
+
+    <button
+      id="backToGateway"
+      type="button"
+      style="
+        width:100%;
+        margin-top:12px;
+        padding:12px;
+        border:1px solid rgba(255,255,255,.12);
+        border-radius:12px;
+        background:rgba(255,255,255,.05);
+        color:#cbd5e1;
+        cursor:pointer;
+      "
+    >
+      ← Rudi hatua ya kwanza
+    </button>
+
+  </section>
+
+  <div class="forgot-password-wrap">
+    <button
+      type="button"
+      class="forgot-password-btn"
+      id="forgotAdminPasswordBtn"
+    >
+      Forgot password?
+    </button>
+  </div>
+
+  <div
+    id="forgotAdminPasswordPanel"
+    class="forgot-password-panel"
+    hidden
+  >
+    <h3>🔐 Reset Admin Password</h3>
+    <p>Weka admin email yako ili kuomba password reset link.</p>
+
+    <label>
+      <span>Admin Email</span>
+      <input
+        id="forgotAdminEmail"
+        type="email"
+        autocomplete="email"
+        placeholder="admin@example.com"
+      >
+    </label>
+
+    <button
+      type="button"
+      id="requestAdminPasswordResetBtn"
+    >
+      📧 Request Reset Link
+    </button>
+
+    <span
+      id="forgotAdminPasswordMessage"
+      class="settings-message"
+    ></span>
+  </div>
+
+  <div id="message"></div>
+
+  <a class="back-home" href="./index.html">
+    ← Rudi Zenodic
+  </a>
+
+  <div class="footer-note">
+    Zenodic Admin Control Center<br>
+    Access only for authorized administrators.
+  </div>
+
+</main>
+
+<script src="./vendor/simplewebauthn-browser.js"></script>
+<script src="./admin-login.js?v=1001"></script>
+
+</body>
+</html>

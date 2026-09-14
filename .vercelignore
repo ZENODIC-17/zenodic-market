@@ -1,0 +1,8 @@
+
+# Vercel ignored local/archive files
+*.tar.gz
+*.zip
+backup-*/
+*-backup/
+backend-before-*/
+vendor/

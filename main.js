@@ -13,7 +13,13 @@
     user: null
   };
 
-  /* ---------- HELPERS ---------- */
+  /* ---------- API ---------- */
+const API_BASE =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://zenodic-market-production.up.railway.app";
+
+/* ---------- HELPERS ---------- */
 
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => document.querySelectorAll(selector);
@@ -419,7 +425,7 @@ function setupRoles() {
       }
 
       try {
-        const response = await fetch("/api/auth/login", {
+        const response = await fetch(API_BASE + "/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -587,7 +593,7 @@ function setupRoles() {
       }
 
       try {
-        const response = await fetch("/api/auth/register", {
+        const response = await fetch(API_BASE + "/api/auth/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -721,7 +727,7 @@ function setupRoles() {
       </div>
     `;
 
-    fetch("/api/inventory/market", {
+    fetch(API_BASE + "/api/inventory/market", {
       credentials: "include"
     })
       .then(async (response) => {
@@ -1372,7 +1378,7 @@ function setupRoles() {
           throw new Error("Cart ina bidhaa yenye ID isiyo sahihi.");
         }
 
-        const response = await fetch("/api/orders", {
+        const response = await fetch(API_BASE + "/api/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -2496,7 +2502,7 @@ function setupWholesaleOrders() {
       }
 
       try {
-        const response = await fetch("/api/rfqs", {
+        const response = await fetch(API_BASE + "/api/rfqs", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -2586,7 +2592,7 @@ async function loadWholesalePayments() {
     if (empty) empty.style.display = "none";
     if (tableWrap) tableWrap.style.display = "none";
 
-    const response = await fetch("/api/payments/wholesale", { credentials: "same-origin" });
+    const response = await fetch(API_BASE + "/api/payments/wholesale", { credentials: "same-origin" });
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok || !data.success) {
@@ -2693,7 +2699,7 @@ async function loadWholesalePayments() {
 /* ---------- WHOLESALE SIDEBAR NAVIGATION ---------- */
   async function loadWholesaleOverview() {
   try {
-    const response = await fetch("/api/wholesale/overview");
+    const response = await fetch(API_BASE + "/api/wholesale/overview");
     const result = await response.json().catch(() => ({}));
 
     if (!response.ok || !result.success) {
@@ -2894,7 +2900,7 @@ function setupWholesaleProductionCreate() {
     }
 
     try {
-      const response = await fetch("/api/production", {
+      const response = await fetch(API_BASE + "/api/production", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -2967,7 +2973,7 @@ async function loadWholesaleProduction() {
   `;
 
   try {
-    const response = await fetch("/api/production", {
+    const response = await fetch(API_BASE + "/api/production", {
       credentials: "include"
     });
 
@@ -3995,7 +4001,7 @@ function setupWholesaleSidebarNavigation() {
             return;
           }
 
-          fetch(`/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`, {
+          fetch(`${API_BASE}/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`, {
             credentials: "include"
           })
             .then((response) => response.json())
@@ -5464,7 +5470,7 @@ function setupWholesaleSidebarNavigation() {
       const videoFormData = new FormData();
       videoFormData.append("video", videoFile);
 
-      const videoResponse = await fetch("/api/inventory/video", {
+      const videoResponse = await fetch(API_BASE + "/api/inventory/video", {
         method: "POST",
         body: videoFormData
       });
@@ -7543,7 +7549,7 @@ async function loadSellerSettings() {
 
     if (!userId) return;
 
-    const response = await fetch(`/api/seller/settings?user_id=${userId}`);
+    const response = await fetch(`${API_BASE}/api/seller/settings?user_id=${userId}`);
     const data = await response.json();
 
     if (!response.ok || !data.success) {
@@ -7719,7 +7725,7 @@ async function saveSellerSettings(event) {
         document.getElementById("sellerDeliveryInformation")?.value.trim() || ""
     };
 
-    const response = await fetch("/api/seller/settings", {
+    const response = await fetch(API_BASE + "/api/seller/settings", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -7787,7 +7793,7 @@ async function saveSellerPayoutSettings() {
   }
 
   try {
-    const response = await fetch("/api/seller/settings", {
+    const response = await fetch(API_BASE + "/api/seller/settings", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -7853,7 +7859,7 @@ async function saveSellerNotificationSettings() {
   };
 
   try {
-    const response = await fetch("/api/seller/settings", {
+    const response = await fetch(API_BASE + "/api/seller/settings", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -8386,7 +8392,7 @@ async function changeSellerPassword(event) {
       throw new Error("Seller user ID haijapatikana.");
     }
 
-    const response = await fetch("/api/seller/change-password", {
+    const response = await fetch(API_BASE + "/api/seller/change-password", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -8517,7 +8523,7 @@ function setupAI() {
       if (status) status.textContent = "Thinking...";
 
       try {
-        const response = await fetch("/api/ai/chat", {
+        const response = await fetch(API_BASE + "/api/ai/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -9171,7 +9177,7 @@ setupWholesaleSidebarNavigation();
     button.textContent = "Submitting...";
 
     try {
-      const response = await fetch("/api/seller/payments/payout-request", {
+      const response = await fetch(API_BASE + "/api/seller/payments/payout-request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -9238,7 +9244,7 @@ async function loadWholesaleInventory() {
   try {
     if (loading) loading.style.display = "";
 
-    const response = await fetch(`/api/inventory/wholesale/${state.user.id}`, { signal: AbortSignal.timeout(5000) });
+    const response = await fetch(`${API_BASE}/api/inventory/wholesale/${state.user.id}`, { signal: AbortSignal.timeout(5000) });
     const data = await response.json();
 
     if (!response.ok || !data.success) {

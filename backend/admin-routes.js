@@ -73,6 +73,8 @@ function getWebAuthnConfig() {
   return { rpName, rpID, origin };
 }
 
+function ensureAdminAccount() { const h=process.env.ADMIN_PASSWORD_HASH; if(!h) return; const e=db.prepare("SELECT id FROM admins WHERE username=?").get("admin@zenodic.com"); if(!e) db.prepare("INSERT INTO admins (username,password_hash,email) VALUES (?,?,?)").run("admin@zenodic.com",h,"admin@zenodic.com"); } ensureAdminAccount();
+
 function ensureAdminGateway() {
   db.prepare(`
     CREATE TABLE IF NOT EXISTS admin_gateway (

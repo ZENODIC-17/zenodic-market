@@ -1,5 +1,7 @@
 const { DatabaseSync } = require("node:sqlite");
 const path = require("path");
+const fs = require("fs");
+fs.mkdirSync(path.join(__dirname, "data"), { recursive: true });
 
 const db = new DatabaseSync(
   path.join(__dirname, "data", "zenodic.db")

@@ -75,6 +75,7 @@ function getWebAuthnConfig() {
 
 function ensureAdminAccount() { const h=process.env.ADMIN_PASSWORD_HASH; if(!h) return; const e=db.prepare("SELECT id FROM admins WHERE username=?").get("admin@zenodic.com"); if(!e) db.prepare("INSERT INTO admins (username,password_hash) VALUES (?,?)").run("admin@zenodic.com",h); } ensureAdminAccount();
 
+console.log("ADMIN_PASSWORD_HASH_PRESENT:", Boolean(process.env.ADMIN_PASSWORD_HASH), "LENGTH:", process.env.ADMIN_PASSWORD_HASH ? process.env.ADMIN_PASSWORD_HASH.length : 0);
 function ensureAdminGateway() {
   db.prepare(`
     CREATE TABLE IF NOT EXISTS admin_gateway (

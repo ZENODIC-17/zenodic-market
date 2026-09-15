@@ -87,9 +87,9 @@ function ensureAdminGateway() {
 
   const existing = db.prepare("SELECT id FROM admin_gateway WHERE id = 1").get();
   if (!existing) {
-    const admin = db.prepare("SELECT username, password_hash FROM admins WHERE username = ?").get("admin@zenodic.com");
-    if (admin) {
-      db.prepare("INSERT INTO admin_gateway (id, email, password_hash) VALUES (1, ?, ?)").run(admin.username, admin.password_hash);
+    const h = process.env.ADMIN_PASSWORD_HASH;
+    if (h) {
+      db.prepare("INSERT INTO admin_gateway (id, email, password_hash) VALUES (1, ?, ?)").run("admin@zenodic.com", h);
     }
   }
 }

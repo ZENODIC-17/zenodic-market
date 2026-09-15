@@ -630,6 +630,7 @@ router.post("/gateway-login", loginLimiter, (req, res) => {
       });
     }
 
+    console.log("ADMIN_GATEWAY_LOGIN_TEST: route reached");
     const gateway = db
       .prepare(`
         SELECT id, email, password_hash

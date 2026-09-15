@@ -73,6 +73,27 @@ function getWebAuthnConfig() {
   return { rpName, rpID, origin };
 }
 
+function ensureAdminGateway() {
+  db.prepare(`
+    CREATE TABLE IF NOT EXISTS admin_gateway (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      email TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    )
+  `).run();
+
+  const existing = db.prepare("SELECT id FROM admin_gateway WHERE id = 1").get();
+  if (!existing) {
+    const admin = db.prepare("SELECT username, password_hash FROM admins WHERE username = ?").get("admin@zenodic.com");
+    if (admin) {
+      db.prepare("INSERT INTO admin_gateway (id, email, password_hash) VALUES (1, ?, ?)").run(admin.username, admin.password_hash);
+    }
+  }
+}
+
+ensureAdminGateway();
+
 const GATEWAY_COOKIE = "zenodic_admin_gateway";
 const GATEWAY_TTL_MS = 10 * 60 * 1000;
 

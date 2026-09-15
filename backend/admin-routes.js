@@ -96,6 +96,8 @@ function ensureAdminGateway() {
 }
 
 ensureAdminGateway();
+const gatewayDebug = db.prepare("SELECT id, email, LENGTH(password_hash) AS hash_length FROM admin_gateway WHERE id = 1").get();
+console.log("ADMIN_GATEWAY_ROW:", gatewayDebug ? {id: gatewayDebug.id, email: gatewayDebug.email, hash_length: gatewayDebug.hash_length} : "MISSING");
 
 const GATEWAY_COOKIE = "zenodic_admin_gateway";
 const GATEWAY_TTL_MS = 10 * 60 * 1000;

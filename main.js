@@ -1514,7 +1514,7 @@ function setupBuyerOverview() {
   async function loadOverview() {
     try {
       const response = await fetch(
-        `/api/orders?buyer_id=${encodeURIComponent(buyerId)}`,
+        `${API_BASE}/api/orders?buyer_id=${encodeURIComponent(buyerId)}`,
         {
           credentials: "include"
         }
@@ -2035,7 +2035,7 @@ function setupBuyerOrders() {
 
     try {
       const response = await fetch(
-        `/api/orders?buyer_id=${encodeURIComponent(buyerId)}`,
+        `${API_BASE}/api/orders?buyer_id=${encodeURIComponent(buyerId)}`,
         {
           credentials: "include"
         }

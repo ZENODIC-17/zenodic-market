@@ -389,6 +389,12 @@ CREATE TABLE IF NOT EXISTS order_items (
     reorder_level REAL DEFAULT 0,
     unit TEXT DEFAULT 'pcs',
     location TEXT,
+    image_url TEXT,
+    description TEXT,
+    price REAL,
+    phone TEXT,
+    approval_status TEXT DEFAULT 'pending',
+    video_url TEXT,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
@@ -478,3 +484,27 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_notifications_created
     ON notifications(created_at);
 `);
+
+/* ============================================================
+   ZENODIC INVENTORY SCHEMA MIGRATION
+   ============================================================ */
+const inventoryColumns = db
+  .prepare("PRAGMA table_info(inventory)")
+  .all()
+  .map((column) => column.name);
+
+const inventoryMigrations = {
+  image_url: "ALTER TABLE inventory ADD COLUMN image_url TEXT",
+  description: "ALTER TABLE inventory ADD COLUMN description TEXT",
+  price: "ALTER TABLE inventory ADD COLUMN price REAL",
+  phone: "ALTER TABLE inventory ADD COLUMN phone TEXT",
+  approval_status:
+    "ALTER TABLE inventory ADD COLUMN approval_status TEXT DEFAULT 'pending'",
+  video_url: "ALTER TABLE inventory ADD COLUMN video_url TEXT"
+};
+
+for (const [column, sql] of Object.entries(inventoryMigrations)) {
+  if (!inventoryColumns.includes(column)) {
+    db.exec(sql);
+  }
+}

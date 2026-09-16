@@ -508,3 +508,24 @@ for (const [column, sql] of Object.entries(inventoryMigrations)) {
     db.exec(sql);
   }
 }
+
+/* ============================================================
+   ZENODIC USERS SCHEMA MIGRATION
+   ============================================================ */
+const userColumns = db
+  .prepare("PRAGMA table_info(users)")
+  .all()
+  .map((column) => column.name);
+
+const userMigrations = {
+  verification_status:
+    "ALTER TABLE users ADD COLUMN verification_status TEXT NOT NULL DEFAULT 'pending'",
+  account_status:
+    "ALTER TABLE users ADD COLUMN account_status TEXT NOT NULL DEFAULT 'active'"
+};
+
+for (const [column, sql] of Object.entries(userMigrations)) {
+  if (!userColumns.includes(column)) {
+    db.exec(sql);
+  }
+}

@@ -102,7 +102,8 @@ router.get("/market", (req, res) => {
 
     res.status(500).json({
       success: false,
-      message: "Imeshindikana kupata bidhaa za Market."
+      message: "Imeshindikana kupata bidhaa za Market.",
+      debug: error.message
     });
   }
 });

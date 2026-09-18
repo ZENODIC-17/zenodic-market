@@ -529,3 +529,16 @@ for (const [column, sql] of Object.entries(userMigrations)) {
     db.exec(sql);
   }
 }
+
+const adminColumns = db
+  .prepare("PRAGMA table_info(admins)")
+  .all()
+  .map((column) => column.name);
+
+if (!adminColumns.includes("email")) {
+  db.exec("ALTER TABLE admins ADD COLUMN email TEXT");
+}
+
+db.prepare(
+  "UPDATE admins SET email = username WHERE email IS NULL AND username = ?"
+).run("admin@zenodic.com");

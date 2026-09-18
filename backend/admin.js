@@ -5,7 +5,7 @@ const db = require("./database");
 function createAdmin(username, password) {
   const existing = db
     .prepare("SELECT id FROM admins WHERE username = ?")
-    .get(email);
+    .get(email, email);
 
   if (existing) {
     throw new Error("Admin username tayari ipo.");
@@ -25,9 +25,9 @@ function createAdmin(username, password) {
 function loginAdmin(email, password) {
   const admin = db
     .prepare(
-      "SELECT id, username, password_hash FROM admins WHERE LOWER(username) = ?"
+      "SELECT id, username, email, password_hash FROM admins WHERE LOWER(username) = ? OR LOWER(email) = ?"
     )
-    .get(email);
+    .get(email, email);
 
   if (!admin || !bcrypt.compareSync(password, admin.password_hash)) {
     return null;

@@ -35,6 +35,7 @@ app.use(helmet());
 app.use(cors({
   origin: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.get("/admin", (req, res) => {

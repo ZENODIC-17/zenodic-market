@@ -1,4 +1,4 @@
-const API = window.location.origin;
+const API = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" ? "http://localhost:3000" : "https://zenodic-market-production.up.railway.app";
 
 console.log("ADMIN JS LOADED - TOKEN:", sessionStorage.getItem("zenodicAdminToken") ? "YES" : "NO");
 const adminApp =

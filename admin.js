@@ -145,7 +145,7 @@ async function loadUsers() {
   if (!usersSection) return;
 
   try {
-    const response = await fetch("/api/admin/management/users", {
+    const response = await fetch(`${API}/api/admin/management/users`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -260,7 +260,7 @@ async function openAdminUserDetails(userId) {
 
   try {
     const response = await fetch(
-      `/api/admin/management/users/${encodeURIComponent(userId)}`,
+      `${API}/api/admin/management/users/${encodeURIComponent(userId)}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -395,7 +395,7 @@ async function updateAdminUserSuspension(userId, suspend) {
 
   try {
     const response = await fetch(
-      `/api/admin/management/users/${encodeURIComponent(userId)}/suspension`,
+      `${API}/api/admin/management/users/${encodeURIComponent(userId)}/suspension`,
       {
         method: "PATCH",
         headers: {
@@ -427,7 +427,7 @@ async function updateAdminUserVerification(userId, status) {
 
   try {
     const response = await fetch(
-      `/api/admin/management/users/${encodeURIComponent(userId)}/verification`,
+      `${API}/api/admin/management/users/${encodeURIComponent(userId)}/verification`,
       {
         method: "PATCH",
         headers: {
@@ -462,7 +462,7 @@ async function deleteAdminUser(userId) {
 
   try {
     const response = await fetch(
-      `/api/admin/management/users/${encodeURIComponent(userId)}`,
+      `${API}/api/admin/management/users/${encodeURIComponent(userId)}`,
       {
         method: "DELETE",
         headers: {
@@ -492,7 +492,7 @@ async function loadSellers() {
   if (!token || !sellersSection) return;
 
   try {
-    const response = await fetch("/api/admin/management/users", {
+    const response = await fetch(`${API}/api/admin/management/users`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -600,7 +600,7 @@ async function loadProducts() {
   if (!content) return;
 
   try {
-    const response = await fetch("/api/admin/management/products", {
+    const response = await fetch(`${API}/api/admin/management/products`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -725,7 +725,7 @@ async function updateAdminProductApproval(productId, status) {
 
   try {
     const response = await fetch(
-      `/api/admin/management/products/${encodeURIComponent(productId)}/approval`,
+      `${API}/api/admin/management/products/${encodeURIComponent(productId)}/approval`,
       {
         method: "PATCH",
         headers: {
@@ -788,7 +788,7 @@ async function loadOrders() {
   `;
 
   try {
-    const response = await fetch("/api/admin/management/orders", {
+    const response = await fetch(`${API}/api/admin/management/orders`, {
       headers: getAdminHeaders()
     });
 
@@ -940,7 +940,7 @@ async function loadOrderDetails(orderId) {
 
   try {
     const response = await fetch(
-      "/api/admin/management/orders/" + encodeURIComponent(orderId),
+      `${API}/api/admin/management/orders/${encodeURIComponent(orderId)}`,
       {
         headers: getAdminHeaders()
       }
@@ -1135,7 +1135,7 @@ async function loadOrderDetails(orderId) {
 
         try {
           const response = await fetch(
-            "/api/admin/management/orders/" +
+            `${API}/api/admin/management/orders/` +
               encodeURIComponent(orderId) +
               "/cancel",
             {
@@ -1185,7 +1185,7 @@ async function loadOrderDetails(orderId) {
 
         try {
           const response = await fetch(
-            "/api/admin/management/orders/" +
+            `${API}/api/admin/management/orders/` +
             encodeURIComponent(orderId) +
             "/status",
             {
@@ -1259,7 +1259,7 @@ async function loadPayments() {
   try {
     const token = sessionStorage.getItem("zenodicAdminToken");
 
-    const response = await fetch("/api/admin/management/payments", {
+    const response = await fetch(`${API}/api/admin/management/payments`, {
       headers: {
         Authorization: token ? "Bearer " + token : ""
       }
@@ -1382,7 +1382,7 @@ async function loadAnalytics() {
   if (!token || !analyticsSection) return;
 
   try {
-    const response = await fetch("/api/admin/management/stats", {
+    const response = await fetch(`${API}/api/admin/management/stats`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -3019,7 +3019,7 @@ async function saveCommissionRate(rate) {
 
   try {
     const response = await fetch(
-      "/api/admin/management/settings",
+      `${API}/api/admin/management/settings`,
       {
         method: "PATCH",
         headers: {
@@ -4220,7 +4220,7 @@ async function requestAdminCommissionPayout() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/commission-payouts",
+      `${API}/api/admin/management/commission-payouts`,
       {
         method: "POST",
         headers: {
@@ -4271,7 +4271,7 @@ async function updateAdminCommissionPayoutStatus(payoutId, nextStatus, providerR
     }
 
     const response = await fetch(
-      "/api/admin/management/commission-payouts/" + encodeURIComponent(payoutId),
+      `${API}/api/admin/management/commission-payouts/${encodeURIComponent(payoutId)}`,
       {
         method: "PATCH",
         headers: {
@@ -4317,7 +4317,7 @@ async function loadAdminCommissionPayouts() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/commission-payouts",
+      `${API}/api/admin/management/commission-payouts`,
       {
         method: "GET",
         headers: getAdminHeaders()
@@ -4590,7 +4590,7 @@ async function saveAdminGeneralSettings() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/settings",
+      `${API}/api/admin/management/settings`,
       {
         method: "PATCH",
         headers: {
@@ -4698,7 +4698,7 @@ async function loadAdminGeneralSettings() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/settings",
+      `${API}/api/admin/management/settings`,
       {
         method: "GET",
         headers: getAdminHeaders()
@@ -4766,7 +4766,7 @@ async function loadAdminCommissionBalance() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/commission-payout-summary?currency=TZS",
+      `${API}/api/admin/management/commission-payout-summary?currency=TZS`,
       {
         method: "GET",
         headers: getAdminHeaders()
@@ -4836,7 +4836,7 @@ async function initAdminPayoutAccount() {
 
   try {
     const response = await fetch(
-      "/api/admin/management/payout-account",
+      `${API}/api/admin/management/payout-account`,
       {
         method: "GET",
         headers: getAdminHeaders()
@@ -4897,7 +4897,7 @@ async function initAdminPayoutAccount() {
 
     try {
       const response = await fetch(
-        "/api/admin/management/payout-account",
+        `${API}/api/admin/management/payout-account`,
         {
           method: "PUT",
           headers: {
@@ -5128,7 +5128,7 @@ async function loadAdminPasskeys() {
   `;
 
   try {
-    const response = await fetch("/api/admin/management/passkeys", {
+    const response = await fetch(`${API}/api/admin/management/passkeys`, {
       method: "GET",
       headers: getAdminHeaders()
     });
@@ -5234,7 +5234,7 @@ async function registerAdminPasskey() {
 
   try {
     const optionsResponse = await fetch(
-      "/api/admin/webauthn/register/options",
+      `${API}/api/admin/webauthn/register/options`,
       {
         method: "POST",
         headers: {
@@ -5282,7 +5282,7 @@ async function registerAdminPasskey() {
     const response = credential.response;
 
     const verifyResponse = await fetch(
-      "/api/admin/webauthn/register/verify",
+      `${API}/api/admin/webauthn/register/verify`,
       {
         method: "POST",
         headers: {
@@ -5349,9 +5349,7 @@ async function revokeAdminPasskey(passkeyId) {
 
   try {
     const response = await fetch(
-      "/api/admin/management/passkeys/" +
-        encodeURIComponent(passkeyId),
-      {
+      `${API}/api/admin/management/passkeys/${encodeURIComponent(passkeyId)}`, {
         method: "DELETE",
         headers: getAdminHeaders()
       }
@@ -5414,7 +5412,7 @@ async function loadAdminAuditLogs(page = 1) {
     if (action) params.set("action", action);
 
     const response = await fetch(
-      "/api/admin/management/audit-logs?" + params.toString(),
+      `${API}/api/admin/management/audit-logs?${params.toString()}`,
       {
         method: "GET",
         headers: getAdminHeaders()
@@ -5612,7 +5610,7 @@ function initAdminAuditActivity() {
 
       try {
         const response = await fetch(
-          "/api/admin/management/audit-logs/" + id,
+          `${API}/api/admin/management/audit-logs/${id}`,
           {
             method: "DELETE",
             headers: getAdminHeaders()
@@ -5684,7 +5682,7 @@ async function saveAdminCommissionSetting() {
   }
 
   try {
-    const response = await fetch("/api/admin/management/settings", {
+    const response = await fetch(`${API}/api/admin/management/settings`, {
       method: "PATCH",
       headers: {
         ...getAdminHeaders(),
@@ -5746,7 +5744,7 @@ async function loadAdminSecurityEmail() {
   if (!input) return;
 
   try {
-    const response = await fetch("/api/admin/management/security/email", {
+    const response = await fetch(`${API}/api/admin/management/security/email`, {
       credentials: "include"
     });
 
@@ -5787,7 +5785,7 @@ async function saveAdminSecurityEmail() {
   }
 
   try {
-    const response = await fetch("/api/admin/management/security/email", {
+    const response = await fetch(`${API}/api/admin/management/security/email`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -5866,7 +5864,7 @@ async function changeAdminSecurityPassword() {
   }
 
   try {
-    const response = await fetch("/api/admin/management/security/password", {
+    const response = await fetch(`${API}/api/admin/management/security/password`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

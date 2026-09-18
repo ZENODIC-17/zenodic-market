@@ -530,6 +530,16 @@ for (const [column, sql] of Object.entries(userMigrations)) {
   }
 }
 
+db.exec(`
+  CREATE TABLE IF NOT EXISTS admin_audit_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER,
+    action TEXT,
+    details TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  )
+`);
+
 const adminColumns = db
   .prepare("PRAGMA table_info(admins)")
   .all()

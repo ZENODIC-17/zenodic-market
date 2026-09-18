@@ -25,7 +25,7 @@ function createAdmin(username, password) {
 function loginAdmin(email, password) {
   const admin = db
     .prepare(
-      "SELECT id, username, email, password_hash FROM admins WHERE LOWER(email) = ?"
+      "SELECT id, username, password_hash FROM admins WHERE LOWER(username) = ?"
     )
     .get(email);
 

@@ -540,6 +540,26 @@ db.exec(`
   )
 `);
 
+const auditColumns = db
+  .prepare("PRAGMA table_info(admin_audit_logs)")
+  .all()
+  .map((column) => column.name);
+
+const auditMigrations = {
+  target_type: "ALTER TABLE admin_audit_logs ADD COLUMN target_type TEXT",
+  target_id: "ALTER TABLE admin_audit_logs ADD COLUMN target_id TEXT",
+  description: "ALTER TABLE admin_audit_logs ADD COLUMN description TEXT",
+  metadata: "ALTER TABLE admin_audit_logs ADD COLUMN metadata TEXT",
+  ip_address: "ALTER TABLE admin_audit_logs ADD COLUMN ip_address TEXT",
+  user_agent: "ALTER TABLE admin_audit_logs ADD COLUMN user_agent TEXT"
+};
+
+for (const [column, sql] of Object.entries(auditMigrations)) {
+  if (!auditColumns.includes(column)) {
+    db.exec(sql);
+  }
+}
+
 const adminColumns = db
   .prepare("PRAGMA table_info(admins)")
   .all()

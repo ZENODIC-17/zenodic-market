@@ -2099,7 +2099,7 @@ function setupBuyerOrders() {
 
       try {
         const response = await fetch(
-          `/api/orders/${encodeURIComponent(orderId)}/cancel`,
+          `${API_BASE}/api/orders/${encodeURIComponent(orderId)}/cancel`,
           {
             method: "POST",
             credentials: "include",
@@ -2138,7 +2138,7 @@ function setupBuyerOrders() {
 
     try {
       const response = await fetch(
-        `/api/orders/${encodeURIComponent(orderId)}`,
+        `${API_BASE}/api/orders/${encodeURIComponent(orderId)}`,
         { credentials: "include" }
       );
 
@@ -2398,7 +2398,7 @@ function setupWholesaleOrders() {
 
       try {
         const response = await fetch(
-          "/api/rfqs"
+          API_BASE + "/api/rfqs"
         );
 
         const data = await response.json().catch(() => ({}));
@@ -2750,7 +2750,7 @@ async function updateWholesaleProductionProgress(productionId, producedQuantity,
     }
 
     const response = await fetch(
-      `/api/production/${productionId}/progress`,
+      `${API_BASE}/api/production/${productionId}/progress`,
       {
         method: "PATCH",
         credentials: "include",
@@ -3602,7 +3602,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          `/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`, { credentials: "include" }
+          `${API_BASE}/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`, { credentials: "include" }
         );
 
         const data = await response.json().catch(() => ({}));
@@ -3775,7 +3775,7 @@ function setupWholesaleSidebarNavigation() {
     }
 
     async function buyerPaymentRequest(url, options = {}) {
-      const response = await fetch(url, {
+      const response = await fetch(API_BASE + url, {
         credentials: "include",
         ...options
       });
@@ -4046,7 +4046,7 @@ function setupWholesaleSidebarNavigation() {
 
     try {
       const response = await fetch(
-        `/api/orders/${encodeURIComponent(orderId)}/status`,
+        `${API_BASE}/api/orders/${encodeURIComponent(orderId)}/status`,
         {
           method: "PATCH",
           headers: {
@@ -4218,7 +4218,7 @@ function setupWholesaleSidebarNavigation() {
 
     try {
       const response = await fetch(
-        `/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`,
+        `${API_BASE}/api/orders/${encodeURIComponent(orderId)}?user_id=${encodeURIComponent(userId)}`,
         { credentials: "include" }
       );
 
@@ -4541,7 +4541,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          `/api/orders/seller/${encodeURIComponent(sellerId)}`
+          `${API_BASE}/api/orders/seller/${encodeURIComponent(sellerId)}`
         );
 
         const data = await response.json().catch(() => ({}));
@@ -4590,7 +4590,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          `/api/orders/${encodeURIComponent(orderId)}/status`,
+          `${API_BASE}/api/orders/${encodeURIComponent(orderId)}/status`,
           {
             method: "PATCH",
             headers: {
@@ -4851,7 +4851,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          "/api/orders/seller/" + encodeURIComponent(sellerId) + "/overview"
+          API_BASE + "/api/orders/seller/" + encodeURIComponent(sellerId) + "/overview"
         );
 
         const data = await response.json().catch(function() {
@@ -5222,7 +5222,7 @@ function setupWholesaleSidebarNavigation() {
       if (phone === null) return;
 
       const response = await fetch(
-        `/api/inventory/seller/${encodeURIComponent(sellerId)}/${encodeURIComponent(product.id)}`,
+        `${API_BASE}/api/inventory/seller/${encodeURIComponent(sellerId)}/${encodeURIComponent(product.id)}`,
         {
           method: "PUT",
           headers: {
@@ -5267,7 +5267,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          `/api/inventory/seller/${encodeURIComponent(sellerId)}/${encodeURIComponent(product.id)}`,
+          `${API_BASE}/api/inventory/seller/${encodeURIComponent(sellerId)}/${encodeURIComponent(product.id)}`,
           {
             method: "DELETE"
           }
@@ -5353,7 +5353,7 @@ function setupWholesaleSidebarNavigation() {
 
       try {
         const response = await fetch(
-          `/api/inventory/seller/${encodeURIComponent(sellerId)}`
+          `${API_BASE}/api/inventory/seller/${encodeURIComponent(sellerId)}`
         );
 
         const data = await response.json();
@@ -5487,7 +5487,7 @@ function setupWholesaleSidebarNavigation() {
     }
 
     const response = await fetch(
-          `/api/inventory/seller/${encodeURIComponent(sellerId)}`,
+          `${API_BASE}/api/inventory/seller/${encodeURIComponent(sellerId)}`,
           {
             method: "POST",
             headers: {
@@ -5906,7 +5906,7 @@ async function loadSellerAnalytics(period = "30d", customFrom = "", customTo = "
     `;
 
     let url =
-      `/api/orders/seller/${encodeURIComponent(sellerId)}/analytics`;
+      `${API_BASE}/api/orders/seller/${encodeURIComponent(sellerId)}/analytics`;
 
     if (customFrom && customTo) {
       url +=
@@ -5917,7 +5917,7 @@ async function loadSellerAnalytics(period = "30d", customFrom = "", customTo = "
     }
 
     const topProductsUrl =
-      `/api/orders/seller/${encodeURIComponent(sellerId)}/analytics/top-products` +
+      `${API_BASE}/api/orders/seller/${encodeURIComponent(sellerId)}/analytics/top-products` +
       (customFrom && customTo
         ? `?from=${encodeURIComponent(customFrom)}&to=${encodeURIComponent(customTo)}`
         : `?period=${encodeURIComponent(period)}`);
@@ -6558,7 +6558,7 @@ async function loadSellerSpeedSheet() {
     `;
 
     const response = await fetch(
-      `/api/orders/seller/${encodeURIComponent(sellerId)}/speed-sheet`
+      `${API_BASE}/api/orders/seller/${encodeURIComponent(sellerId)}/speed-sheet`
     );
 
     const data = await response.json();
@@ -7267,7 +7267,7 @@ async function markSellerNotificationRead(notificationId) {
 
   try {
     const response = await fetch(
-      `/api/notifications/${encodeURIComponent(notificationId)}/read`,
+      `${API_BASE}/api/notifications/${encodeURIComponent(notificationId)}/read`,
       {
         method: "PATCH",
         headers: {
@@ -7305,7 +7305,7 @@ async function markAllSellerNotificationsRead() {
 
   try {
     const response = await fetch(
-      "/api/notifications/read-all",
+      API_BASE + API_BASE + "/api/notifications/read-all",
       {
         method: "PATCH",
         headers: {
@@ -8046,7 +8046,7 @@ async function clearSellerLoginHistory() {
     button.textContent = "Clearing...";
 
     const response = await fetch(
-      `/api/seller/login-activity?user_id=${userId}`,
+      `${API_BASE}/api/seller/login-activity?user_id=${userId}`,
       {
         method: "DELETE"
       }
@@ -8981,14 +8981,14 @@ setupWholesaleSidebarNavigation();
         transactionsResponse
       ] = await Promise.all([
         fetch(
-          `/api/seller/payments/summary`,
+          `${API_BASE}/api/seller/payments/summary`,
           {
             credentials: "include"
           }
         ),
 
         fetch(
-          `/api/seller/payments/transactions`,
+          `${API_BASE}/api/seller/payments/transactions`,
           {
             credentials: "include"
           }

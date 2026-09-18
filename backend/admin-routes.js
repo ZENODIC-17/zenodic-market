@@ -675,9 +675,8 @@ router.post("/gateway-login", loginLimiter, (req, res) => {
 
     res.cookie(GATEWAY_COOKIE, gatewayToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      maxAge: GATEWAY_TTL_MS,
+      secure: true,
+      sameSite: "none",
       path: "/api/admin"
     });
 
